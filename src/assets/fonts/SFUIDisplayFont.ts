@@ -6,9 +6,10 @@ const SFUIDisplayFont = css`
     src:
       local("San Francisco(SF UI) Display Regular"),
       local("San-Francisco(SF-UI)-Display-Regular"),
-      url("SFUIDisplay-Regular.woff2") format("woff2"),
-      url("SFUIDisplay-Regular.woff") format("woff"),
-      url("SFUIDisplay-Regular.ttf") format("truetype");
+      url("/assets/fonts/SFUIDisplay/SFUIDisplay-Regular.woff2") format("woff2"),
+      url("/assets/fonts/SFUIDisplay/SFUIDisplay-Regular.woff") format("woff"),
+      url("/assets/fonts/SFUIDisplay/SFUIDisplay-Regular.ttf")
+        format("truetype");
     font-weight: 400;
     font-style: normal;
   }

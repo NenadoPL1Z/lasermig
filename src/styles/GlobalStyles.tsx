@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import BebasNeueFont from "@/assets/fonts/BebasNeue";
-import SFUIDisplayFont from "@/assets/fonts/SFUIDisplay";
 import ColorScheme from "@/styles/theme/ColorScheme";
+import SFUIDisplayFont from "@/assets/fonts/SFUIDisplayFont";
+import BebasNeueFont from "@/assets/fonts/BebasNeueFont";
 
 const GlobalStyles = createGlobalStyle`
   body {
