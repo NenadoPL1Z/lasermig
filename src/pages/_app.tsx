@@ -1,6 +1,17 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import React from "react";
+import type { AppProps } from "next/app";
+import MainLayout from "@/layout/MainLayout";
+import GlobalStyles from "@/styles/GlobalStyles";
+import ErrorBoundary from "@/layout/ErrorBoundary";
+import "normalize.css";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ErrorBoundary>
+      <MainLayout>
+        <Component {...pageProps} />
+      </MainLayout>
+      <GlobalStyles />
+    </ErrorBoundary>
+  );
 }
