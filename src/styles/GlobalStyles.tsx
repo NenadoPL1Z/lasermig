@@ -1,8 +1,17 @@
 import { createGlobalStyle } from "styled-components";
+import BebasNeueFont from "@/assets/fonts/BebasNeue";
+import SFUIDisplayFont from "@/assets/fonts/SFUIDisplay";
+import ColorScheme from "@/styles/theme/ColorScheme";
 
 const GlobalStyles = createGlobalStyle`
   body {
     height: 100%;
+    
+    font-family: SF, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    
+    background-color: ${ColorScheme.BACKGROUND};
   },
   
   *, *::after, *::before {
@@ -39,12 +48,14 @@ const GlobalStyles = createGlobalStyle`
   }
   
   .container {
-    width: 100%;
-    max-width: 1470px;
+    width: calc(100% - 30px);
+    max-width: 1600px;
     
     margin: 0 auto;
-    padding: 0 15px;
   }
+  
+  ${BebasNeueFont};
+  ${SFUIDisplayFont};
 `;
 
 export default GlobalStyles;

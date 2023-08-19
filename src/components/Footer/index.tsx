@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer = () => {
-  return <footer>footer</footer>;
+  return <footer className="container">footer</footer>;
 };
 
 export default React.memo(Footer);

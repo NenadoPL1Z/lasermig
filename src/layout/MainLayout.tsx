@@ -9,7 +9,7 @@ const MainLayout = ({ children }: ChildrenProps) => {
   return (
     <ThemeProvider theme={theme}>
       <Header />
-      <main>{children}</main>
+      <main className="container">{children}</main>
       <Footer />
     </ThemeProvider>
   );
