@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@mui/material";
 import styled from "styled-components";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
+import ModalCall from "@/UI/Modals/ModalCall";
 
 const Request = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
     <>
-      <ButtonSC>Оставить заявку</ButtonSC>
+      <ButtonSC onClick={() => setIsOpen(true)}>Оставить заявку</ButtonSC>
+      <ModalCall open={isOpen} onClose={() => setIsOpen(false)} />
     </>
   );
 };

@@ -9,6 +9,7 @@ enum ColorScheme {
   ERROR = "#E80000",
   YELLOW = "#FFCC00",
   BLACK = "#000000",
+  BACKDOOR = "rgba(0, 0, 0, 0.5)",
 }
 
 export default ColorScheme;

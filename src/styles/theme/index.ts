@@ -9,6 +9,9 @@ const theme = createTheme({
     primary: {
       main: ColorScheme.ACCENT,
     },
+    secondary: {
+      main: ColorScheme.TERTIARY,
+    },
   },
   typography: {
     fontFamily: FontNamespace.SF,
@@ -34,8 +37,11 @@ const theme = createTheme({
       fontWeight: 700,
     },
     h4: {
+      color: ColorScheme.WHITE,
       fontFamily: FontNamespace.BN,
+      fontSize: 48,
       fontWeight: 700,
+      lineHeight: "normal",
     },
     h5: {
       fontFamily: FontNamespace.BN,
@@ -82,6 +88,11 @@ const theme = createTheme({
       },
       defaultProps: {
         variant: "contained",
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        variant: "standard",
       },
     },
   },

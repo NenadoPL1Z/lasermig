@@ -33,7 +33,7 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
   
-  ul {
+  ul, p {
     margin: 0;
     padding: 0;
   }
