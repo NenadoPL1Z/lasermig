@@ -113,6 +113,21 @@ const theme = createTheme({
         color: "secondary",
       },
     },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          color: `${ColorScheme.ERROR} !important`,
+
+          fontFamily: FontNamespace.SF,
+          fontSize: "12px",
+          fontWeight: 400,
+          lineHeight: "normal",
+
+          position: "absolute",
+          bottom: "-20px",
+        },
+      },
+    },
   },
 });
 

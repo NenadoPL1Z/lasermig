@@ -19,18 +19,8 @@ const TextFieldSC = styled(TextField)<{ isError: boolean }>`
     &::placeholder {
       color: ${({ isError }) =>
         isError ? ColorScheme.ERROR : ColorScheme.TERTIARY};
+      opacity: 1;
     }
-  }
-  .MuiFormHelperText-root {
-    color: ${ColorScheme.ERROR};
-
-    font-family: SF, sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: normal;
-
-    position: absolute;
-    bottom: -20px;
   }
 `;
 
