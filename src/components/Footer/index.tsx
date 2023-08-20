@@ -10,7 +10,7 @@ import FooterMoore from "@/components/Footer/FooterMoore/FooterMoore";
 const Footer = () => {
   return (
     <FooterSC className="container disable-mobile-safe">
-      <FooterWrapperSC>
+      <FooterWrapperSC className="content-tablet">
         <FooterInfo />
         <FooterNav />
         <FooterAction />
@@ -27,7 +27,7 @@ const FooterSC = styled("footer")`
 
   background-image: url("/assets/images/Bg.png");
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right top;
 
   border-radius: 50px;
 
@@ -42,10 +42,8 @@ const FooterSC = styled("footer")`
 
 const FooterWrapperSC = styled("div")`
   display: flex;
-  padding: 30px;
 
   @media (max-width: ${Breakpoints.TABLET}px) {
-    padding: 16px;
     flex-direction: column;
   }
 `;

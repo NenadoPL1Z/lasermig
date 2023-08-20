@@ -12,14 +12,11 @@ const theme = createTheme({
   },
   typography: {
     h1: {
+      color: ColorScheme.PRIMARY,
       fontFamily: FontNamespace.BN,
       fontWeight: 700,
       fontSize: "82px",
       lineHeight: "82px",
-
-      "@media (max-width:1000px)": {
-        fontSize: "20px",
-      },
     },
     h2: {
       fontFamily: FontNamespace.BN,

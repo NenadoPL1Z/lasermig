@@ -84,6 +84,25 @@ const GlobalStyles = createGlobalStyle`
     top: -120px !important;
   }
   
+  .content {
+    padding: 30px;
+    @media(max-width: ${Breakpoints.BIG_TABLET}px) {
+      padding: 16px;
+    }
+  }
+  
+  .content-bg {
+    background-color: ${ColorScheme.WHITE};
+    border-radius: 40px;
+  }
+
+  .content-tablet {
+    padding: 30px;
+    @media(max-width: ${Breakpoints.TABLET}px) {
+      padding: 16px;
+    }
+  }
+  
   ${BebasNeueFont};
   ${SFUIDisplayFont};
 `;
