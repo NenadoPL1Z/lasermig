@@ -5,8 +5,8 @@ import CallIcon from "@/assets/icons/CallIcon.svg";
 import BurgerMenu from "@/assets/icons/BurgerMenu.svg";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { Button } from "@mui/material";
-import { headerInfo } from "@/lib/mock/headerData";
 import HeaderDrawer from "@/components/Header/HeaderMobile/HeaderDrawer";
+import { companyData } from "@/lib/mock/companyData";
 
 const HeaderMobile = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -23,7 +23,7 @@ const HeaderMobile = () => {
           <Lasermig />
         </MiddleSC>
         <RightSC>
-          <Button variant="outlined" href={headerInfo.hrefPhone}>
+          <Button variant="outlined" href={companyData.hrefPhone}>
             <CallIcon />
           </Button>
         </RightSC>

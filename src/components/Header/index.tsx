@@ -27,7 +27,6 @@ const Header = () => {
 
 const HeaderSC = styled("header")`
   height: 99px;
-  margin-top: 20px;
 
   position: sticky;
   top: 20px;
@@ -42,7 +41,6 @@ const HeaderSC = styled("header")`
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     height: auto;
 
-    margin-top: 0;
     top: 0;
     border-radius: 0 0 24px 24px;
   }

@@ -7,12 +7,13 @@ import { Breakpoints } from "@/styles/theme/Breakpoints";
 const GlobalStyles = createGlobalStyle`
   body {
     height: 100%;
-    
+   
+    color: ${ColorScheme.SECONDARY};
     font-family: SF, sans-serif;
     font-size: 20px;
     font-weight: 400;
     
-    background-color: ${ColorScheme.BACKGROUND};
+    background-color: ${ColorScheme.WHITE_TWO};
   },
   
   *, *:after, *:before {
@@ -32,6 +33,11 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
   
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  
   ul, li {
     list-style-type: none;
   }
@@ -39,9 +45,15 @@ const GlobalStyles = createGlobalStyle`
   #__next {
     height: 100%;
     min-height: 100vh;
+
+    margin: 20px 0;
     
     display: flex;
     flex-direction: column;
+    
+    @media(max-width: ${Breakpoints.BIG_TABLET}px) {
+      margin: 0;
+    }
   }
   
   #__next > main {

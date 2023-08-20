@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import { headMock } from "@/lib/mock/headMock";
+import { headData } from "@/lib/mock/headData";
 import { ChildrenProps } from "@/types/types";
 
 type TitleLayoutProps = {
@@ -12,7 +12,7 @@ const TitleLayout = ({ children, title = "" }: TitleLayoutProps) => {
     <>
       <Head>
         <title>
-          {title ? `${headMock.titleSmall} ${title}` : headMock.titleFull}
+          {title ? `${headData.titleSmall} ${title}` : headData.titleFull}
         </title>
       </Head>
       {children}

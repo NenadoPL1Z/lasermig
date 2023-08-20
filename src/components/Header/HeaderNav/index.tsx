@@ -1,9 +1,8 @@
 import React from "react";
-import { headerData } from "@/lib/mock/headerData";
+import { navData } from "@/lib/mock/navData";
 import { LinkSC } from "@/UI/LinkSC";
 import styled from "styled-components";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
-import ColorScheme from "@/styles/theme/ColorScheme";
 
 interface HeaderNavProps {
   callbackClose?: (path: string) => () => void;
@@ -13,7 +12,7 @@ const HeaderNav = ({ callbackClose = () => () => {} }: HeaderNavProps) => {
   return (
     <NavSC>
       <UlSC>
-        {headerData.map((item) => (
+        {navData.map((item) => (
           <LiSC key={item.path}>
             <CustomLinkSC
               onClick={callbackClose(item.path)}
@@ -37,8 +36,6 @@ const NavSC = styled("nav")`
 `;
 
 const UlSC = styled("ul")`
-  margin: 0;
-  padding: 0;
   display: flex;
   align-items: center;
 
@@ -77,7 +74,6 @@ const CustomLinkSC = styled(LinkSC)`
     padding: 12px 0;
 
     font-size: 20px;
-    color: ${ColorScheme.MAIN};
   }
 `;
 

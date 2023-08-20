@@ -7,7 +7,7 @@ const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: ColorScheme.PRIMARY,
+      main: ColorScheme.ACCENT,
     },
   },
   typography: {
@@ -49,7 +49,7 @@ const theme = createTheme({
           maxHeight: "60px",
           padding: "20px 30px 16px",
 
-          color: ColorScheme.MAIN,
+          color: ColorScheme.PRIMARY,
 
           fontFamily: FontNamespace.BN,
           fontSize: "24px",
@@ -64,7 +64,7 @@ const theme = createTheme({
 
           [`@media (max-width: ${Breakpoints.BIG_TABLET}px)`]: {
             maxHeight: "40px",
-            padding: "13px 20px 10px",
+            padding: "15px 20px 10px",
 
             fontSize: "18px",
           },

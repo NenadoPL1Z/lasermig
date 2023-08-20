@@ -1,15 +1,15 @@
 import React from "react";
 import { LinkSC } from "@/UI/LinkSC";
-import { headerInfo } from "@/lib/mock/headerData";
-import { Button } from "@mui/material";
 import styled from "styled-components";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
+import { companyData } from "@/lib/mock/companyData";
+import Request from "@/components/Request/Request";
 
 const Index = () => {
   return (
     <ContainerSC className="mobile-safe">
-      <TelSC href={headerInfo.hrefPhone}>{headerInfo.phone}</TelSC>
-      <Button>Оставить заявку</Button>
+      <TelSC href={companyData.hrefPhone}>{companyData.phone}</TelSC>
+      <Request />
     </ContainerSC>
   );
 };
