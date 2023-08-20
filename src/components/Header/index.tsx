@@ -10,7 +10,6 @@ const Header = () => {
   const [isVisibleHeader, setIsVisibleHeader] = useState<boolean>(true);
   const isMobile = usMobile();
 
-  // test
   const handleChangeVisible = (state: boolean) => {
     setIsVisibleHeader(state);
   };

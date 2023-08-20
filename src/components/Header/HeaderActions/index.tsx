@@ -4,7 +4,6 @@ import { headerInfo } from "@/lib/mock/headerData";
 import { Button } from "@mui/material";
 import styled from "styled-components";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
-import ColorScheme from "@/styles/theme/ColorScheme";
 
 const Index = () => {
   return (
