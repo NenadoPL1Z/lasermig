@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import SFUIDisplayFont from "@/assets/fonts/SFUIDisplayFont";
 import BebasNeueFont from "@/assets/fonts/BebasNeueFont";
+import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -14,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
     background-color: ${ColorScheme.BACKGROUND};
   },
   
-  *, *::after, *::before {
+  *, *:after, *:before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -48,10 +49,27 @@ const GlobalStyles = createGlobalStyle`
   }
   
   .container {
-    width: calc(100% - 30px);
+    width: calc(100% - 32px);
     max-width: 1600px;
     
     margin: 0 auto;
+  }
+  
+  .mobile-safe {
+    @media(max-width: ${Breakpoints.BIG_TABLET}px) {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+  }
+  
+  .disable-mobile-safe {
+    @media(max-width: ${Breakpoints.BIG_TABLET}px) {
+      width: 100%;
+    }
+  }
+  
+  .header-hide {
+    top: -120px !important;
   }
   
   ${BebasNeueFont};

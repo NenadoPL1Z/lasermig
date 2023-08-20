@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { FontNamespace } from "@/styles/theme/FontNamespace";
+import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 const theme = createTheme({
   palette: {
@@ -43,6 +44,38 @@ const theme = createTheme({
   },
   components: {
     MuiButton: {
+      styleOverrides: {
+        contained: {
+          maxHeight: "60px",
+          padding: "20px 30px 16px",
+
+          color: ColorScheme.MAIN,
+
+          fontFamily: FontNamespace.BN,
+          fontSize: "24px",
+          fontWeight: "400",
+
+          borderRadius: 69,
+          boxShadow: "none",
+
+          "&:hover": {
+            boxShadow: "none",
+          },
+
+          [`@media (max-width: ${Breakpoints.BIG_TABLET}px)`]: {
+            maxHeight: "40px",
+            padding: "13px 20px 10px",
+
+            fontSize: "18px",
+          },
+        },
+        outlined: {
+          minWidth: 36,
+          padding: 0,
+          border: "0 !important",
+          color: "#7E7E7E",
+        },
+      },
       defaultProps: {
         variant: "contained",
       },
