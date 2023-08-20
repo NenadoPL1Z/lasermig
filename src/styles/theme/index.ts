@@ -96,20 +96,21 @@ const theme = createTheme({
           ".MuiInputBase-root": {
             height: 60,
 
-            // color: ColorScheme.TERTIARY,
+            color: ColorScheme.TERTIARY,
 
             fontSize: "24px",
             fontWeight: 400,
             fontFamily: FontNamespace.BN,
 
-            // "&::before": {
-            //   borderBottomColor: `${ColorScheme.TERTIARY} !important`,
-            // },
+            "&::before": {
+              borderBottomColor: `${ColorScheme.TERTIARY} !important`,
+            },
           },
         },
       },
       defaultProps: {
         variant: "standard",
+        color: "secondary",
       },
     },
   },

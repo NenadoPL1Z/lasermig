@@ -1,10 +1,10 @@
-import { TextField } from "@mui/material";
 import React from "react";
+import TextFieldUI from "@/UI/TextFieldUI";
 
 export default function Home() {
   return (
     <div style={{ height: 10000 }}>
-      <TextField placeholder="ИМЯ" fullWidth={true} />
+      <TextFieldUI placeholder="ИМЯ" fullWidth={true} />
     </div>
   );
 }

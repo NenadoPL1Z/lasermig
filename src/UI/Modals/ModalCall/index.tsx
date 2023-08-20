@@ -1,8 +1,9 @@
 import React from "react";
-import { Button, DialogProps, TextField } from "@mui/material";
+import { Button, DialogProps } from "@mui/material";
 import ModalContent from "@/UI/Modals/ModalContent";
 import styled from "styled-components";
 import { useModalCall } from "@/UI/Modals/ModalCall/useModalCall";
+import TextFieldUI from "@/UI/TextFieldUI";
 
 const ModalCall = (props: Omit<DialogProps, "children">) => {
   const { nameController, phoneController, onSubmit } = useModalCall();
@@ -10,7 +11,7 @@ const ModalCall = (props: Omit<DialogProps, "children">) => {
     <ModalContent dialogProps={props} title="Заказать звонок">
       <FormSC onSubmit={onSubmit}>
         <FormItemSC>
-          <TextField
+          <TextFieldUI
             name="name"
             placeholder="ИМЯ"
             inputProps={{ inputMode: "text" }}
@@ -22,7 +23,7 @@ const ModalCall = (props: Omit<DialogProps, "children">) => {
           />
         </FormItemSC>
         <FormItemSC>
-          <TextField
+          <TextFieldUI
             name="phone"
             placeholder="ТЕЛЕФОН"
             inputProps={{ inputMode: "tel" }}
