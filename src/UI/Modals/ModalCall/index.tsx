@@ -1,64 +1,45 @@
 import React from "react";
 import { Button, DialogProps, TextField } from "@mui/material";
 import ModalContent from "@/UI/Modals/ModalContent";
-import { useController, useForm } from "react-hook-form";
 import styled from "styled-components";
+import { useModalCall } from "@/UI/Modals/ModalCall/useModalCall";
 
 const ModalCall = (props: Omit<DialogProps, "children">) => {
-  const { control } = useForm<{ name: string; phone: string }>({
-    defaultValues: { name: "", phone: "" },
-  });
-
-  const nameController = useController({
-    control,
-    name: "name",
-    rules: {
-      required: true,
-      maxLength: {
-        value: 20,
-        message: "Максимальная длинна имени до 20-ти символов",
-      },
-    },
-  });
-
-  const phoneController = useController({
-    control,
-    name: "phone",
-    rules: {
-      required: true,
-      maxLength: {
-        value: 20,
-        message: "Максимальная длинна телефона до 20-ти символов",
-      },
-    },
-  });
-
+  const { nameController, phoneController, onSubmit } = useModalCall();
   return (
     <ModalContent dialogProps={props} title="Заказать звонок">
-      <FormSC>
+      <FormSC onSubmit={onSubmit}>
         <FormItemSC>
           <TextField
-            label="ИМЯ"
+            name="name"
+            placeholder="ИМЯ"
+            inputProps={{ inputMode: "text" }}
             fullWidth={true}
             value={nameController.field.value}
             onChange={nameController.field.onChange}
+            error={!!nameController.fieldState.error}
+            helperText={nameController.fieldState.error?.message}
           />
         </FormItemSC>
         <FormItemSC>
           <TextField
-            label="ТЕЛЕФОН"
+            name="phone"
+            placeholder="ТЕЛЕФОН"
+            inputProps={{ inputMode: "tel" }}
             fullWidth={true}
             value={phoneController.field.value}
             onChange={phoneController.field.onChange}
+            error={!!phoneController.fieldState.error}
+            helperText={phoneController.fieldState.error?.message}
           />
         </FormItemSC>
-        <ButtonSC>Отправить</ButtonSC>
+        <ButtonSC type="submit">Отправить</ButtonSC>
       </FormSC>
     </ModalContent>
   );
 };
 
-const FormSC = styled("div")`
+const FormSC = styled("form")`
   display: flex;
   flex-direction: column;
 `;
