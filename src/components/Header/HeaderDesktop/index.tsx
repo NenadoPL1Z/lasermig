@@ -44,6 +44,10 @@ const WrapperSC = styled("div")`
 
 const MiddleSC = styled("section")`
   padding-bottom: 6px;
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
 `;
 
 const LogoSC = styled("div")`
