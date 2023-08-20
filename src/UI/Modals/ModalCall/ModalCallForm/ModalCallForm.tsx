@@ -1,49 +1,22 @@
 import React from "react";
-import { useController, useForm } from "react-hook-form";
 import TextFieldUI from "@/UI/TextFieldUI";
 import styled from "styled-components";
-import { Button } from "@mui/material";
+import { Button, CircularProgress } from "@mui/material";
 import { ErrorTitleSC } from "@/UI/ErrorTitleSC";
+import { useModalCall } from "@/UI/Modals/ModalCall/useModalCall";
+import { AllModalProps } from "@/UI/Modals/types";
 
-const ModalCallForm = () => {
-  const { control, handleSubmit, formState } = useForm<{
-    name: string;
-    phone: string;
-  }>({
-    defaultValues: { name: "", phone: "" },
-  });
+const ModalCallForm = (props: AllModalProps) => {
+  const {
+    isLoading,
+    isEmpty,
+    hasError,
 
-  const isEmpty =
-    formState.errors.name?.type === "required" ||
-    formState.errors.phone?.type === "required";
+    nameController,
+    phoneController,
 
-  const nameController = useController({
-    control,
-    name: "name",
-    rules: {
-      required: true,
-      maxLength: {
-        value: 20,
-        message: "Максимальная длинна имени до 20-ти символов",
-      },
-    },
-  });
-
-  const phoneController = useController({
-    control,
-    name: "phone",
-    rules: {
-      required: true,
-      maxLength: {
-        value: 20,
-        message: "Максимальная длинна телефона до 20-ти символов",
-      },
-    },
-  });
-
-  const onSubmit = handleSubmit(() => {
-    // console.log(data);
-  });
+    onSubmit,
+  } = useModalCall(props);
 
   return (
     <FormSC onSubmit={onSubmit}>
@@ -71,8 +44,14 @@ const ModalCallForm = () => {
           helperText={phoneController.fieldState.error?.message}
         />
       </FormItemSC>
-      {isEmpty && <ErrorTitleSC>Заполните все обязательные поля</ErrorTitleSC>}
-      <ButtonSC type="submit">Отправить</ButtonSC>
+      {(isEmpty || !!hasError) && (
+        <ErrorTitleSC>
+          {hasError || "Заполните все обязательные поля"}
+        </ErrorTitleSC>
+      )}
+      <ButtonSC type="submit" disabled={isLoading}>
+        {isLoading ? <CircularProgress size={30} /> : "Отправить"}
+      </ButtonSC>
     </FormSC>
   );
 };
