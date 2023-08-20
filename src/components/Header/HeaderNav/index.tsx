@@ -1,7 +1,7 @@
 import React from "react";
 import { navData } from "@/lib/mock/navData";
 import { LinkSC } from "@/UI/LinkSC";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 interface HeaderNavProps {

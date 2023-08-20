@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import ModalCall from "@/UI/Modals/ModalCall";
 

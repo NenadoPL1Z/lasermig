@@ -1,6 +1,6 @@
 import React from "react";
 import { TextField, TextFieldProps } from "@mui/material";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import ColorScheme from "@/styles/theme/ColorScheme";
 
 const Index = (props: TextFieldProps) => {

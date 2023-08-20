@@ -1,6 +1,6 @@
 import React from "react";
 import Lasermig from "@/assets/icons/Lasermig.svg";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import { companyData } from "@/lib/mock/companyData";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { Breakpoints } from "@/styles/theme/Breakpoints";

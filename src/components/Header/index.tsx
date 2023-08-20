@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import HeaderDesktop from "@/components/Header/HeaderDesktop";
 import HeaderMobile from "@/components/Header/HeaderMobile";

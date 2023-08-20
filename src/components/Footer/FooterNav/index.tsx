@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import { navData } from "@/lib/mock/navData";
 import { LinkSC } from "@/UI/LinkSC";
 import ColorScheme from "@/styles/theme/ColorScheme";

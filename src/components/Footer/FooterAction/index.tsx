@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import { companyData } from "@/lib/mock/companyData";
 import { LinkSC } from "@/UI/LinkSC";
 import Request from "@/components/Request/Request";

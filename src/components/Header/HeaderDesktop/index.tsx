@@ -1,6 +1,6 @@
 import React from "react";
 import Lasermig from "@/assets/icons/Lasermig.svg";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import HeaderNav from "@/components/Header/HeaderNav";
 import HeaderActions from "@/components/Header/HeaderActions";

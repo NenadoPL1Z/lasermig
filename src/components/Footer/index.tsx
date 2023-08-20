@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import FooterInfo from "@/components/Footer/FooterInfo";
 import FooterAction from "@/components/Footer/FooterAction";
 import FooterNav from "@/components/Footer/FooterNav";

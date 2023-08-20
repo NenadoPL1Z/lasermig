@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import { Typography } from "@mui/material";
 import { ChildrenProps } from "@/types/types";
 import { Breakpoints } from "@/styles/theme/Breakpoints";

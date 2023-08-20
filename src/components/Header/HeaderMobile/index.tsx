@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import Lasermig from "@/assets/icons/Lasermig.svg";
 import CallIcon from "@/assets/icons/CallIcon.svg";
 import BurgerMenu from "@/assets/icons/BurgerMenu.svg";

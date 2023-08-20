@@ -1,6 +1,6 @@
 import React from "react";
 import TextFieldUI from "@/UI/TextFieldUI";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import { Button, CircularProgress } from "@mui/material";
 import { ErrorTitleSC } from "@/UI/ErrorTitleSC";
 import { useModalCall } from "@/UI/Modals/ModalCall/useModalCall";

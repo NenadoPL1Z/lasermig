@@ -1,6 +1,6 @@
 import React from "react";
 import { LinkSC } from "@/UI/LinkSC";
-import styled from "styled-components";
+import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { companyData } from "@/lib/mock/companyData";
 import Request from "@/components/Request/Request";
