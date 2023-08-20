@@ -58,6 +58,8 @@ const GlobalStyles = createGlobalStyle`
   
   #__next > main {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   }
   
   .container {
@@ -94,6 +96,10 @@ const GlobalStyles = createGlobalStyle`
   .content-bg {
     background-color: ${ColorScheme.WHITE};
     border-radius: 40px;
+    
+    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+      border-radius: 24px;
+    }
   }
 
   .content-tablet {

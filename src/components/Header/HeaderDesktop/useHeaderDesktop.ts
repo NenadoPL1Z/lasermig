@@ -1,9 +1,15 @@
 import { useEffect } from "react";
 import { HeaderDesktopProps } from "@/components/Header/HeaderDesktop/index";
+import { useRouter } from "next/router";
+
+const hideHeaderRoutes = ["/"];
 
 export const useHeaderDesktop = ({
   handleChangeVisible,
 }: HeaderDesktopProps) => {
+  const { pathname } = useRouter();
+  const isHide = !!hideHeaderRoutes.find((item) => item === pathname);
+
   useEffect(() => {
     let prevState: number = 0;
     const onScroll = () => {
@@ -12,10 +18,12 @@ export const useHeaderDesktop = ({
       prevState = lastScroll;
     };
 
-    window.addEventListener("scroll", onScroll);
+    if (isHide) {
+      window.addEventListener("scroll", onScroll);
+    }
 
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
-  }, []);
+  }, [isHide]);
 };

@@ -1,5 +1,5 @@
 export const headData = {
   titleFull: `Лазермиг`,
-  titleSmall: ``,
+  titleSmall: `Лазермиг`,
   desc: ``,
 };

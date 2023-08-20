@@ -11,12 +11,19 @@ const theme = createTheme({
     },
   },
   typography: {
+    fontFamily: FontNamespace.SF,
+
     h1: {
       color: ColorScheme.PRIMARY,
       fontFamily: FontNamespace.BN,
-      fontWeight: 700,
       fontSize: "82px",
+      fontWeight: 700,
       lineHeight: "82px",
+
+      [`@media (max-width: ${Breakpoints.BIG_TABLET}px)`]: {
+        fontSize: "36px",
+        lineHeight: "normal",
+      },
     },
     h2: {
       fontFamily: FontNamespace.BN,
