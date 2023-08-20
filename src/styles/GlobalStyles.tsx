@@ -1,7 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 import ColorScheme from "@/styles/theme/ColorScheme";
-import SFUIDisplayFont from "@/assets/fonts/SFUIDisplayFont";
-import BebasNeueFont from "@/assets/fonts/BebasNeueFont";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 const GlobalStyles = createGlobalStyle`
@@ -104,9 +102,6 @@ const GlobalStyles = createGlobalStyle`
       padding: 16px;
     }
   }
-  
-  ${BebasNeueFont};
-  ${SFUIDisplayFont};
 `;
 
 export default GlobalStyles;

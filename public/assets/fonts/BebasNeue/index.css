@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "BN";
+  src:
+    local("Bebas Neue Bold"),
+    local("Bebas-Neue-Bold"),
+    url("./BebasNeueBold.woff2") format("woff2"),
+    url("./BebasNeueBold.woff") format("woff"),
+    url("./BebasNeueBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BN";
+  src:
+    local("Bebas Neue Regular"),
+    local("Bebas-Neue-Regular"),
+    url("./BebasNeueRegular.woff2") format("woff2"),
+    url("./BebasNeueRegular.woff") format("woff"),
+    url("./BebasNeueRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
