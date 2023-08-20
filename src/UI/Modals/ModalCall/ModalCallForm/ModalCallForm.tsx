@@ -3,14 +3,19 @@ import { useController, useForm } from "react-hook-form";
 import TextFieldUI from "@/UI/TextFieldUI";
 import styled from "styled-components";
 import { Button } from "@mui/material";
+import { ErrorTitleSC } from "@/UI/ErrorTitleSC";
 
 const ModalCallForm = () => {
-  const { control, handleSubmit } = useForm<{
+  const { control, handleSubmit, formState } = useForm<{
     name: string;
     phone: string;
   }>({
     defaultValues: { name: "", phone: "" },
   });
+
+  const isEmpty =
+    formState.errors.name?.type === "required" ||
+    formState.errors.phone?.type === "required";
 
   const nameController = useController({
     control,
@@ -66,6 +71,7 @@ const ModalCallForm = () => {
           helperText={phoneController.fieldState.error?.message}
         />
       </FormItemSC>
+      {isEmpty && <ErrorTitleSC>Заполните все обязательные поля</ErrorTitleSC>}
       <ButtonSC type="submit">Отправить</ButtonSC>
     </FormSC>
   );

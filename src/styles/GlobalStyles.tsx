@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     
     background-color: ${ColorScheme.WHITE_TWO};
-  },
+  }
   
   *, *:after, *:before {
     margin: 0;
@@ -33,10 +33,6 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
   
-  ul, p {
-    margin: 0;
-    padding: 0;
-  }
   
   ul, li {
     list-style-type: none;

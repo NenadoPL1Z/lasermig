@@ -21,7 +21,7 @@ const Index = () => {
 
 const DescSC = styled(Typography)`
   color: ${ColorScheme.PRIMARY};
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 
   font-size: 20px;
   line-height: normal;

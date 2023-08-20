@@ -39,9 +39,8 @@ const DialogSC = styled(Dialog)`
   }
   .MuiPaper-root {
     width: 100%;
-    height: 100%;
     max-width: 1100px;
-    max-height: 452px;
+    max-height: none;
 
     box-shadow: none !important;
     border-radius: 50px;
