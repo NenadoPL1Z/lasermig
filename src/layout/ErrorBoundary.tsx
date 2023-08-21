@@ -1,5 +1,5 @@
 import React, { Component, ErrorInfo, ReactNode } from "react";
-import ErrorPage from "@/components/ErrorPage";
+import Error500 from "@/components/ErrorPage/Error500";
 
 interface Props {
   children?: ReactNode;
@@ -26,7 +26,7 @@ class ErrorBoundary extends Component<Props, State> {
 
   public render() {
     if (this.state.hasError) {
-      return <ErrorPage errorImage="404" />;
+      return <Error500 />;
     }
 
     return this.props.children;

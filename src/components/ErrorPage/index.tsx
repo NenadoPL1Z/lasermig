@@ -4,17 +4,18 @@ import { Typography } from "@mui/material";
 import { ChildrenProps } from "@/types/types";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 
-type ErrorImage = "404";
+type ErrorImage = "404" | "500";
 
 interface ErrorPageProps extends Partial<ChildrenProps> {
+  title: string;
   errorImage: ErrorImage;
 }
 
-const ErrorPage = ({ errorImage, children }: ErrorPageProps) => {
+const ErrorPage = ({ title, errorImage, children }: ErrorPageProps) => {
   return (
     <ContainerSC errorImage={errorImage} className="content content-bg">
       <TextContentSC>
-        <TitlesSC variant="h1">Страница не найдена</TitlesSC>
+        <TitlesSC variant="h1">{title}</TitlesSC>
         {children}
       </TextContentSC>
     </ContainerSC>
@@ -41,14 +42,13 @@ const ContainerSC = styled("section")<Pick<ErrorPageProps, "errorImage">>`
 `;
 
 const TextContentSC = styled("div")`
-  max-width: 427px;
-
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     max-width: none;
   }
 `;
 
 const TitlesSC = styled(Typography)`
+  max-width: 427px;
   margin-bottom: 16px;
 `;
 

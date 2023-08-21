@@ -9,11 +9,13 @@ import "normalize.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ErrorBoundary>
+    <>
       <MainLayout>
-        <Component {...pageProps} />
+        <ErrorBoundary>
+          <Component {...pageProps} />
+        </ErrorBoundary>
       </MainLayout>
       <GlobalStyles />
-    </ErrorBoundary>
+    </>
   );
 }
