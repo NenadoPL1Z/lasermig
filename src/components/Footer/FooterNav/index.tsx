@@ -28,7 +28,7 @@ const ContainerSC = styled("nav")`
   align-items: flex-start;
   flex-direction: column;
 
-  @media (max-width: ${Breakpoints.TABLET}px) {
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     max-width: none;
     margin-right: 0;
     margin-bottom: 36px;
@@ -45,7 +45,7 @@ const LiSC = styled("li")`
   font-size: 24px;
   margin-bottom: 24px;
 
-  @media (max-width: ${Breakpoints.TABLET}px) {
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     font-size: 20px;
     margin-bottom: 16px;
   }

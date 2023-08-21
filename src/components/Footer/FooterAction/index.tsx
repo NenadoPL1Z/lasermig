@@ -20,7 +20,7 @@ const ContainerSC = styled("section")`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: ${Breakpoints.TABLET}px) {
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     margin-bottom: 36px;
   }
 `;
@@ -32,7 +32,7 @@ const TelSC = styled(LinkSC)`
 
   margin-bottom: 24px;
 
-  @media (max-width: ${Breakpoints.TABLET}px) {
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     font-size: 24px;
     margin-bottom: 16px;
   }
@@ -45,7 +45,7 @@ const EmailSC = styled(LinkSC)`
 
   margin-bottom: 36px;
 
-  @media (max-width: ${Breakpoints.TABLET}px) {
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     font-size: 24px;
     margin-bottom: 24px;
   }

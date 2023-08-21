@@ -63,21 +63,11 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
   }
   
-  .mobile-safe {
-    @media(max-width: ${Breakpoints.BIG_TABLET}px) {
-      padding-left: 16px !important;
-      padding-right: 16px !important;
-    }
-  }
   
   .disable-mobile-safe {
     @media(max-width: ${Breakpoints.BIG_TABLET}px) {
       width: 100%;
     }
-  }
-  
-  .header-hide {
-    top: -120px !important;
   }
   
   .content {
@@ -96,11 +86,8 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  .content-tablet {
-    padding: 30px;
-    @media(max-width: ${Breakpoints.TABLET}px) {
-      padding: 16px;
-    }
+  .header-hide {
+    top: -120px !important;
   }
 `;
 

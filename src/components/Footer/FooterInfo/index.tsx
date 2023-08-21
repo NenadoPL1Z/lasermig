@@ -27,7 +27,7 @@ const ContainerSC = styled("section")`
   max-width: 450px;
   margin-right: 70px;
 
-  @media (max-width: ${Breakpoints.TABLET}px) {
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     max-width: none;
     margin-right: 0;
   }
@@ -43,7 +43,7 @@ const LogoSC = styled("div")`
     fill: ${ColorScheme.WHITE};
   }
 
-  @media (max-width: ${Breakpoints.TABLET}px) {
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     width: 153px;
     height: 30px;
   }
@@ -58,7 +58,7 @@ const AddressSC = styled("address")`
 
   margin-bottom: 32px;
 
-  @media (max-width: ${Breakpoints.TABLET}px) {
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     font-size: 14px;
   }
 `;
@@ -69,7 +69,7 @@ const WorkTimeTitleSC = styled("div")`
   font-size: 18px;
   margin-bottom: 10px;
 
-  @media (max-width: ${Breakpoints.TABLET}px) {
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     font-size: 14px;
   }
 `;
@@ -82,14 +82,14 @@ const WorkTimeSC = styled("div")`
 
   margin-bottom: 84px;
 
-  @media (max-width: ${Breakpoints.TABLET}px) {
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     font-size: 14px;
     margin-bottom: 36px;
   }
 `;
 
 const BottomSC = styled("div")`
-  @media (max-width: ${Breakpoints.TABLET}px) {
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     display: none;
   }
 `;

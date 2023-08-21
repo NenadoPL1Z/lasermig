@@ -15,10 +15,7 @@ const HeaderNav = ({ callbackClose = () => () => {} }: HeaderNavProps) => {
       <UlSC>
         {navData.map((item) => (
           <LiSC key={item.path}>
-            <CustomLinkSC
-              onClick={callbackClose(item.path)}
-              className="mobile-safe"
-              href={item.path}>
+            <CustomLinkSC onClick={callbackClose(item.path)} href={item.path}>
               {item.title}
             </CustomLinkSC>
           </LiSC>
@@ -71,7 +68,7 @@ const LiSC = styled("li")`
 const CustomLinkSC = styled(LinkSC)`
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     display: block;
-    padding: 12px 0;
+    padding: 12px 16px;
 
     color: ${ColorScheme.PRIMARY};
 

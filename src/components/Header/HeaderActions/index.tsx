@@ -8,7 +8,7 @@ import ColorScheme from "@/styles/theme/ColorScheme";
 
 const Index = () => {
   return (
-    <ContainerSC className="mobile-safe">
+    <ContainerSC>
       <TelSC href={companyData.hrefPhone}>{companyData.phone}</TelSC>
       <Request />
     </ContainerSC>
@@ -22,6 +22,7 @@ const ContainerSC = styled("section")`
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     flex-direction: column;
     align-items: flex-start;
+    padding: 0 16px;
   }
 `;
 
