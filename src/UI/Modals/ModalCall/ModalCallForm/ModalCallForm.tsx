@@ -1,10 +1,11 @@
 import React from "react";
 import TextFieldUI from "@/UI/TextFieldUI";
 import { styled } from "@mui/material";
-import { Button, CircularProgress } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { ErrorTitleSC } from "@/UI/ErrorTitleSC";
 import { useModalCall } from "@/UI/Modals/ModalCall/useModalCall";
 import { AllModalProps } from "@/UI/Modals/types";
+import { DefaultButton } from "@/UI/Buttons/DefaultButton";
 
 const ModalCallForm = (props: AllModalProps) => {
   const {
@@ -65,7 +66,7 @@ const FormItemSC = styled("div")`
   margin-bottom: 32px;
 `;
 
-const ButtonSC = styled(Button)`
+const ButtonSC = styled(DefaultButton)`
   max-width: 179px;
 `;
 

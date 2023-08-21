@@ -1,6 +1,7 @@
 import { Button, styled } from "@mui/material";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { FontNamespace } from "@/styles/theme/FontNamespace";
+import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 export const DefaultButton = styled(Button)`
   padding: 20px 40px 16px;
@@ -17,5 +18,10 @@ export const DefaultButton = styled(Button)`
 
   &:hover {
     background-color: ${ColorScheme.ACCENT_2};
+  }
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    padding: 12px 20px 10px;
+    font-size: 18px;
   }
 `;

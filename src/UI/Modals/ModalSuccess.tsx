@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@mui/material";
+import { DefaultButton } from "@/UI/Buttons/DefaultButton";
 
 interface ModalSuccessProps {
   // eslint-disable-next-line
@@ -7,7 +7,7 @@ interface ModalSuccessProps {
 }
 
 const ModalSuccess = ({ handleClose }: ModalSuccessProps) => {
-  return <Button onClick={handleClose}>закрыть</Button>;
+  return <DefaultButton onClick={handleClose}>закрыть</DefaultButton>;
 };
 
 export default React.memo(ModalSuccess);

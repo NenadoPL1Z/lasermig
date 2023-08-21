@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Button } from "@mui/material";
 import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import ModalCall from "@/UI/Modals/ModalCall";
+import { DefaultButton } from "@/UI/Buttons/DefaultButton";
 
 const Request = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -15,7 +15,7 @@ const Request = () => {
   );
 };
 
-const ButtonSC = styled(Button)`
+const ButtonSC = styled(DefaultButton)`
   width: 197px;
   display: flex;
   align-items: center;
