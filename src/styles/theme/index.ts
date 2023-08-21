@@ -55,35 +55,36 @@ const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
-        contained: {
-          maxHeight: "60px",
-          padding: "20px 30px 16px",
-
-          color: ColorScheme.PRIMARY,
-
-          fontFamily: FontNamespace.BN,
-          fontSize: "24px",
-          fontWeight: "400",
-
-          borderRadius: 69,
-          boxShadow: "none",
-
-          "&:hover": {
-            boxShadow: "none",
-          },
-
-          [`@media (max-width: ${Breakpoints.BIG_TABLET}px)`]: {
-            maxHeight: "40px",
-            padding: "15px 20px 10px",
-
-            fontSize: "18px",
-          },
-        },
+        // contained: {
+        //   maxHeight: "60px",
+        //   padding: "20px 30px 16px",
+        //
+        //   color: ColorScheme.PRIMARY,
+        //
+        //   fontFamily: FontNamespace.BN,
+        //   fontSize: "24px",
+        //   fontWeight: "400",
+        //
+        //   borderRadius: 69,
+        //   boxShadow: "none",
+        //
+        //   "&:hover": {
+        //     boxShadow: "none",
+        //   },
+        //
+        //   [`@media (max-width: ${Breakpoints.BIG_TABLET}px)`]: {
+        //     maxHeight: "40px",
+        //     padding: "15px 20px 10px",
+        //
+        //     fontSize: "18px",
+        //   },
+        // },
         outlined: {
           minWidth: 36,
           padding: 0,
           border: "0 !important",
           color: "#7E7E7E",
+          borderRadius: "50%",
         },
       },
       defaultProps: {
