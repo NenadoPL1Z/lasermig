@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { DialogProps } from "@mui/material";
 import ModalContent from "@/UI/Modals/ModalContent";
 import ModalCallForm from "@/UI/Modals/ModalCall/ModalCallForm/ModalCallForm";
 import ModalSuccess from "@/UI/Modals/ModalSuccess";
+import { AllModalProps } from "@/UI/Modals/types";
 
-export type ModalCallProps = Omit<DialogProps, "children">;
-const ModalCall = (props: ModalCallProps) => {
+const ModalCall = (props: AllModalProps) => {
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
+
+  const title = isSuccess ? "Ваша заявка получена" : "Заказать звонок";
+  const subtitle = isSuccess
+    ? "В ближайшее время наш менеджер свяжется с вами для уточнения деталей"
+    : "";
 
   const handleSuccess = () => {
     setIsSuccess(true);
@@ -15,16 +19,12 @@ const ModalCall = (props: ModalCallProps) => {
   return (
     <>
       <ModalContent
-        title={isSuccess ? "Ваша заявка получена" : "Заказать звонок"}
-        subtitle={
-          isSuccess
-            ? "В ближайшее время наш менеджер свяжется с вами для уточнения деталей"
-            : ""
-        }
+        title={title}
+        subtitle={subtitle}
         isSuccess={isSuccess}
-        dialogProps={props}>
+        {...props}>
         {!isSuccess && <ModalCallForm handleSuccess={handleSuccess} />}
-        {isSuccess && <ModalSuccess handleClose={props.onClose} />}
+        {isSuccess && <ModalSuccess handleClose={props.handleClose} />}
       </ModalContent>
     </>
   );

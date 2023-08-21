@@ -10,7 +10,7 @@ const Request = () => {
   return (
     <>
       <ButtonSC onClick={() => setIsOpen(true)}>Оставить заявку</ButtonSC>
-      <ModalCall open={isOpen} onClose={() => setIsOpen(false)} />
+      <ModalCall isOpen={isOpen} handleClose={() => setIsOpen(false)} />
     </>
   );
 };

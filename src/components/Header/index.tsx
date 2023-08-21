@@ -4,11 +4,11 @@ import { Breakpoints } from "@/styles/theme/Breakpoints";
 import HeaderDesktop from "@/components/Header/HeaderDesktop";
 import HeaderMobile from "@/components/Header/HeaderMobile";
 import ColorScheme from "@/styles/theme/ColorScheme";
-import { usMobile } from "@/hooks/useMedia";
+import { useMobile } from "@/hooks/useMedia";
 
 const Header = () => {
   const [isVisibleHeader, setIsVisibleHeader] = useState<boolean>(true);
-  const isMobile = usMobile();
+  const isMobile = useMobile();
 
   const handleChangeVisible = (state: boolean) => {
     setIsVisibleHeader(state);

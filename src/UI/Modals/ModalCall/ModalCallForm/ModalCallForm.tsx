@@ -4,10 +4,10 @@ import { styled } from "@mui/material";
 import { CircularProgress } from "@mui/material";
 import { ErrorTitleSC } from "@/UI/ErrorTitleSC";
 import { useModalCall } from "@/UI/Modals/ModalCall/useModalCall";
-import { AllModalProps } from "@/UI/Modals/types";
 import { DefaultButton } from "@/UI/Buttons/DefaultButton";
+import { ModaFormProps } from "@/UI/Modals/types";
 
-const ModalCallForm = (props: AllModalProps) => {
+const ModalCallForm = (props: ModaFormProps) => {
   const {
     isLoading,
     isEmpty,

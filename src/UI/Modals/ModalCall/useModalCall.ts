@@ -3,10 +3,10 @@ import { axiosProject } from "@/lib/http";
 import { ApiNamespace } from "@/lib/constants/ApiNamespace";
 import { useStatus } from "@/hooks/useStatus";
 import { ErrorNamespace } from "@/lib/constants/ErrorNamespace";
-import { AllModalProps } from "@/UI/Modals/types";
 import { useEffect } from "react";
+import { ModaFormProps } from "@/UI/Modals/types";
 
-export const useModalCall = ({ handleSuccess }: AllModalProps) => {
+export const useModalCall = ({ handleSuccess }: ModaFormProps) => {
   const { isLoading, hasError, handleChangeStatus } = useStatus({
     isLoading: false,
   });

@@ -1,25 +1,14 @@
 import React from "react";
-import { ChildrenProps } from "@/types/types";
-import styled, { css } from "styled-components";
-import { Dialog, DialogProps, Typography } from "@mui/material";
+import { styled, Typography } from "@mui/material";
 import ColorScheme from "@/styles/theme/ColorScheme";
+import ModalContainer from "@/UI/Modals/ModalContainer";
+import { ModalContentProps } from "@/UI/Modals/types";
 
-interface ModalContentProps extends ChildrenProps {
-  title: string;
-  subtitle?: string;
-  isSuccess?: boolean;
-  dialogProps: DialogProps;
-}
+const ModalContent = ({ title, subtitle, ...props }: ModalContentProps) => {
+  const { isSuccess, children } = props;
 
-const ModalContent = ({
-  title,
-  subtitle,
-  dialogProps,
-  isSuccess,
-  children,
-}: ModalContentProps) => {
   return (
-    <DialogSC isSuccess={isSuccess} {...dialogProps}>
+    <ModalContainer {...props}>
       <ContainerSC>
         <WrapperSC>
           <TitleSC variant="h4">{title}</TitleSC>
@@ -33,38 +22,9 @@ const ModalContent = ({
           )}
         </WrapperSC>
       </ContainerSC>
-    </DialogSC>
+    </ModalContainer>
   );
 };
-
-const DialogSC = styled(Dialog)<Pick<ModalContentProps, "isSuccess">>`
-  .MuiBackdrop-root {
-    background-color: ${ColorScheme.BACKDOOR};
-  }
-  .MuiPaper-root {
-    width: 100%;
-    max-height: none;
-
-    box-shadow: none !important;
-    border-radius: 50px;
-
-    background-color: ${ColorScheme.PRIMARY};
-    background-repeat: no-repeat;
-
-    ${({ isSuccess }) =>
-      !isSuccess
-        ? css`
-            max-width: 1100px;
-            background-image: url(/assets/images/ModalBg.png);
-            background-position: left bottom;
-          `
-        : css`
-            max-width: 870px;
-            background-image: url(/assets/images/ModalSuccessBg.png);
-            background-position: left top;
-          `}
-  }
-`;
 
 const ContainerSC = styled("div")`
   height: 100%;
