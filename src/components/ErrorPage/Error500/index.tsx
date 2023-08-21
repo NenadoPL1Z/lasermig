@@ -7,7 +7,11 @@ import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { useRouter } from "next/router";
 
 const Error500 = () => {
-  const { reload } = useRouter();
+  const { pathname, push, reload } = useRouter();
+  const is500Page = pathname == "/500";
+
+  const onClick = is500Page ? () => push("/") : reload;
+  const buttonTitle = is500Page ? "На главную" : "Перезагрузить";
 
   return (
     <ErrorPage title="Что-то пошло не так" errorImage="500">
@@ -15,7 +19,7 @@ const Error500 = () => {
         Мы уже устраняем неисправность, попробуйте обновить страницу через
         некоторое время. Приносим извинения за временные неудобства.
       </DescSC>
-      <DefaultButton onClick={reload}>Перезагрузить</DefaultButton>
+      <DefaultButton onClick={onClick}>{buttonTitle}</DefaultButton>
     </ErrorPage>
   );
 };
