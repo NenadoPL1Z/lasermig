@@ -1,5 +1,6 @@
 import React from "react";
+import TitleLayout from "@/layout/TitleLayout";
 
 export default function Home() {
-  return <></>;
+  return <TitleLayout>123</TitleLayout>;
 }

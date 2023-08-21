@@ -4,6 +4,7 @@ import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { companyData } from "@/lib/mock/companyData";
 import Request from "@/components/Request/Request";
+import ColorScheme from "@/styles/theme/ColorScheme";
 
 const Index = () => {
   return (
@@ -29,8 +30,11 @@ const TelSC = styled(LinkSC)`
   margin-right: 24px;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    font-weight: 700;
     margin-bottom: 8px;
+
+    color: ${ColorScheme.PRIMARY};
+
+    font-weight: 700;
   }
 `;
 

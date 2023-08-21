@@ -62,7 +62,9 @@ const ContainerSC = styled("div")`
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+
+  margin-top: 116px;
   margin-bottom: 25px;
 `;
 

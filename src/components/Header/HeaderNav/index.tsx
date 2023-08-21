@@ -3,6 +3,7 @@ import { navData } from "@/lib/mock/navData";
 import { LinkSC } from "@/UI/LinkSC";
 import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
+import ColorScheme from "@/styles/theme/ColorScheme";
 
 interface HeaderNavProps {
   callbackClose?: (path: string) => () => void;
@@ -70,8 +71,9 @@ const LiSC = styled("li")`
 const CustomLinkSC = styled(LinkSC)`
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     display: block;
-
     padding: 12px 0;
+
+    color: ${ColorScheme.PRIMARY};
 
     font-size: 20px;
   }
