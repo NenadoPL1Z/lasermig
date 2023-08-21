@@ -1,10 +1,11 @@
 import React from "react";
 import ErrorPage from "@/components/ErrorPage";
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { styled } from "@mui/material";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import TitleLayout from "@/layout/TitleLayout";
+import { DefaultButton } from "@/UI/Buttons/DefaultButton";
 
 const Index = () => {
   return (
@@ -13,7 +14,7 @@ const Index = () => {
         <DescSC>
           Страница, которую вы ищете, не существует или была удалена
         </DescSC>
-        <Button href="/">На главную страницу</Button>
+        <DefaultButton href="/">На главную страницу</DefaultButton>
       </ErrorPage>
     </TitleLayout>
   );

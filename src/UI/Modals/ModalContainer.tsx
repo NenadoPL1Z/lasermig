@@ -53,6 +53,15 @@ const DialogSC = styled(Dialog)<Pick<ModalContentProps, "isSuccess">>`
   }
 `;
 
-const DrawerSC = styled(Drawer)<Pick<ModalContentProps, "isSuccess">>``;
+const DrawerSC = styled(Drawer)<Pick<ModalContentProps, "isSuccess">>`
+  .MuiBackdrop-root {
+    background-color: ${ColorScheme.BACKDOOR};
+  }
+  .MuiPaper-root {
+    background-color: ${ColorScheme.PRIMARY};
+    border-radius: 24px 24px 0 0;
+    box-shadow: none;
+  }
+`;
 
 export default React.memo(ModalContainer);

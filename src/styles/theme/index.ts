@@ -42,6 +42,10 @@ const theme = createTheme({
       fontSize: 48,
       fontWeight: 700,
       lineHeight: "normal",
+
+      [`@media (max-width: ${Breakpoints.BIG_TABLET}px)`]: {
+        fontSize: 24,
+      },
     },
     h5: {
       fontFamily: FontNamespace.BN,

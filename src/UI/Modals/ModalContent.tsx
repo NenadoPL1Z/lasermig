@@ -3,6 +3,7 @@ import { styled, Typography } from "@mui/material";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import ModalContainer from "@/UI/Modals/ModalContainer";
 import { ModalContentProps } from "@/UI/Modals/types";
+import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 const ModalContent = ({ title, subtitle, ...props }: ModalContentProps) => {
   const { isSuccess, children } = props;
@@ -32,6 +33,10 @@ const ContainerSC = styled("div")`
 
   display: flex;
   justify-content: flex-end;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    padding: 16px;
+  }
 `;
 
 const WrapperSC = styled("div")`
@@ -40,10 +45,18 @@ const WrapperSC = styled("div")`
 
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    max-width: none;
+  }
 `;
 
 const TitleSC = styled(Typography)`
   margin-bottom: 16px;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    margin-bottom: 12px;
+  }
 `;
 
 const SubtitleSC = styled("p")`
@@ -55,6 +68,10 @@ const ChildSC = styled("div")`
   flex-grow: 1;
 
   margin-top: 32px;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    margin-top: 24px;
+  }
 `;
 
 const DescSC = styled("p")`
