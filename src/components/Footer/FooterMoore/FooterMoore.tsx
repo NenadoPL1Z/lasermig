@@ -2,13 +2,14 @@ import React from "react";
 import { styled } from "@mui/material";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
+import { headData } from "@/lib/mock/headData";
 
 const FooterMoore = () => {
   return (
     <>
       <PolicySC>Политика конфиденциальности</PolicySC>
       <AllRightSC>
-        Лазермиг, все права защищены, {new Date().getFullYear()}
+        {headData.titleSmall}, все права защищены, {new Date().getFullYear()}
       </AllRightSC>
     </>
   );
