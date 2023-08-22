@@ -49,7 +49,7 @@ export const useModalCallForm = ({ handleSuccess }: ModalFormProps) => {
   const onSubmit = handleSubmit((data) => {
     handleChangeStatus({ isLoading: true, hasError: "" });
     axiosProject
-      .post(ApiNamespace.CALL, data)
+      .post(ApiNamespace.FEEDBACK_CALL, data)
       .then(() => {
         handleChangeStatus({ isLoading: false, hasError: "" });
         handleSuccess();

@@ -63,7 +63,7 @@ export const useModalQuestionForm = ({ handleSuccess }: ModalFormProps) => {
   const onSubmit = handleSubmit((data) => {
     handleChangeStatus({ isLoading: true, hasError: "" });
     axiosProject
-      .post(ApiNamespace.QUESTION, data)
+      .post(ApiNamespace.FEEDBACK_QUESTION, data)
       .then(() => {
         handleChangeStatus({ isLoading: false, hasError: "" });
         handleSuccess();

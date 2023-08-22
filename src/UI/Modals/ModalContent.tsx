@@ -77,13 +77,13 @@ const TitleButtonSC = styled(Button)`
   }
 `;
 
-const SubtitleSC = styled("p")`
+const SubtitleSC = styled("p")<Pick<ModalContentProps, "isSuccess">>`
   margin-top: 16px;
   color: ${ColorScheme.TERTIARY};
   font-size: 20px;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    margin-top: 24px;
+    margin-top: ${({ isSuccess }) => (isSuccess ? "24px" : "12px")};
     font-size: 14px;
   }
 `;
