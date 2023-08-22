@@ -15,7 +15,7 @@ export default function Home() {
         <OutlinedButton>OutlinedButton</OutlinedButton>
         <OutlinedButtonRadius>1</OutlinedButtonRadius>
         <TagButton>TagButton</TagButton>
-        <TagButton active={true}>TagButton</TagButton>
+        <TagButton>TagButton</TagButton>
       </div>
     </TitleLayout>
   );

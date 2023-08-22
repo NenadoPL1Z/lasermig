@@ -6,6 +6,7 @@ import { ErrorTitleSC } from "@/UI/ErrorTitleSC";
 import { useModalCall } from "@/UI/Modals/ModalCall/useModalCall";
 import { DefaultButton } from "@/UI/Buttons/DefaultButton";
 import { ModaFormProps } from "@/UI/Modals/types";
+import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 const ModalCallForm = (props: ModaFormProps) => {
   const {
@@ -64,10 +65,18 @@ const FormSC = styled("form")`
 
 const FormItemSC = styled("div")`
   margin-bottom: 32px;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    margin-bottom: 16px;
+  }
 `;
 
 const ButtonSC = styled(DefaultButton)`
   max-width: 179px;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    max-width: none;
+  }
 `;
 
 export default React.memo(ModalCallForm);

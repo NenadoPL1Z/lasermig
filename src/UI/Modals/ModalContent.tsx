@@ -1,9 +1,10 @@
 import React from "react";
-import { styled, Typography } from "@mui/material";
+import { Button, styled, Typography } from "@mui/material";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import ModalContainer from "@/UI/Modals/ModalContainer";
 import { ModalContentProps } from "@/UI/Modals/types";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
+import CloseIcon from "@/assets/icons/CloseIocn.svg";
 
 const ModalContent = ({ title, subtitle, ...props }: ModalContentProps) => {
   const { isSuccess, children } = props;
@@ -12,7 +13,14 @@ const ModalContent = ({ title, subtitle, ...props }: ModalContentProps) => {
     <ModalContainer {...props}>
       <ContainerSC>
         <WrapperSC>
-          <TitleSC variant="h4">{title}</TitleSC>
+          <TitleContainerSC>
+            <TitleSC variant="h4">{title}</TitleSC>
+            {!isSuccess && (
+              <TitleButtonSC onClick={props.handleClose}>
+                <CloseIcon />
+              </TitleButtonSC>
+            )}
+          </TitleContainerSC>
           {subtitle && <SubtitleSC>{subtitle}</SubtitleSC>}
           <ChildSC>{children}</ChildSC>
           {!isSuccess && (
@@ -51,17 +59,33 @@ const WrapperSC = styled("div")`
   }
 `;
 
-const TitleSC = styled(Typography)`
-  margin-bottom: 16px;
+const TitleContainerSC = styled("div")`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
+const TitleSC = styled(Typography)`
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    margin-bottom: 12px;
+    padding: 8px 0 4px;
+  }
+`;
+
+const TitleButtonSC = styled(Button)`
+  @media (min-width: ${Breakpoints.BIG_TABLET}px) {
+    display: none;
   }
 `;
 
 const SubtitleSC = styled("p")`
+  margin-top: 16px;
   color: ${ColorScheme.TERTIARY};
   font-size: 20px;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    margin-top: 24px;
+    font-size: 14px;
+  }
 `;
 
 const ChildSC = styled("div")`
@@ -76,8 +100,13 @@ const ChildSC = styled("div")`
 
 const DescSC = styled("p")`
   margin-top: 16px;
+
   color: ${ColorScheme.TERTIARY};
   font-size: 12px;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    margin-top: 8px;
+  }
 `;
 
 export default React.memo(ModalContent);

@@ -29,7 +29,7 @@ export const useModalCall = ({ handleSuccess }: ModaFormProps) => {
       required: true,
       maxLength: {
         value: 20,
-        message: "Максимальная длинна имени до 20-ти символов",
+        message: "Макс. длинна 20-ти символов",
       },
     },
   });
@@ -41,7 +41,7 @@ export const useModalCall = ({ handleSuccess }: ModaFormProps) => {
       required: true,
       maxLength: {
         value: 20,
-        message: "Максимальная длинна телефона до 20-ти символов",
+        message: "Макс. длинна 20-ти символов",
       },
     },
   });

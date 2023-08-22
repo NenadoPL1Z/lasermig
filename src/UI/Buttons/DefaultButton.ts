@@ -6,6 +6,7 @@ import { Breakpoints } from "@/styles/theme/Breakpoints";
 export const DefaultButton = styled(Button)`
   padding: 20px 40px 16px;
 
+  color: ${ColorScheme.PRIMARY};
   background-color: ${ColorScheme.ACCENT};
   border-radius: 45px;
   box-shadow: none !important;

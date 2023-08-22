@@ -59,30 +59,6 @@ const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
-        // contained: {
-        //   maxHeight: "60px",
-        //   padding: "20px 30px 16px",
-        //
-        //   color: ColorScheme.PRIMARY,
-        //
-        //   fontFamily: FontNamespace.BN,
-        //   fontSize: "24px",
-        //   fontWeight: "400",
-        //
-        //   borderRadius: 69,
-        //   boxShadow: "none",
-        //
-        //   "&:hover": {
-        //     boxShadow: "none",
-        //   },
-        //
-        //   [`@media (max-width: ${Breakpoints.BIG_TABLET}px)`]: {
-        //     maxHeight: "40px",
-        //     padding: "15px 20px 10px",
-        //
-        //     fontSize: "18px",
-        //   },
-        // },
         outlined: {
           minWidth: 36,
           padding: 0,
@@ -92,7 +68,7 @@ const theme = createTheme({
         },
       },
       defaultProps: {
-        variant: "contained",
+        variant: "outlined",
       },
     },
     MuiTextField: {
@@ -109,6 +85,11 @@ const theme = createTheme({
 
             "&::before": {
               borderBottomColor: `${ColorScheme.TERTIARY} !important`,
+            },
+
+            [`@media (max-width: ${Breakpoints.BIG_TABLET}px)`]: {
+              height: 44,
+              fontSize: "18px",
             },
           },
         },
@@ -130,6 +111,10 @@ const theme = createTheme({
 
           position: "absolute",
           bottom: "-20px",
+
+          [`@media (max-width: ${Breakpoints.BIG_TABLET}px)`]: {
+            bottom: "-16px",
+          },
         },
       },
     },
