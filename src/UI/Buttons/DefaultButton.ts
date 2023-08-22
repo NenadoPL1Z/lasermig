@@ -21,6 +21,12 @@ export const DefaultButton = styled(Button)`
     background-color: ${ColorScheme.ACCENT_2};
   }
 
+  &:disabled {
+    cursor: not-allowed;
+    color: ${ColorScheme.WHITE};
+    background-color: ${ColorScheme.SECONDARY};
+  }
+
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     padding: 12px 20px 10px;
     font-size: 18px;

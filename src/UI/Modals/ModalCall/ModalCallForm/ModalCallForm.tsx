@@ -7,6 +7,7 @@ import { useModalCall } from "@/UI/Modals/ModalCall/useModalCall";
 import { DefaultButton } from "@/UI/Buttons/DefaultButton";
 import { ModaFormProps } from "@/UI/Modals/types";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
+import { telephoneMask } from "@/lib/services";
 
 const ModalCallForm = (props: ModaFormProps) => {
   const {
@@ -41,7 +42,9 @@ const ModalCallForm = (props: ModaFormProps) => {
           inputProps={{ inputMode: "tel" }}
           fullWidth={true}
           value={phoneController.field.value}
-          onChange={phoneController.field.onChange}
+          onChange={(e) =>
+            phoneController.field.onChange(telephoneMask(e.target.value))
+          }
           error={!!phoneController.fieldState.error}
           helperText={phoneController.fieldState.error?.message}
         />
