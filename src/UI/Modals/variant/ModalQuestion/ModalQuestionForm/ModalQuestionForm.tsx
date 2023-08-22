@@ -3,13 +3,13 @@ import TextFieldUI from "@/UI/TextFieldUI";
 import { styled } from "@mui/material";
 import { CircularProgress } from "@mui/material";
 import { ErrorTitleSC } from "@/UI/ErrorTitleSC";
-import { useModalCall } from "@/UI/Modals/ModalCall/useModalCall";
 import { DefaultButton } from "@/UI/Buttons/DefaultButton";
-import { ModaFormProps } from "@/UI/Modals/types";
+import { ModalFormProps } from "@/UI/Modals/types";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { telephoneMask } from "@/lib/services";
+import { useModalQuestionForm } from "@/UI/Modals/variant/ModalQuestion/ModalQuestionForm/useModalQuestionForm";
 
-const ModalCallForm = (props: ModaFormProps) => {
+const ModalQuestionForm = (props: ModalFormProps) => {
   const {
     isLoading,
     isEmpty,
@@ -17,9 +17,10 @@ const ModalCallForm = (props: ModaFormProps) => {
 
     nameController,
     phoneController,
+    questionController,
 
     onSubmit,
-  } = useModalCall(props);
+  } = useModalQuestionForm(props);
 
   return (
     <FormSC onSubmit={onSubmit}>
@@ -47,6 +48,16 @@ const ModalCallForm = (props: ModaFormProps) => {
           }
           error={!!phoneController.fieldState.error}
           helperText={phoneController.fieldState.error?.message}
+        />
+      </FormItemSC>
+      <FormItemSC>
+        <TextFieldUI
+          placeholder="ВАШ ВОПРОС"
+          fullWidth={true}
+          value={questionController.field.value}
+          onChange={questionController.field.onChange}
+          error={!!questionController.fieldState.error}
+          helperText={questionController.fieldState.error?.message}
         />
       </FormItemSC>
       {(isEmpty || !!hasError) && (
@@ -82,4 +93,4 @@ const ButtonSC = styled(DefaultButton)`
   }
 `;
 
-export default React.memo(ModalCallForm);
+export default React.memo(ModalQuestionForm);

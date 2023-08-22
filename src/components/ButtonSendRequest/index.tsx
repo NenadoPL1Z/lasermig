@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
-import ModalCall from "@/UI/Modals/ModalCall";
 import { DefaultButton } from "@/UI/Buttons/DefaultButton";
+import ModalQuestion from "@/UI/Modals/variant/ModalQuestion";
 
-const Request = () => {
+const Index = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <>
       <ButtonSC onClick={() => setIsOpen(true)}>Оставить заявку</ButtonSC>
-      <ModalCall isOpen={isOpen} handleClose={() => setIsOpen(false)} />
+      <ModalQuestion isOpen={isOpen} handleClose={() => setIsOpen(false)} />
     </>
   );
 };
@@ -29,4 +29,4 @@ const ButtonSC = styled(DefaultButton)`
   }
 `;
 
-export default React.memo(Request);
+export default React.memo(Index);

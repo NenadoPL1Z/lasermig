@@ -77,7 +77,7 @@ const theme = createTheme({
           ".MuiInputBase-root": {
             height: 60,
 
-            color: ColorScheme.TERTIARY,
+            color: ColorScheme.WHITE,
 
             fontSize: "24px",
             fontWeight: 400,
@@ -85,6 +85,10 @@ const theme = createTheme({
 
             "&::before": {
               borderBottomColor: `${ColorScheme.TERTIARY} !important`,
+            },
+
+            "&::placeholder": {
+              color: ColorScheme.TERTIARY,
             },
 
             [`@media (max-width: ${Breakpoints.BIG_TABLET}px)`]: {

@@ -3,14 +3,14 @@ import { LinkSC } from "@/UI/LinkSC";
 import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { companyData } from "@/lib/mock/companyData";
-import Request from "@/components/Request/Request";
+import ButtonSendRequest from "@/components/ButtonSendRequest";
 import ColorScheme from "@/styles/theme/ColorScheme";
 
 const Index = () => {
   return (
     <ContainerSC>
       <TelSC href={companyData.hrefPhone}>{companyData.phone}</TelSC>
-      <Request />
+      <ButtonSendRequest />
     </ContainerSC>
   );
 };

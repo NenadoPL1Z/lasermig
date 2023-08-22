@@ -19,7 +19,7 @@ export interface ModalContainerProps
     "isSuccess" | "isOpen" | "handleClose" | "children"
   > {}
 
-export interface ModaFormProps {
+export interface ModalFormProps {
   handleSuccess: () => void;
 }
 

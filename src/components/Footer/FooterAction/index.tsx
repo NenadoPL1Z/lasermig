@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "@mui/material";
 import { companyData } from "@/lib/mock/companyData";
 import { LinkSC } from "@/UI/LinkSC";
-import Request from "@/components/Request/Request";
+import ButtonSendRequest from "@/components/ButtonSendRequest";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 
@@ -11,7 +11,7 @@ const FooterAction = () => {
     <ContainerSC>
       <TelSC href={companyData.hrefPhone}>{companyData.phone}</TelSC>
       <EmailSC href={companyData.hrefEmail}>{companyData.email}</EmailSC>
-      <Request />
+      <ButtonSendRequest />
     </ContainerSC>
   );
 };

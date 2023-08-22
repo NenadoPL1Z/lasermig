@@ -1,3 +1,4 @@
 export enum ApiNamespace {
-  call = "/api/call",
+  CALL = "/api/feedback/call",
+  QUESTION = "/api/feedback/question",
 }

@@ -4,9 +4,9 @@ import { ApiNamespace } from "@/lib/constants/ApiNamespace";
 import { useStatus } from "@/hooks/useStatus";
 import { ErrorNamespace } from "@/lib/constants/ErrorNamespace";
 import { useEffect } from "react";
-import { ModaFormProps } from "@/UI/Modals/types";
+import { ModalFormProps } from "@/UI/Modals/types";
 
-export const useModalCall = ({ handleSuccess }: ModaFormProps) => {
+export const useModalCallForm = ({ handleSuccess }: ModalFormProps) => {
   const { isLoading, hasError, handleChangeStatus } = useStatus({
     isLoading: false,
   });
@@ -49,7 +49,7 @@ export const useModalCall = ({ handleSuccess }: ModaFormProps) => {
   const onSubmit = handleSubmit((data) => {
     handleChangeStatus({ isLoading: true, hasError: "" });
     axiosProject
-      .post(ApiNamespace.call, data)
+      .post(ApiNamespace.CALL, data)
       .then(() => {
         handleChangeStatus({ isLoading: false, hasError: "" });
         handleSuccess();
