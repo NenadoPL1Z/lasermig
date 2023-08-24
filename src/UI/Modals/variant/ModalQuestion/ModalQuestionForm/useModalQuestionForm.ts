@@ -15,8 +15,9 @@ export const useModalQuestionForm = ({ handleSuccess }: ModalFormProps) => {
     name: string;
     phone: string;
     question: string;
+    email: string;
   }>({
-    defaultValues: { name: "", phone: "", question: "" },
+    defaultValues: { name: "", phone: "", question: "", email: "" },
   });
 
   const isEmpty =
@@ -44,6 +45,18 @@ export const useModalQuestionForm = ({ handleSuccess }: ModalFormProps) => {
       maxLength: {
         value: 20,
         message: "Макс. длинна 20-ти символов",
+      },
+    },
+  });
+
+  const emailController = useController({
+    control,
+    name: "email",
+    rules: {
+      required: true,
+      maxLength: {
+        value: 50,
+        message: "Макс. длинна 50-ти символов",
       },
     },
   });
@@ -86,8 +99,10 @@ export const useModalQuestionForm = ({ handleSuccess }: ModalFormProps) => {
     isEmpty,
     isLoading,
     hasError,
+
     nameController,
     phoneController,
+    emailController,
     questionController,
     onSubmit,
   };

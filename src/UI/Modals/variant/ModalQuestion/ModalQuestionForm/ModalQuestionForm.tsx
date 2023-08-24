@@ -15,6 +15,7 @@ const ModalQuestionForm = (props: ModalFormProps) => {
     isEmpty,
     hasError,
 
+    emailController,
     nameController,
     phoneController,
     questionController,
@@ -48,6 +49,18 @@ const ModalQuestionForm = (props: ModalFormProps) => {
           }
           error={!!phoneController.fieldState.error}
           helperText={phoneController.fieldState.error?.message}
+        />
+      </FormItemSC>
+      <FormItemSC>
+        <TextFieldUI
+          name="email"
+          placeholder="ПОЧТА"
+          inputProps={{ inputMode: "email" }}
+          fullWidth={true}
+          value={emailController.field.value}
+          onChange={emailController.field.onChange}
+          error={!!emailController.fieldState.error}
+          helperText={emailController.fieldState.error?.message}
         />
       </FormItemSC>
       <FormItemSC>

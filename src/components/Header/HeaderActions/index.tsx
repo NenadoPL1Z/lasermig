@@ -27,13 +27,11 @@ const ContainerSC = styled("section")`
 `;
 
 const TelSC = styled(LinkSC)`
-  padding-top: 6px;
   margin-right: 24px;
+  color: ${ColorScheme.PRIMARY};
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     margin-bottom: 8px;
-
-    color: ${ColorScheme.PRIMARY};
 
     font-weight: 700;
   }

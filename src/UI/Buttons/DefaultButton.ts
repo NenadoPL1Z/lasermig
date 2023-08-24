@@ -4,7 +4,8 @@ import { FontNamespace } from "@/styles/theme/FontNamespace";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 export const DefaultButton = styled(Button)`
-  padding: 20px 40px 16px;
+  height: 60px;
+  padding: 0 30px;
 
   color: ${ColorScheme.PRIMARY};
   background-color: ${ColorScheme.ACCENT};
@@ -28,7 +29,8 @@ export const DefaultButton = styled(Button)`
   }
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    padding: 12px 20px 10px;
+    height: 40px;
+    padding: 0 20px;
     font-size: 18px;
   }
 `;

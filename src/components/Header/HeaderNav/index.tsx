@@ -26,8 +26,6 @@ const HeaderNav = ({ callbackClose = () => () => {} }: HeaderNavProps) => {
 };
 
 const NavSC = styled("nav")`
-  padding-top: 6px;
-
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     margin-bottom: 60px;
   }
