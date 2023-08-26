@@ -1,11 +1,12 @@
 import React from "react";
+import { PageTitleSC } from "@/UI/PageTitleSC";
 
-const Index = () => {
+const News = () => {
   return (
-    <div>
-      <h1>news</h1>
-    </div>
+    <>
+      <PageTitleSC>Новости</PageTitleSC>
+    </>
   );
 };
 
-export default React.memo(Index);
+export default React.memo(News);

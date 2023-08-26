@@ -1,11 +1,21 @@
 import React from "react";
+import { PageTitleSC } from "@/UI/PageTitleSC";
+import CatalogList from "@/components/CatalogList/CatalogList";
+import { styled } from "@mui/material";
 
-const Index = () => {
+const Catalog = () => {
   return (
-    <div>
-      <h1>catalog</h1>
-    </div>
+    <>
+      <PageTitleSC>Каталог</PageTitleSC>
+      <CatalogListContainerSC>
+        <CatalogList />
+      </CatalogListContainerSC>
+    </>
   );
 };
 
-export default React.memo(Index);
+const CatalogListContainerSC = styled("section")`
+  margin-top: 50px;
+`;
+
+export default React.memo(Catalog);

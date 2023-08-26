@@ -4,8 +4,8 @@ import ColorScheme from "@/styles/theme/ColorScheme";
 
 export const OutlinedButton = styled(DefaultButton)`
   color: ${ColorScheme.PRIMARY};
-  background-color: ${ColorScheme.WHITE};
-  border: 1px solid ${ColorScheme.SECONDARY};
+  background-color: ${ColorScheme.TRANSPARENT};
+  border: 1px solid ${ColorScheme.SECONDARY} !important;
 
   &:hover {
     color: ${ColorScheme.WHITE};
