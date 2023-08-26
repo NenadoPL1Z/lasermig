@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { ChildrenProps } from "@/types/types";
 import { ThemeProvider } from "@mui/material";
 import theme from "@/styles/theme";
-import Cookie from "@/components/Cookie/Cookie";
+import Cookie from "@/components/Cookie";
 
 const MainLayout = ({ children }: ChildrenProps) => {
   return (

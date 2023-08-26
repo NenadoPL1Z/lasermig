@@ -9,7 +9,7 @@ const FooterMoore = () => {
     <>
       <PolicySC>Политика конфиденциальности</PolicySC>
       <AllRightSC>
-        {headData.titleFull}, все права защищены, {new Date().getFullYear()}
+        {headData.license}, {new Date().getFullYear()}
       </AllRightSC>
     </>
   );

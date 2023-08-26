@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "@mui/material";
 import CatalogCard from "@/UI/ Cards/CatalogCard/CatalogCard";
 
-const CatalogList = () => {
+const Index = () => {
   return (
     <ContainerSC>
       <CatalogCard />
@@ -18,4 +18,4 @@ const ContainerSC = styled("div")`
   gap: 20px;
 `;
 
-export default React.memo(CatalogList);
+export default React.memo(Index);

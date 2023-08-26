@@ -3,4 +3,5 @@ export const headData = {
   desc: "",
   address: "ул. Худякова 421",
   localy: "г. Челябинск",
+  license: "© ООО «ЛАЗЕРМИГ»",
 };

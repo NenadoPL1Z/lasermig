@@ -10,6 +10,7 @@ import { aboutPageData } from "@/lib/mock/aboutPageData";
 import { H2SC } from "@/UI/H2SC";
 import { ParagraphSC } from "@/UI/ParagraphSC";
 import TitleLayout from "@/layout/TitleLayout";
+import Questions from "@/components/Questions";
 
 const About = () => {
   return (
@@ -19,7 +20,7 @@ const About = () => {
           <TitleSC>{aboutPageData.title}</TitleSC>
         </ImgPage>
       </ContainerImageSC>
-      <ContainerInfoSC>
+      <ContainerInfoSC className="container-two">
         <H2SC className="content-title">{aboutPageData.titleList}</H2SC>
         <TextsList
           item={aboutPageData.list.items}
@@ -38,6 +39,7 @@ const About = () => {
           {aboutPageData.desc4};
         </ParagraphSC>
       </ContainerInfoSC>
+      <Questions />
     </TitleLayout>
   );
 };

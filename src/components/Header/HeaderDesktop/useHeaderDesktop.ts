@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import { HeaderDesktopProps } from "@/components/Header/HeaderDesktop/index";
 import { useRouter } from "next/router";
 
-const hideHeaderRoutes = ["/"];
+const visibleHeaderRoutes = ["/404", "/500"];
 
 export const useHeaderDesktop = ({
   handleChangeVisible,
 }: HeaderDesktopProps) => {
   const { pathname } = useRouter();
-  const isHide = !!hideHeaderRoutes.find((item) => item === pathname);
+  const isHide = !visibleHeaderRoutes.find((item) => item === pathname);
 
   useEffect(() => {
     let prevState: number = 0;

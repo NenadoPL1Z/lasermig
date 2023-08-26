@@ -68,6 +68,11 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
   }
   
+  .container-two {
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+  
   
   .disable-mobile-safe {
     @media(max-width: ${Breakpoints.BIG_TABLET}px) {
