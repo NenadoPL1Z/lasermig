@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { DefaultButton } from "@/UI/Buttons/DefaultButton";
-import ModalQuestion from "@/UI/Modals/variant/ModalQuestion";
+import ModalCall from "@/UI/Modals/variant/ModalCall";
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <>
       <ButtonSC onClick={() => setIsOpen(true)}>Оставить заявку</ButtonSC>
-      <ModalQuestion isOpen={isOpen} handleClose={() => setIsOpen(false)} />
+      <ModalCall isOpen={isOpen} handleClose={() => setIsOpen(false)} />
     </>
   );
 };

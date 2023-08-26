@@ -1,8 +1,8 @@
 import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
-import { TitleSC } from "@/UI/TitleSC";
+import { H1SC } from "@/UI/H1SC";
 
-export const PageTitleSC = styled(TitleSC)`
+export const H1PageSC = styled(H1SC)`
   margin-top: 50px;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {

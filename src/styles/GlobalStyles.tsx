@@ -32,10 +32,6 @@ const GlobalStyles = createGlobalStyle`
   }
   
   
-  ul, li {
-    list-style-type: none;
-  }
-  
   #__next {
     height: 100%;
     min-height: 100vh;
@@ -54,6 +50,11 @@ const GlobalStyles = createGlobalStyle`
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    margin: 50px auto 100px;
+    
+    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+      margin: 16px auto 48px;
+    }
   }
   
   .container {
@@ -84,6 +85,14 @@ const GlobalStyles = createGlobalStyle`
     @media (max-width: ${Breakpoints.BIG_TABLET}px) {
       border-radius: 24px;
     }
+  }
+  
+  .content-title {
+    margin-bottom: 15px;
+  }
+
+  .content-margin48 {
+    margin-bottom: 48px;
   }
 
   .header-hide {

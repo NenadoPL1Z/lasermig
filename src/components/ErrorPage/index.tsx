@@ -24,7 +24,6 @@ const ErrorPage = ({ title, errorImage, children }: ErrorPageProps) => {
 
 const ContainerSC = styled("section")<Pick<ErrorPageProps, "errorImage">>`
   flex-grow: 1;
-  margin: 50px 0;
   min-height: 802px;
 
   background-image: url(/assets/images/${({ errorImage }) =>
@@ -34,7 +33,6 @@ const ContainerSC = styled("section")<Pick<ErrorPageProps, "errorImage">>`
   background-size: 45%;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    margin: 16px 0 48px;
     min-height: 402px;
 
     background-position: right 6px bottom;

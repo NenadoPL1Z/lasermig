@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "@mui/material";
-import CatalogCard from "@/components/ Cards/CatalogCard/CatalogCard";
+import CatalogCard from "@/UI/ Cards/CatalogCard/CatalogCard";
 
 const CatalogList = () => {
   return (

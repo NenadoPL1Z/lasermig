@@ -36,6 +36,7 @@ const ContainerSC = styled("nav")`
 `;
 
 const UlSC = styled("ul")`
+  list-style-type: none;
   & > *:last-child {
     margin-bottom: 0;
   }

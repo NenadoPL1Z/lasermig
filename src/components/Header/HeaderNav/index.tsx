@@ -34,6 +34,7 @@ const NavSC = styled("nav")`
 const UlSC = styled("ul")`
   display: flex;
   align-items: center;
+  list-style-type: none;
 
   & > *:last-child {
     margin-right: 0;
