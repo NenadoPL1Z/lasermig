@@ -16,10 +16,6 @@ const TitleLayout = ({ children, title = "" }: TitleLayoutProps) => {
           {title ? `${headData.titleSmall} ${title}` : headData.titleFull}
         </title>
         <meta name="description" content={headData.desc} />
-        <meta property="og:title" content={headData.titleFull} />
-        <meta property="og:description" content={headData.desc} />
-        <meta property="og:street-address" content={headData.address} />
-        <meta property="og:locality" content={headData.localy} />
       </Head>
       {children}
     </>
