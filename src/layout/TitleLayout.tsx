@@ -12,9 +12,7 @@ const TitleLayout = ({ children, title = "" }: TitleLayoutProps) => {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <title>
-          {title ? `${headData.titleSmall} ${title}` : headData.titleFull}
-        </title>
+        <title>{title ? `${title}` : headData.titleFull}</title>
         <meta name="description" content={headData.desc} />
       </Head>
       {children}

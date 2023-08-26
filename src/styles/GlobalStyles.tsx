@@ -33,6 +33,8 @@ const GlobalStyles = createGlobalStyle`
   
   
   #__next {
+    position: relative;
+    
     height: 100%;
     min-height: 100vh;
 
@@ -47,13 +49,15 @@ const GlobalStyles = createGlobalStyle`
   }
   
   #__next > main {
+    margin: 0 auto;
+    padding: 50px 0 100px;
+    
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    margin: 50px auto 100px;
     
     @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-      margin: 16px auto 48px;
+      padding: 16px 0 48px;
     }
   }
   
@@ -78,8 +82,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   
-  .content-bg {
-    background-color: ${ColorScheme.WHITE};
+  .content-br {
     border-radius: 40px;
     
     @media (max-width: ${Breakpoints.BIG_TABLET}px) {

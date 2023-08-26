@@ -3,6 +3,7 @@ import { styled } from "@mui/material";
 import { Typography } from "@mui/material";
 import { ChildrenProps } from "@/types/types";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
+import ColorScheme from "@/styles/theme/ColorScheme";
 
 type ErrorImage = "404" | "500";
 
@@ -13,7 +14,7 @@ interface ErrorPageProps extends Partial<ChildrenProps> {
 
 const ErrorPage = ({ title, errorImage, children }: ErrorPageProps) => {
   return (
-    <ContainerSC errorImage={errorImage} className="content content-bg">
+    <ContainerSC errorImage={errorImage} className="content content-br">
       <TextContentSC>
         <TitlesSC variant="h1">{title}</TitlesSC>
         {children}
@@ -23,6 +24,8 @@ const ErrorPage = ({ title, errorImage, children }: ErrorPageProps) => {
 };
 
 const ContainerSC = styled("section")<Pick<ErrorPageProps, "errorImage">>`
+  background-color: ${ColorScheme.WHITE};
+
   flex-grow: 1;
   min-height: 802px;
 

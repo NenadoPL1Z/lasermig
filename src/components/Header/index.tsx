@@ -5,6 +5,7 @@ import HeaderDesktop from "@/components/Header/HeaderDesktop";
 import HeaderMobile from "@/components/Header/HeaderMobile";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { useMobile } from "@/hooks/useMedia";
+import { ZIndex } from "@/styles/theme/ZIndex";
 
 const Header = () => {
   const [isVisibleHeader, setIsVisibleHeader] = useState<boolean>(true);
@@ -30,7 +31,7 @@ const HeaderSC = styled("header")`
 
   position: sticky;
   top: 20px;
-  z-index: 1;
+  z-index: ${ZIndex.HEADER};
 
   border-radius: 50px;
   box-shadow: 0 9px 34px 0 rgba(223, 223, 223, 0.42);

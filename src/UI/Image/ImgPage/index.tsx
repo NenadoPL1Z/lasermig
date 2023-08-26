@@ -10,7 +10,7 @@ interface ImgPageProps extends ChildrenProps {
 
 const ImgPage = ({ url, children }: ImgPageProps) => {
   return (
-    <ContainerSC url={url} className="content content-bg">
+    <ContainerSC url={url} className="content content-br">
       {children}
       <ShadowBG />
     </ContainerSC>

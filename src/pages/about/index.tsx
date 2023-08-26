@@ -9,10 +9,11 @@ import ImgPage from "@/UI/Image/ImgPage";
 import { aboutPageData } from "@/lib/mock/aboutPageData";
 import { H2SC } from "@/UI/H2SC";
 import { ParagraphSC } from "@/UI/ParagraphSC";
+import TitleLayout from "@/layout/TitleLayout";
 
 const About = () => {
   return (
-    <>
+    <TitleLayout title="О НАС">
       <ContainerImageSC>
         <ImgPage url={aboutPageData.image}>
           <TitleSC>{aboutPageData.title}</TitleSC>
@@ -37,7 +38,7 @@ const About = () => {
           {aboutPageData.desc4};
         </ParagraphSC>
       </ContainerInfoSC>
-    </>
+    </TitleLayout>
   );
 };
 
