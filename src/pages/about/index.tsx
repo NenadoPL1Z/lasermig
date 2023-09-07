@@ -1,9 +1,4 @@
 import React from "react";
-import { styled } from "@mui/material";
-import { Breakpoints } from "@/styles/theme/Breakpoints";
-import ColorScheme from "@/styles/theme/ColorScheme";
-import { FontNamespace } from "@/styles/theme/FontNamespace";
-import { ZIndex } from "@/styles/theme/ZIndex";
 import TextsList from "@/UI/TextsList/TextsList";
 import ImgPage from "@/UI/Image/ImgPage";
 import { aboutPageData } from "@/lib/mock/aboutPageData";
@@ -11,6 +6,7 @@ import { H2SC } from "@/UI/H2SC";
 import { ParagraphSC } from "@/UI/ParagraphSC";
 import TitleLayout from "@/layout/TitleLayout";
 import Questions from "@/components/Questions";
+import { styles } from "@/pages/about/index.styles";
 
 const About = () => {
   return (
@@ -38,37 +34,25 @@ const About = () => {
         <ParagraphSC className="content-margin48">
           {aboutPageData.desc4};
         </ParagraphSC>
+        <figure className="content-margin48">
+          <BottomImageSC
+            className="content-br"
+            src="/assets/images/office.jpg"
+          />
+          <FigcaptionSC>Офис</FigcaptionSC>
+        </figure>
       </ContainerInfoSC>
       <Questions />
     </TitleLayout>
   );
 };
 
-const ContainerImageSC = styled("section")`
-  margin-bottom: 50px;
-
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    margin-bottom: 32px;
-  }
-`;
-
-const TitleSC = styled("h1")`
-  color: ${ColorScheme.WHITE};
-  font-family: ${FontNamespace.BN};
-
-  font-size: 82px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-
-  margin: 0;
-  z-index: ${ZIndex.OVER};
-
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    font-size: 36px;
-  }
-`;
-
-const ContainerInfoSC = styled("section")``;
+const {
+  ContainerImageSC,
+  TitleSC,
+  ContainerInfoSC,
+  BottomImageSC,
+  FigcaptionSC,
+} = styles;
 
 export default React.memo(About);
