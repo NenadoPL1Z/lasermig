@@ -1,19 +1,11 @@
-import React, { useState } from "react";
-import { styled } from "@mui/material";
-import { Breakpoints } from "@/styles/theme/Breakpoints";
+import React from "react";
 import HeaderDesktop from "@/components/Header/HeaderDesktop";
 import HeaderMobile from "@/components/Header/HeaderMobile";
-import ColorScheme from "@/styles/theme/ColorScheme";
-import { useMobile } from "@/hooks/useMedia";
-import { ZIndex } from "@/styles/theme/ZIndex";
+import { useHeader } from "@/components/Header/useHeader";
+import { styles } from "@/components/Header/index.styles";
 
 const Header = () => {
-  const [isVisibleHeader, setIsVisibleHeader] = useState<boolean>(true);
-  const isMobile = useMobile();
-
-  const handleChangeVisible = (state: boolean) => {
-    setIsVisibleHeader(state);
-  };
+  const { isMobile, isVisibleHeader, handleChangeVisible } = useHeader();
 
   return (
     <HeaderSC
@@ -26,25 +18,6 @@ const Header = () => {
   );
 };
 
-const HeaderSC = styled("header")`
-  height: 99px;
-
-  position: sticky;
-  top: 20px;
-  z-index: ${ZIndex.HEADER};
-
-  border-radius: 50px;
-  box-shadow: 0 9px 34px 0 rgba(223, 223, 223, 0.42);
-  background-color: ${ColorScheme.WHITE};
-
-  transition: 0.2s all linear;
-
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    height: auto;
-
-    top: 0;
-    border-radius: 0 0 24px 24px;
-  }
-`;
+const { HeaderSC } = styles;
 
 export default React.memo(Header);
