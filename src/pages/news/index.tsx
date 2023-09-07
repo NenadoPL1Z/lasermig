@@ -1,10 +1,10 @@
 import React from "react";
-import { H1PageSC } from "@/UI/H1PageSC";
+import { H1SC } from "@/UI/H1SC";
 
 const News = () => {
   return (
     <>
-      <H1PageSC>Новости</H1PageSC>
+      <H1SC>Новости</H1SC>
     </>
   );
 };

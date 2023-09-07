@@ -57,7 +57,7 @@ const GlobalStyles = createGlobalStyle`
     flex-direction: column;
     
     @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-      padding: 16px 0 48px;
+      padding: 36px 0 48px;
     }
   }
   

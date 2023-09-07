@@ -1,13 +1,11 @@
 import React from "react";
 import TextFieldUI from "@/UI/TextFieldUI";
-import { styled } from "@mui/material";
 import { CircularProgress } from "@mui/material";
 import { ErrorTitleSC } from "@/UI/ErrorTitleSC";
-import { DefaultButton } from "@/UI/Buttons/DefaultButton";
 import { ModalFormProps } from "@/UI/Modals/types";
-import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { telephoneMask } from "@/lib/services";
 import { useModalQuestionForm } from "@/UI/Modals/variant/ModalQuestion/ModalQuestionForm/useModalQuestionForm";
+import { styles } from "@/UI/Modals/variant/ModalQuestion/ModalQuestionForm/index.styles";
 
 const ModalQuestionForm = (props: ModalFormProps) => {
   const {
@@ -15,7 +13,6 @@ const ModalQuestionForm = (props: ModalFormProps) => {
     isEmpty,
     hasError,
 
-    emailController,
     nameController,
     phoneController,
     questionController,
@@ -53,18 +50,6 @@ const ModalQuestionForm = (props: ModalFormProps) => {
       </FormItemSC>
       <FormItemSC>
         <TextFieldUI
-          name="email"
-          placeholder="ПОЧТА"
-          inputProps={{ inputMode: "email" }}
-          fullWidth={true}
-          value={emailController.field.value}
-          onChange={emailController.field.onChange}
-          error={!!emailController.fieldState.error}
-          helperText={emailController.fieldState.error?.message}
-        />
-      </FormItemSC>
-      <FormItemSC>
-        <TextFieldUI
           placeholder="ВАШ ВОПРОС"
           fullWidth={true}
           value={questionController.field.value}
@@ -85,25 +70,6 @@ const ModalQuestionForm = (props: ModalFormProps) => {
   );
 };
 
-const FormSC = styled("form")`
-  display: flex;
-  flex-direction: column;
-`;
-
-const FormItemSC = styled("div")`
-  margin-bottom: 32px;
-
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    margin-bottom: 16px;
-  }
-`;
-
-const ButtonSC = styled(DefaultButton)`
-  max-width: 179px;
-
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    max-width: none;
-  }
-`;
+export const { FormSC, FormItemSC, ButtonSC } = styles;
 
 export default React.memo(ModalQuestionForm);

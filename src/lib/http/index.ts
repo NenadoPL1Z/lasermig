@@ -1,7 +1,13 @@
 import axios from "axios";
-import { BASE_URL, TIMEOUT } from "@/lib/constants";
+import { API_URL, TIMEOUT } from "@/lib/constants";
 
-export const axiosProject = axios.create({
-  baseURL: BASE_URL,
-  timeout: TIMEOUT,
-});
+const createInstance = () => {
+  const config = axios.create({
+    baseURL: API_URL,
+    timeout: TIMEOUT,
+  });
+
+  return config;
+};
+
+export const axiosProject = createInstance();

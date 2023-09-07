@@ -1,8 +1,8 @@
 import { useStatus } from "@/hooks/useStatus";
 import { useController, useForm } from "react-hook-form";
 import { axiosProject } from "@/lib/http";
-import { ApiNamespace } from "@/lib/constants/ApiNamespace";
-import { ErrorNamespace } from "@/lib/constants/ErrorNamespace";
+import { ApiNamespace } from "@/lib/constants/enums/ApiNamespace";
+import { ErrorNamespace } from "@/lib/constants/enums/ErrorNamespace";
 import { useEffect } from "react";
 import { ModalFormProps } from "@/UI/Modals/types";
 
@@ -13,17 +13,16 @@ export const useModalQuestionForm = ({ handleSuccess }: ModalFormProps) => {
 
   const { control, handleSubmit, formState } = useForm<{
     name: string;
-    phone: string;
-    question: string;
-    email: string;
+    number: string;
+    text: string;
   }>({
-    defaultValues: { name: "", phone: "", question: "", email: "" },
+    defaultValues: { name: "", number: "", text: "" },
   });
 
   const isEmpty =
     formState.errors.name?.type === "required" ||
-    formState.errors.phone?.type === "required" ||
-    formState.errors.question?.type === "required";
+    formState.errors.number?.type === "required" ||
+    formState.errors.text?.type === "required";
 
   const nameController = useController({
     control,
@@ -39,7 +38,7 @@ export const useModalQuestionForm = ({ handleSuccess }: ModalFormProps) => {
 
   const phoneController = useController({
     control,
-    name: "phone",
+    name: "number",
     rules: {
       required: true,
       maxLength: {
@@ -49,21 +48,9 @@ export const useModalQuestionForm = ({ handleSuccess }: ModalFormProps) => {
     },
   });
 
-  const emailController = useController({
-    control,
-    name: "email",
-    rules: {
-      required: true,
-      maxLength: {
-        value: 50,
-        message: "Макс. длинна 50-ти символов",
-      },
-    },
-  });
-
   const questionController = useController({
     control,
-    name: "question",
+    name: "text",
     rules: {
       required: true,
       maxLength: {
@@ -75,6 +62,7 @@ export const useModalQuestionForm = ({ handleSuccess }: ModalFormProps) => {
 
   const onSubmit = handleSubmit((data) => {
     handleChangeStatus({ isLoading: true, hasError: "" });
+
     axiosProject
       .post(ApiNamespace.FEEDBACK_QUESTION, data)
       .then(() => {
@@ -102,7 +90,6 @@ export const useModalQuestionForm = ({ handleSuccess }: ModalFormProps) => {
 
     nameController,
     phoneController,
-    emailController,
     questionController,
     onSubmit,
   };

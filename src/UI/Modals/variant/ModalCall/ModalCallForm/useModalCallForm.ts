@@ -1,8 +1,8 @@
 import { useController, useForm } from "react-hook-form";
 import { axiosProject } from "@/lib/http";
-import { ApiNamespace } from "@/lib/constants/ApiNamespace";
+import { ApiNamespace } from "@/lib/constants/enums/ApiNamespace";
 import { useStatus } from "@/hooks/useStatus";
-import { ErrorNamespace } from "@/lib/constants/ErrorNamespace";
+import { ErrorNamespace } from "@/lib/constants/enums/ErrorNamespace";
 import { useEffect } from "react";
 import { ModalFormProps } from "@/UI/Modals/types";
 
@@ -13,14 +13,14 @@ export const useModalCallForm = ({ handleSuccess }: ModalFormProps) => {
 
   const { control, handleSubmit, formState } = useForm<{
     name: string;
-    phone: string;
+    number: string;
   }>({
-    defaultValues: { name: "", phone: "" },
+    defaultValues: { name: "", number: "" },
   });
 
   const isEmpty =
     formState.errors.name?.type === "required" ||
-    formState.errors.phone?.type === "required";
+    formState.errors.number?.type === "required";
 
   const nameController = useController({
     control,
@@ -36,7 +36,7 @@ export const useModalCallForm = ({ handleSuccess }: ModalFormProps) => {
 
   const phoneController = useController({
     control,
-    name: "phone",
+    name: "number",
     rules: {
       required: true,
       maxLength: {
