@@ -8,20 +8,20 @@ import HomeAbout from "@/components/Home/HomeAbout";
 import { GetServerSideProps } from "next";
 import { fetchGetMain, FetchGetMainRequest } from "@/lib/api/fetchGetMain";
 import HomeCategories from "@/components/Home/HomeCategories";
+import HomeBg from "@/components/Home/HomeBg";
 
 interface HomeProps extends FetchGetMainRequest {}
 
 const Home = ({ slider, category }: HomeProps) => {
   return (
     <TitleLayout>
-      <BackgroundSC>
-        <ContainerSC>
-          <HomeAbout slider={slider} />
-        </ContainerSC>
-        <ContainerSC>
-          <HomeCategories categories={category} />
-        </ContainerSC>
-      </BackgroundSC>
+      <ContainerSC>
+        <HomeAbout slider={slider} />
+        <HomeBg />
+      </ContainerSC>
+      <ContainerSC>
+        <HomeCategories categories={category} />
+      </ContainerSC>
       <ContainerSC>
         <Advantages />
       </ContainerSC>
@@ -33,7 +33,7 @@ const Home = ({ slider, category }: HomeProps) => {
   );
 };
 
-const { BackgroundSC, ContainerSC } = styles;
+const { ContainerSC } = styles;
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   const main = await fetchGetMain();

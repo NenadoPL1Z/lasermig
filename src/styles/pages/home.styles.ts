@@ -1,8 +1,6 @@
 import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 
-const BackgroundSC = styled("div")``;
-
 const ContainerSC = styled("section")`
   margin-bottom: 100px;
 
@@ -12,6 +10,5 @@ const ContainerSC = styled("section")`
 `;
 
 export const styles = {
-  BackgroundSC,
   ContainerSC,
 };
