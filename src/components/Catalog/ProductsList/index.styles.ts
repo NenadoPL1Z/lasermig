@@ -2,7 +2,16 @@ import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 const ListSC = styled("ul")`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
   list-style-type: none;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 `;
 
 const BottomSC = styled("div")`

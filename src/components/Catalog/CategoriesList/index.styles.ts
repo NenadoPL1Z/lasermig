@@ -7,7 +7,7 @@ const UlSC = styled("ul")`
   gap: 20px;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    gap: 10px;
+    gap: 16px;
   }
 
   @media (max-width: ${Breakpoints.TABLET}px) {
