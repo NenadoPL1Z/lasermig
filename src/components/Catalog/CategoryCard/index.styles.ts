@@ -2,30 +2,40 @@ import { styled } from "@mui/material";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { H2SC } from "@/UI/H2SC";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
+import Link from "next/link";
 
 const ContainerSC = styled("li")`
   list-style-type: none;
   background-color: ${ColorScheme.WHITE};
 `;
 
-const ImgSC = styled("img")`
-  display: block;
+const LinkSC = styled(Link)`
+  display: flex;
+  flex-direction: column;
+`;
 
-  width: 100%;
+const ImgContainerSC = styled("div")`
+  flex-grow: 1;
+
   max-width: 480px;
   max-height: 323px;
 
   margin-bottom: 51px;
-
-  object-fit: contain;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     margin-bottom: 20px;
   }
 
   @media (max-width: ${Breakpoints.TABLET}px) {
-    max-height: 172px;
+    height: 172px;
   }
+`;
+
+const ImgSC = styled("img")`
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 `;
 
 const TextContainerSC = styled("div")``;
@@ -39,4 +49,11 @@ const TitleSC = styled(H2SC)`
   }
 `;
 
-export const styles = { ContainerSC, ImgSC, TextContainerSC, TitleSC };
+export const styles = {
+  ContainerSC,
+  LinkSC,
+  ImgContainerSC,
+  ImgSC,
+  TextContainerSC,
+  TitleSC,
+};
