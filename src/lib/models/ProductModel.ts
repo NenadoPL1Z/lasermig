@@ -4,7 +4,7 @@ export interface ProductImageModel {
 }
 
 export interface ProductModel {
-  category: number;
+  category: { name: string; slug: string };
   slug: string;
   name: string;
   short_description: string;

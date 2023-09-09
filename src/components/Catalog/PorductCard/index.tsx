@@ -5,10 +5,8 @@ import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
 import { OutlinedButton } from "@/UI/Buttons/OutlinedButton";
 
 const ProductCard = (props: ProductModel) => {
-  const { name, short_description, slug, product_images } = props;
-
-  // TODO:
-  const href = `${RoutesNamespace.CATALOG}/1/${slug}`;
+  const { category, name, short_description, slug, product_images } = props;
+  const href = `${RoutesNamespace.CATALOG}/${category.slug}/${slug}`;
   const { image } = product_images.sort((a, b) => a.position - b.position)[0];
 
   return (
@@ -16,7 +14,7 @@ const ProductCard = (props: ProductModel) => {
       <LinkSC className="content" href={href}>
         <LeftSC>
           <LeftTopSC>
-            <CategorySC>листогибочное оборудование</CategorySC>
+            <CategorySC>{category.name}</CategorySC>
             <TitleSC>{name}</TitleSC>
             <DescSC>{short_description}</DescSC>
           </LeftTopSC>
