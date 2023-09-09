@@ -1,12 +1,12 @@
 import React from "react";
 import TextsList from "@/UI/TextsList/TextsList";
-import ImgPage from "@/UI/Image/ImgPage";
 import { aboutPageData } from "@/lib/mock/aboutPageData";
 import { H2SC } from "@/UI/H2SC";
 import { ParagraphSC } from "@/UI/ParagraphSC";
 import TitleLayout from "@/layout/TitleLayout";
 import Questions from "@/components/Questions";
 import { styles } from "@/styles/pages/about.styles";
+import ImgPage from "@/components/ImgPage";
 
 const About = () => {
   return (

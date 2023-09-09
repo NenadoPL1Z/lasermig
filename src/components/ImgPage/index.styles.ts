@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
+import { ImgPageProps } from "@/components/ImgPage/types";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
-import { ImgPageProps } from "@/UI/Image/ImgPage/types";
 
 const ContainerSC = styled("div")<Pick<ImgPageProps, "url">>`
   position: relative;

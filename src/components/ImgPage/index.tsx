@@ -1,6 +1,6 @@
 import React from "react";
-import { ImgPageProps } from "@/UI/Image/ImgPage/types";
-import { styles } from "@/UI/Image/ImgPage/index.styles";
+import { ImgPageProps } from "@/components/ImgPage/types";
+import { styles } from "@/components/ImgPage/index.styles";
 
 const ImgPage = ({ url, children }: ImgPageProps) => {
   return (
