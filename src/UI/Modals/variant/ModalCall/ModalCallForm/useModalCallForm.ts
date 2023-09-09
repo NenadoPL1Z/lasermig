@@ -53,7 +53,7 @@ export const useModalCallForm = ({ handleSuccess }: ModalFormProps) => {
         handleSuccess();
       })
       .catch((error) => {
-        let hasError: string = ErrorNamespace.default;
+        let hasError: string = ErrorNamespace.FORM;
 
         if (isAxiosError<FormCall>(error)) {
           const data = error.response?.data || { name: "", number: "" };

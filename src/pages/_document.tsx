@@ -7,6 +7,7 @@ function MyDocument() {
   return (
     <Html lang="ru">
       <Head>
+        <meta charSet="utf-8" />
         <meta property="og:title" content={headData.titleFull} />
         <meta property="og:description" content={headData.desc} />
         <meta property="og:street-address" content={headData.address} />
@@ -84,6 +85,7 @@ function MyDocument() {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
+        <meta name="description" content={headData.desc} />
       </Head>
       <body>
         <Main />

@@ -66,7 +66,7 @@ export const useModalQuestionForm = ({ handleSuccess }: ModalFormProps) => {
         handleSuccess();
       })
       .catch((error) => {
-        let hasError: string = ErrorNamespace.default;
+        let hasError: string = ErrorNamespace.FORM;
 
         if (isAxiosError<FormQuestion>(error)) {
           const data = error.response?.data || {

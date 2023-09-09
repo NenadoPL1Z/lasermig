@@ -18,6 +18,8 @@ export const useStatus = (initialArg?: NotRequiredStatus) => {
   const [{ isLoading, hasError }, setStatus] =
     useState<IStatusState>(initialState);
 
+  const isError = !!hasError;
+
   const handleChangeStatus: ChangeStatusFunctionType = (state) => {
     setStatus((prevState) => ({ ...prevState, ...state }));
   };
@@ -27,6 +29,7 @@ export const useStatus = (initialArg?: NotRequiredStatus) => {
   };
 
   return {
+    isError,
     isLoading,
     hasError,
     handleChangeStatus,

@@ -1,33 +1,52 @@
 import React from "react";
-import { H1SC } from "@/UI/H1SC";
 import { GetServerSideProps } from "next";
 import { CategoriesArr } from "@/lib/models/CategoryModel";
 import { fetchGetCategories } from "@/lib/api/catalog/fetchGetCategories";
 import CategoriesList from "@/components/Catalog/CategoriesList";
 import { styles } from "@/styles/pages/catalog.styles";
+import ProductsList from "@/components/Catalog/ProductsList";
+import { ProductsArr } from "@/lib/models/ProductModel";
+import { fetchGetProducts } from "@/lib/api/catalog/fetchGetProducts";
+import { PaginationResult } from "@/types/types";
+import Questions from "@/components/Questions";
+import TitleLayout from "@/layout/TitleLayout";
+import Orders from "@/components/Orders";
 
 interface CatalogProps {
   categories: CategoriesArr;
+  products: PaginationResult<ProductsArr>;
 }
 
-const Catalog = ({ categories }: CatalogProps) => {
+const Catalog = ({ categories, products }: CatalogProps) => {
   return (
-    <>
-      <H1SC>Каталог</H1SC>
-      <ListSC>
-        <CategoriesList categories={categories} />
-      </ListSC>
-    </>
+    <TitleLayout title="Каталог">
+      <TitleSC>Каталог</TitleSC>
+      {categories && (
+        <CategoriesSC>
+          <CategoriesList categories={categories} />
+        </CategoriesSC>
+      )}
+      {products && (
+        <ContainerSC>
+          <ProductsList {...products} />
+        </ContainerSC>
+      )}
+      <ContainerSC>
+        <Orders />
+      </ContainerSC>
+      <Questions />
+    </TitleLayout>
   );
 };
 
-const { ListSC } = styles;
+const { TitleSC, CategoriesSC, ContainerSC } = styles;
 
 export const getServerSideProps: GetServerSideProps<
   CatalogProps
 > = async () => {
   const categories = await fetchGetCategories();
-  return { props: { categories } };
+  const products = await fetchGetProducts({ page: 1 });
+  return { props: { categories, products } };
 };
 
 export default React.memo(Catalog);

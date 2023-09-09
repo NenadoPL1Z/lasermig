@@ -11,9 +11,7 @@ const TitleLayout = ({ children, title = "" }: TitleLayoutProps) => {
   return (
     <>
       <Head>
-        <meta charSet="utf-8" />
         <title>{title ? `${title}` : headData.titleFull}</title>
-        <meta name="description" content={headData.desc} />
       </Head>
       {children}
     </>
