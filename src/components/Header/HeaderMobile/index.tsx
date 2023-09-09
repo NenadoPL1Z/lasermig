@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { styled } from "@mui/material";
 import Lasermig from "@/assets/icons/Lasermig.svg";
 import CallIcon from "@/assets/icons/CallIcon.svg";
 import BurgerMenu from "@/assets/icons/BurgerMenu.svg";
-import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { Button } from "@mui/material";
 import HeaderDrawer from "@/components/Header/HeaderMobile/HeaderDrawer";
 import { companyData } from "@/lib/mock/companyData";
+import { styles } from "@/components/Header/HeaderMobile/index.styles";
 
 const HeaderMobile = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -33,25 +32,5 @@ const HeaderMobile = () => {
   );
 };
 
-const WrapperSC = styled("div")`
-  display: none;
-  padding: 8px 16px;
-
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-`;
-const LeftSC = styled("section")`
-  height: 36px;
-`;
-const MiddleSC = styled("section")`
-  width: 128px;
-  height: 24px;
-`;
-const RightSC = styled("section")`
-  height: 36px;
-`;
-
+const { WrapperSC, LeftSC, MiddleSC, RightSC } = styles;
 export default React.memo(HeaderMobile);

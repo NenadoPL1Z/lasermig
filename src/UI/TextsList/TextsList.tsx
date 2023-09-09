@@ -1,8 +1,5 @@
 import React from "react";
-import { styled } from "@mui/material";
-import ColorScheme from "@/styles/theme/ColorScheme";
-import { FontNamespace } from "@/styles/theme/FontNamespace";
-import { Breakpoints } from "@/styles/theme/Breakpoints";
+import { styles } from "@/UI/TextsList/index.styles";
 
 interface TextsListProps {
   item: string[];
@@ -21,31 +18,6 @@ const TextsList = ({ item, variant }: TextsListProps) => {
   );
 };
 
-const ListSC = styled("ul")`
-  padding-left: 55px;
-  list-style-type: disc;
-`;
-
-const NumberListSC = styled("ol")`
-  padding-left: 55px;
-  list-style-type: number;
-`;
-
-const ItemSC = styled("li")`
-  color: ${ColorScheme.PRIMARY};
-
-  font-family: ${FontNamespace.SF};
-
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-
-  margin-bottom: 5px;
-
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    font-size: 14px;
-  }
-`;
+const { ListSC, NumberListSC, ItemSC } = styles;
 
 export default React.memo(TextsList);

@@ -1,10 +1,8 @@
 import React from "react";
 import ErrorPage from "@/components/ErrorPage";
 import { DefaultButton } from "@/UI/Buttons/DefaultButton";
-import { styled, Typography } from "@mui/material";
-import ColorScheme from "@/styles/theme/ColorScheme";
-import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { useRouter } from "next/router";
+import { styles } from "@/components/ErrorPage/Error500/index.styles";
 
 const Error500 = () => {
   const { pathname, push, reload } = useRouter();
@@ -24,18 +22,6 @@ const Error500 = () => {
   );
 };
 
-const DescSC = styled(Typography)`
-  max-width: 469px;
-
-  color: ${ColorScheme.PRIMARY};
-  margin-bottom: 16px;
-
-  font-size: 20px;
-  line-height: normal;
-
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    font-size: 14px;
-  }
-`;
+const { DescSC } = styles;
 
 export default React.memo(Error500);

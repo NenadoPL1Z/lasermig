@@ -3,9 +3,9 @@ import { TextField, TextFieldProps } from "@mui/material";
 import { styled } from "@mui/material";
 import ColorScheme from "@/styles/theme/ColorScheme";
 
-const Index = (props: TextFieldProps) => {
+const TextFieldUI = (props: TextFieldProps) => {
   const isError = !!props.error;
-  return <TextFieldSC isError={isError} sx={{ color: "red" }} {...props} />;
+  return <TextFieldSC isError={isError} {...props} />;
 };
 
 const TextFieldSC = styled(TextField)<{ isError: boolean }>`
@@ -24,4 +24,4 @@ const TextFieldSC = styled(TextField)<{ isError: boolean }>`
   }
 `;
 
-export default React.memo(Index);
+export default React.memo(TextFieldUI);

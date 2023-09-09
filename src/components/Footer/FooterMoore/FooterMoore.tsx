@@ -1,8 +1,6 @@
 import React from "react";
-import { styled } from "@mui/material";
-import ColorScheme from "@/styles/theme/ColorScheme";
-import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { headData } from "@/lib/mock/headData";
+import { styles } from "@/components/Footer/FooterMoore/index.styles";
 
 const FooterMoore = () => {
   return (
@@ -15,23 +13,6 @@ const FooterMoore = () => {
   );
 };
 
-const PolicySC = styled("div")`
-  color: ${ColorScheme.TERTIARY};
-  font-size: 18px;
-  margin-bottom: 10px;
-
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    font-size: 12px;
-  }
-`;
-
-const AllRightSC = styled("div")`
-  color: ${ColorScheme.TERTIARY};
-  font-size: 18px;
-
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    font-size: 12px;
-  }
-`;
+const { PolicySC, AllRightSC } = styles;
 
 export default React.memo(FooterMoore);

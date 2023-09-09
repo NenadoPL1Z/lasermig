@@ -37,7 +37,7 @@ const BottomImageSC = styled("img")`
   margin-bottom: 16px;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 `;
 
@@ -45,12 +45,10 @@ const FigcaptionSC = styled("figcaption")`
   font-size: 16px;
 `;
 
-const styles = {
+export const styles = {
   ContainerImageSC,
   TitleSC,
   ContainerInfoSC,
   BottomImageSC,
   FigcaptionSC,
 };
-
-export default styles;

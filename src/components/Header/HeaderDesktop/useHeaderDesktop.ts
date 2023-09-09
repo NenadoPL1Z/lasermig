@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { HeaderDesktopProps } from "@/components/Header/HeaderDesktop/index";
 import { useRouter } from "next/router";
+import { HeaderDesktopProps } from "@/components/Header/HeaderDesktop/types";
 
 const visibleHeaderRoutes = ["/404", "/500"];
 
