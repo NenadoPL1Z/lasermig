@@ -8,7 +8,9 @@ import { styles } from "@/styles/pages/home.styles";
 export default function Home() {
   return (
     <TitleLayout>
-      <Advantages />
+      <ContainerSC>
+        <Advantages />
+      </ContainerSC>
       <ContainerSC>
         <Orders />
       </ContainerSC>
