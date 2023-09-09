@@ -1,6 +1,8 @@
+import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
+
 export const navData = [
-  { title: "Главная", path: "/" },
-  { title: "Каталог", path: "/catalog" },
-  { title: "О нас", path: "/about" },
-  { title: "Новости", path: "/news" },
+  { title: "Главная", path: RoutesNamespace.HOME },
+  { title: "Каталог", path: RoutesNamespace.CATALOG },
+  { title: "О нас", path: RoutesNamespace.ABOUT },
+  { title: "Новости", path: RoutesNamespace.NEWS },
 ];
