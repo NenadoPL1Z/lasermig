@@ -2,6 +2,7 @@ import { styled } from "@mui/material";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { H2SC } from "@/UI/H2SC";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
+import { ZIndex } from "@/styles/theme/ZIndex";
 
 const ContainerSC = styled("li")`
   height: 285px;
@@ -21,13 +22,14 @@ const ContainerSC = styled("li")`
 
 const LeftSC = styled("div")`
   max-width: 282px;
+  margin-right: 24px;
+
+  z-index: ${ZIndex.OVER};
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-
-  margin-right: 24px;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     max-width: none;
@@ -62,6 +64,8 @@ const ImgSC = styled("img")`
   object-fit: contain;
 
   position: absolute;
+  top: 0;
+  z-index: ${ZIndex.DEFAULT};
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     height: auto;
