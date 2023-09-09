@@ -31,3 +31,18 @@ export const telephoneMask = (state: string) => {
 };
 
 export const getImageUrl = (url: string) => `${BASE_URL}/${url}`;
+
+export const iOS = () => {
+  return (
+    [
+      "iPad Simulator",
+      "iPhone Simulator",
+      "iPod Simulator",
+      "iPad",
+      "iPhone",
+      "iPod",
+    ].includes(navigator.platform) ||
+    // iPad on iOS 13 detection
+    (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  );
+};
