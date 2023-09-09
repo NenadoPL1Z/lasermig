@@ -21,7 +21,7 @@ const ProductCard = (props: ProductModel) => {
           <OutlinedButton>ПОДРОБНЕЕ</OutlinedButton>
         </LeftSC>
         <RightSC>
-          <ImageSC src={image} alt={name} />
+          <ImgSC src={image} alt={name} />
         </RightSC>
       </LinkSC>
     </ContainerSC>
@@ -37,7 +37,7 @@ const {
   TitleSC,
   DescSC,
   RightSC,
-  ImageSC,
+  ImgSC,
 } = styles;
 
 export default React.memo(ProductCard);

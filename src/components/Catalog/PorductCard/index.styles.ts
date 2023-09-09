@@ -11,14 +11,12 @@ const ContainerSC = styled("li")`
 
 const LinkSC = styled(Link)`
   height: 100%;
-  padding-right: 0 !important;
 
   display: flex;
   justify-content: space-between;
 
   @media (max-width: ${Breakpoints.TABLET}px) {
     flex-direction: column;
-    padding-right: 16px !important;
   }
 `;
 
@@ -95,7 +93,7 @@ const RightSC = styled("div")`
   }
 `;
 
-const ImageSC = styled("img")`
+const ImgSC = styled("img")`
   width: 100%;
   height: 100%;
   max-height: 258px;
@@ -116,5 +114,5 @@ export const styles = {
   TitleSC,
   DescSC,
   RightSC,
-  ImageSC,
+  ImgSC,
 };
