@@ -10,9 +10,7 @@ const CategoryCard = ({ name, image, slug }: CategoryModel) => {
   return (
     <ContainerSC className="content-br">
       <LinkSC className="content" href={href}>
-        <ImgContainerSC>
-          <ImgSC src={image} alt={name} />
-        </ImgContainerSC>
+        <ImgSC src={image} alt={name} />
         <TextContainerSC>
           <TitleSC>{name}</TitleSC>
           <OutlinedButton>ПОДРОБНЕЕ</OutlinedButton>
@@ -22,7 +20,6 @@ const CategoryCard = ({ name, image, slug }: CategoryModel) => {
   );
 };
 
-const { ContainerSC, LinkSC, ImgContainerSC, ImgSC, TextContainerSC, TitleSC } =
-  styles;
+const { ContainerSC, LinkSC, ImgSC, TextContainerSC, TitleSC } = styles;
 
 export default React.memo(CategoryCard);

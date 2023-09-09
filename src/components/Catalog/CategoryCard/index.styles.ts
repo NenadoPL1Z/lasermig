@@ -14,13 +14,19 @@ const LinkSC = styled(Link)`
   flex-direction: column;
 `;
 
-const ImgContainerSC = styled("div")`
+const ImgSC = styled("img")`
+  display: block;
+
   flex-grow: 1;
+
+  width: 100%;
+  height: 100%;
 
   max-width: 480px;
   max-height: 323px;
-
   margin-bottom: 51px;
+
+  object-fit: contain;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     margin-bottom: 20px;
@@ -29,13 +35,6 @@ const ImgContainerSC = styled("div")`
   @media (max-width: ${Breakpoints.TABLET}px) {
     height: 172px;
   }
-`;
-
-const ImgSC = styled("img")`
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 `;
 
 const TextContainerSC = styled("div")``;
@@ -52,7 +51,6 @@ const TitleSC = styled(H2SC)`
 export const styles = {
   ContainerSC,
   LinkSC,
-  ImgContainerSC,
   ImgSC,
   TextContainerSC,
   TitleSC,
