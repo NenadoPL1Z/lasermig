@@ -9,6 +9,7 @@ import { GetServerSideProps } from "next";
 import { fetchGetMain, FetchGetMainRequest } from "@/lib/api/fetchGetMain";
 import HomeCategories from "@/components/Home/HomeCategories";
 import HomeBg from "@/components/Home/HomeBg";
+import HomeNews from "@/components/Home/HomeNews";
 
 interface HomeProps extends FetchGetMainRequest {}
 
@@ -28,7 +29,10 @@ const Home = ({ slider, category }: HomeProps) => {
       <ContainerSC>
         <Orders />
       </ContainerSC>
-      <Questions />
+      <ContainerSC>
+        <Questions />
+      </ContainerSC>
+      <HomeNews />
     </TitleLayout>
   );
 };
