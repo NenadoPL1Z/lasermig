@@ -1,7 +1,7 @@
 export const aboutPageData = {
   header: {
     title: "О НАС",
-    image: "/assets/images/about.jpg",
+    image: "/assets/images/About.jpg",
   },
   list: {
     title: "Наша компания занимается поставкой лазерного оборудования",
@@ -20,7 +20,7 @@ export const aboutPageData = {
     "Аппараты лазерной очистки металла применяются для удаления с поверхности металла следов коррозии и загрязнений таких, как технические жидкости, масла и краску.",
   ],
   bottom: {
-    image: "/assets/images/office.jpg",
+    image: "/assets/images/Office.jpg",
     figcaption: "Офис",
   },
 };

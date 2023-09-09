@@ -38,7 +38,7 @@ const BgSC = styled("div")`
   top: 0;
   z-index: ${ZIndex.HIDDEN};
 
-  background-image: url("/assets/images/HomeBg.png");
+  background-image: url("/assets/images/HomeDescBg.png");
   background-repeat: no-repeat;
   background-position: right top;
 

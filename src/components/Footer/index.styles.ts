@@ -5,7 +5,7 @@ import { Breakpoints } from "@/styles/theme/Breakpoints";
 const FooterSC = styled("footer")`
   background-color: ${ColorScheme.PRIMARY};
 
-  background-image: url("/assets/images/Bg.png");
+  background-image: url("/assets/images/FooterBg.png");
   background-repeat: no-repeat;
   background-position: right top;
 

@@ -36,11 +36,11 @@ const ShadowBackgroundSC = styled("div")`
   left: 0;
   bottom: 0;
 
-  background-image: url("/assets/images/shadowBG.png");
+  background-image: url("/assets/images/ShadowBg.png");
   background-repeat: no-repeat;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    background-image: url("/assets/images/shadowBGMobile.png");
+    background-image: url("/assets/images/ShadowMobileBg.png");
     background-size: 100%;
   }
 `;

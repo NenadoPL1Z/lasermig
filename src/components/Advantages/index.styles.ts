@@ -20,7 +20,7 @@ const LeftSC = styled("div")`
 
   background-color: ${ColorScheme.ACCENT};
 
-  background-image: url("/assets/images/AdvantageBG.png");
+  background-image: url("/assets/images/AdvantageBg.png");
   background-repeat: no-repeat;
   background-position: left bottom;
 
