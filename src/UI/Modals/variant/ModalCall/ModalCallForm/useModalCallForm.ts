@@ -1,20 +1,18 @@
 import { useController, useForm } from "react-hook-form";
-import { axiosProject } from "@/lib/http";
-import { ApiNamespace } from "@/lib/constants/enums/ApiNamespace";
 import { useStatus } from "@/hooks/useStatus";
-import { ErrorNamespace } from "@/lib/constants/enums/ErrorNamespace";
 import { useEffect } from "react";
 import { ModalFormProps } from "@/UI/Modals/types";
+import { FormCall } from "@/lib/models/Forms/FormCall";
+import { fetchPostCall } from "@/lib/api/feedback/fetchPostCall";
+import { ErrorNamespace } from "@/lib/constants/namespaces/ErrorNamespace";
+import { isAxiosError } from "axios";
 
 export const useModalCallForm = ({ handleSuccess }: ModalFormProps) => {
   const { isLoading, hasError, handleChangeStatus } = useStatus({
     isLoading: false,
   });
 
-  const { control, handleSubmit, formState } = useForm<{
-    name: string;
-    number: string;
-  }>({
+  const { control, handleSubmit, formState } = useForm<FormCall>({
     defaultValues: { name: "", number: "" },
   });
 
@@ -48,16 +46,30 @@ export const useModalCallForm = ({ handleSuccess }: ModalFormProps) => {
 
   const onSubmit = handleSubmit((data) => {
     handleChangeStatus({ isLoading: true, hasError: "" });
-    axiosProject
-      .post(ApiNamespace.FEEDBACK_CALL, data)
+
+    fetchPostCall(data)
       .then(() => {
         handleChangeStatus({ isLoading: false, hasError: "" });
         handleSuccess();
       })
-      .catch(() => {
+      .catch((error) => {
+        let hasError: string = ErrorNamespace.default;
+
+        if (isAxiosError<FormCall>(error)) {
+          const data = error.response?.data || { name: "", number: "" };
+
+          if ("name" in data) {
+            hasError = data.name[0];
+          }
+
+          if ("number" in data) {
+            hasError = data.number[0];
+          }
+        }
+
         handleChangeStatus({
           isLoading: false,
-          hasError: ErrorNamespace.default,
+          hasError,
         });
       });
   });

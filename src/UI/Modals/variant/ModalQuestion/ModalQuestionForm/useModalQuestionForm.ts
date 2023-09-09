@@ -1,21 +1,18 @@
 import { useStatus } from "@/hooks/useStatus";
 import { useController, useForm } from "react-hook-form";
-import { axiosProject } from "@/lib/http";
-import { ApiNamespace } from "@/lib/constants/enums/ApiNamespace";
-import { ErrorNamespace } from "@/lib/constants/enums/ErrorNamespace";
 import { useEffect } from "react";
 import { ModalFormProps } from "@/UI/Modals/types";
+import { FormQuestion } from "@/lib/models/Forms/FormQuestion";
+import { ErrorNamespace } from "@/lib/constants/namespaces/ErrorNamespace";
+import { fetchPostQuestion } from "@/lib/api/feedback/fetchPostQuestion";
+import { isAxiosError } from "axios";
 
 export const useModalQuestionForm = ({ handleSuccess }: ModalFormProps) => {
   const { isLoading, hasError, handleChangeStatus } = useStatus({
     isLoading: false,
   });
 
-  const { control, handleSubmit, formState } = useForm<{
-    name: string;
-    number: string;
-    text: string;
-  }>({
+  const { control, handleSubmit, formState } = useForm<FormQuestion>({
     defaultValues: { name: "", number: "", text: "" },
   });
 
@@ -63,16 +60,37 @@ export const useModalQuestionForm = ({ handleSuccess }: ModalFormProps) => {
   const onSubmit = handleSubmit((data) => {
     handleChangeStatus({ isLoading: true, hasError: "" });
 
-    axiosProject
-      .post(ApiNamespace.FEEDBACK_QUESTION, data)
+    fetchPostQuestion(data)
       .then(() => {
         handleChangeStatus({ isLoading: false, hasError: "" });
         handleSuccess();
       })
-      .catch(() => {
+      .catch((error) => {
+        let hasError: string = ErrorNamespace.default;
+
+        if (isAxiosError<FormQuestion>(error)) {
+          const data = error.response?.data || {
+            name: "",
+            number: "",
+            text: "",
+          };
+
+          if ("name" in data) {
+            hasError = data.name[0];
+          }
+
+          if ("number" in data) {
+            hasError = data.number[0];
+          }
+
+          if ("text" in data) {
+            hasError = data.text[0];
+          }
+        }
+
         handleChangeStatus({
           isLoading: false,
-          hasError: ErrorNamespace.default,
+          hasError,
         });
       });
   });
