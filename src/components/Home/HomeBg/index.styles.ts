@@ -1,5 +1,6 @@
 import { styled } from "@mui/material";
 import { ZIndex } from "@/styles/theme/ZIndex";
+import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 const ContainerSC = styled("div")`
   width: 100%;
@@ -13,14 +14,19 @@ const ContainerSC = styled("div")`
   right: 0;
   top: 23px;
   z-index: ${ZIndex.HIDDEN};
+
+  @media (max-width: ${Breakpoints.MOBILE}px) {
+    height: 313px;
+    top: 23px;
+  }
 `;
 
 const WrapperSC = styled("div")`
   position: relative;
-  max-width: 1920px;
 
   width: 100%;
   height: 100%;
+  max-width: 1920px;
 `;
 
 const BgSC = styled("div")`
@@ -35,6 +41,16 @@ const BgSC = styled("div")`
   background-image: url("/assets/images/HomeBg.png");
   background-repeat: no-repeat;
   background-position: right top;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    background-size: 50% 50%;
+  }
+
+  @media (max-width: ${Breakpoints.MOBILE}px) {
+    height: 313px;
+    background-size: auto;
+    background-image: url("/assets/images/HomeMobileBg.png");
+  }
 `;
 
 export const styles = {
