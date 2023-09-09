@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     
     background-color: ${ColorScheme.WHITE_TWO};
+    overflow-x: hidden;
   }
   
   *, *:after, *:before {
