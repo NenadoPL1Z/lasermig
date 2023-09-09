@@ -5,12 +5,13 @@ import { useStatus } from "@/hooks/useStatus";
 import { INITIAL_PAGE } from "@/lib/constants";
 import { fetchGetProducts } from "@/lib/api/catalog/fetchGetProducts";
 import { ErrorNamespace } from "@/lib/constants/namespaces/ErrorNamespace";
+
 export const useProductList = (props: ProductListProps) => {
   const { count, results } = props;
 
-  const [localResult, setLocalResult] = useState<ProductsArr>(results);
   const [page, setPage] = useState(INITIAL_PAGE + 1);
-  const [isEnd, setIsEnd] = useState(results.length === count);
+  const [isEnd, setIsEnd] = useState(results?.length === count);
+  const [localResult, setLocalResult] = useState<ProductsArr>(results || []);
 
   const { isLoading, handleChangeStatus } = useStatus({
     isLoading: false,
