@@ -1,11 +1,11 @@
 import React from "react";
 import SwiperArrows from "@/UI/SwiperArrows";
-import { styles } from "@/components/HomeAbout/index.styles";
-import { useHomeAbout } from "@/components/HomeAbout/useHomeAbout";
-import HASlider from "@/components/HomeAbout/HASlider";
+import { styles } from "@/components/Home/HomeAbout/index.styles";
+import { useHomeAbout } from "@/components/Home/HomeAbout/useHomeAbout";
+import HASlider from "@/components/Home/HomeAbout/HASlider";
 import Link from "next/link";
 import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
-import { HomeSliderProps } from "@/components/HomeAbout/types";
+import { HomeSliderProps } from "@/components/Home/types";
 
 const HomeSlider = ({ slider }: HomeSliderProps) => {
   const { onSwiper, handlePrev, handleNext } = useHomeAbout();

@@ -1,6 +1,6 @@
 import React from "react";
-import { HASliderProps } from "@/components/HomeAbout/types";
-import { styles } from "@/components/HomeAbout/HASlider/index.styles";
+import { HASliderProps } from "@/components/Home/types";
+import { styles } from "@/components/Home/HomeAbout/HASlider/index.styles";
 
 const HASlider = ({ slider, onSwiper }: HASliderProps) => {
   return (
