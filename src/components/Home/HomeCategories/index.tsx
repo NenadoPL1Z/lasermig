@@ -1,12 +1,13 @@
 import React from "react";
 import { HomeCategoriesProps } from "@/components/Home/types";
 import { styles } from "@/components/Home/HomeCategories/index.styles";
+import HCItem from "@/components/Home/HomeCategories/HCItem";
 
 const HomeCategories = ({ categories }: HomeCategoriesProps) => {
   return (
     <ContainerSC>
       {categories.map((category) => (
-        <div key={category.name}>{category.name}</div>
+        <HCItem key={category.slug} {...category} />
       ))}
     </ContainerSC>
   );
