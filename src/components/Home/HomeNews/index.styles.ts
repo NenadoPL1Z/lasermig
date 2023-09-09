@@ -30,7 +30,6 @@ const OpenSC = styled(OpenIcon)`
   height: 20px;
 
   margin-left: 8px;
-  margin-bottom: 5px;
 `;
 
 export const styles = { TopSC, TitleSC, DescButtonSC, OpenSC };
