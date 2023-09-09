@@ -45,10 +45,12 @@ const FigcaptionSC = styled("figcaption")`
   font-size: 16px;
 `;
 
-export const styles = {
+const styles = {
   ContainerImageSC,
   TitleSC,
   ContainerInfoSC,
   BottomImageSC,
   FigcaptionSC,
 };
+
+export default styles;

@@ -6,7 +6,7 @@ import { H2SC } from "@/UI/H2SC";
 import { ParagraphSC } from "@/UI/ParagraphSC";
 import TitleLayout from "@/layout/TitleLayout";
 import Questions from "@/components/Questions";
-import { styles } from "@/pages/about/index.styles";
+import styles from "@/pages/about/index.styles";
 
 const About = () => {
   return (
