@@ -18,7 +18,9 @@ export const useNewsList = (props: NewsListProps) => {
 
   const [page, setPage] = useState(INITIAL_PAGE);
   const [isEnd, setIsEnd] = useState(props.results?.length === props.count);
-  const [localResult, setLocalResult] = useState<NewsArr>(props.results || []);
+  const [localResult, setLocalResult] = useState<NewsArr>(
+    !tagsId.length ? props.results || [] : [],
+  );
 
   const { isLoading, handleChangeStatus } = useStatus({
     isLoading: false,

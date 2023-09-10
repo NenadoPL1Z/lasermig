@@ -17,7 +17,7 @@ const News = ({ news_tags, news }: NewsProps) => {
     <TitleLayout title="Новости">
       <TitleSC className="padding">Новости</TitleSC>
       <TagsList tags={news_tags} />
-      <ContainerSC className="padding">
+      <ContainerSC sx={{ flexGrow: 1 }} className="padding">
         <NewsList tags={news_tags} {...news} />
       </ContainerSC>
       <div className="padding">
