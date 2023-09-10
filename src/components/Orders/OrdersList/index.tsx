@@ -12,7 +12,7 @@ interface OrdersListProps {
 
 const OrdersList = ({ onSwiper }: OrdersListProps) => {
   return (
-    <SwiperSC onSwiper={onSwiper} slidesPerView="auto">
+    <SwiperSC className="padding" onSwiper={onSwiper} slidesPerView="auto">
       {orderData.map((orderItem) => (
         <SwiperSlideSC key={orderItem.title}>
           <OrderItem {...orderItem} />
