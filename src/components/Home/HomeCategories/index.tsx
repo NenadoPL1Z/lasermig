@@ -4,11 +4,17 @@ import { styles } from "@/components/Home/HomeCategories/index.styles";
 import HCItem from "@/components/Home/HomeCategories/HCItem";
 
 const HomeCategories = ({ categories }: HomeCategoriesProps) => {
+  let count = 0;
+
   return (
     <ContainerSC>
-      {categories.map((category) => (
-        <HCItem key={category.slug} {...category} />
-      ))}
+      {categories.map((category) => {
+        count += 1;
+        if (count > 3) {
+          count = 1;
+        }
+        return <HCItem key={category.slug} count={count} {...category} />;
+      })}
     </ContainerSC>
   );
 };

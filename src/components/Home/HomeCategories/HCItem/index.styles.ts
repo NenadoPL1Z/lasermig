@@ -1,13 +1,18 @@
-import { styled } from "@mui/material";
+import { css, styled } from "@mui/material";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { H2SC } from "@/UI/H2SC";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { ZIndex } from "@/styles/theme/ZIndex";
 
-const ContainerSC = styled("li")`
-  height: 285px;
+type Alternative = { isAlternative: boolean };
+
+const ContainerSC = styled("li")<Alternative>`
+  min-height: 285px;
 
   display: flex;
+
+  flex-direction: ${({ isAlternative }) =>
+    isAlternative ? "column-reverse" : "row"};
 
   position: relative;
   overflow: hidden;
@@ -38,7 +43,9 @@ const LeftSC = styled("div")`
   }
 `;
 
-const TitleSC = styled(H2SC)`
+const TitleSC = styled(H2SC)<Alternative>`
+  margin-bottom: ${({ isAlternative }) => (isAlternative ? 24 : 0)}px;
+
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     font-size: 24px;
     margin-bottom: 8px;
@@ -56,21 +63,39 @@ const RightSC = styled("div")`
   }
 `;
 
-const ImgSC = styled("img")`
-  width: 100%;
-  max-width: 574px;
-  height: 386px;
+const ImgSC = styled("img")<Alternative>`
+  ${({ isAlternative }) =>
+    isAlternative
+      ? css`
+          width: 100%;
+          max-height: 329px;
 
-  object-fit: contain;
+          object-fit: contain;
+          position: absolute;
+          right: 0;
 
-  position: absolute;
-  top: 0;
-  z-index: ${ZIndex.DEFAULT};
+          z-index: ${ZIndex.DEFAULT};
+          @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+            height: auto;
+            position: static;
+          }
+        `
+      : css`
+          width: 100%;
+          max-width: 574px;
+          height: 386px;
 
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    height: auto;
-    position: static;
-  }
+          object-fit: contain;
+
+          position: absolute;
+          top: 0;
+          z-index: ${ZIndex.DEFAULT};
+
+          @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+            height: auto;
+            position: static;
+          }
+        `};
 `;
 
 export const styles = {

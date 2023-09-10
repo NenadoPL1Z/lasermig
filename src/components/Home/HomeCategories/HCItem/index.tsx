@@ -6,19 +6,30 @@ import Link from "next/link";
 import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
 import { getImageUrl } from "@/lib/services";
 
-const HCItem = ({ name, slug, image }: CategoryModel) => {
+interface HCItemProps extends CategoryModel {
+  count: number;
+}
+
+const HCItem = ({ name, slug, image, count }: HCItemProps) => {
   const href = `${RoutesNamespace.CATALOG}/${slug}`;
+  const isAlternative = count === 2;
 
   return (
-    <ContainerSC className="content content-br">
+    <ContainerSC
+      className={`content content-br grid-${count}`}
+      isAlternative={isAlternative}>
       <LeftSC>
-        <TitleSC>{name}</TitleSC>
+        <TitleSC isAlternative={isAlternative}>{name}</TitleSC>
         <OutlinedButton>
           <Link href={href}>Подробнее</Link>
         </OutlinedButton>
       </LeftSC>
       <RightSC>
-        <ImgSC src={getImageUrl(image)} alt={name} />
+        <ImgSC
+          isAlternative={isAlternative}
+          src={getImageUrl(image)}
+          alt={name}
+        />
       </RightSC>
     </ContainerSC>
   );
