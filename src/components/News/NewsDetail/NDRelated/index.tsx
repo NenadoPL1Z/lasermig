@@ -5,7 +5,7 @@ import NewsCard from "@/components/News/NewsCard";
 import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
 import { useNotebook } from "@/hooks/useMedia";
 
-const HomeNews = ({ news }: HomeNewsProps) => {
+const NDRelated = ({ news }: HomeNewsProps) => {
   const isFirst = news[0];
   const isSecond = news[1];
   const isThird = news[2];
@@ -14,7 +14,7 @@ const HomeNews = ({ news }: HomeNewsProps) => {
   return (
     <>
       <TopSC>
-        <TitleSC>Новости</TitleSC>
+        <TitleSC>Читайте также</TitleSC>
         <DescButtonSC>
           <LinkSC href={RoutesNamespace.NEWS}>
             ВСЕ НОВОСТИ <OpenSC />
@@ -50,4 +50,4 @@ const HomeNews = ({ news }: HomeNewsProps) => {
 const { TopSC, TitleSC, LinkSC, DescButtonSC, MobileButtonSC, OpenSC, ListSC } =
   styles;
 
-export default React.memo(HomeNews);
+export default React.memo(NDRelated);

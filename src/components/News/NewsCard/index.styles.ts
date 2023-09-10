@@ -3,6 +3,7 @@ import { H1SC } from "@/UI/H1SC";
 import Link from "next/link";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
+import { NewsCardProps } from "@/components/News/NewsCard/index";
 
 const ContainerSC = styled("div")`
   background-color: ${ColorScheme.WHITE};
@@ -13,18 +14,24 @@ const LinkSC = styled(Link)`
   display: block;
 `;
 
-const ImgSC = styled("img")`
+const ImgSC = styled("img")<Pick<NewsCardProps, "isBig">>`
   width: 100%;
   display: block;
 
-  min-height: 254px;
+  min-height: ${({ isBig }) => (isBig ? "440px" : "254px")};
   max-height: 440px;
 
   object-fit: cover;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    min-height: auto;
+    height: 222px;
+    min-height: 222px;
     max-height: 250px;
+  }
+
+  @media (max-width: ${Breakpoints.TABLET}px) {
+    height: 188px;
+    min-height: 188px;
   }
 `;
 

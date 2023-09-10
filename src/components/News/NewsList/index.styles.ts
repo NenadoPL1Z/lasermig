@@ -57,12 +57,38 @@ const ContainerSC = styled("ul")`
       grid-row: initial;
 
       img {
-        height: auto;
+        height: 222px;
       }
     }
 
     .grid-small {
       grid-area: initial;
+    }
+
+    .gird-small-after {
+      div {
+        height: 100%;
+      }
+      img {
+        height: 222px;
+        min-height: 222px;
+      }
+    }
+
+    & > li > div {
+      height: 100%;
+    }
+
+    & > li img {
+      min-height: 222px;
+    }
+  }
+
+  @media (max-width: ${Breakpoints.TABLET}px) {
+    .grid-big {
+      img {
+        height: 188px;
+      }
     }
 
     .gird-small-after {
@@ -72,11 +98,8 @@ const ContainerSC = styled("ul")`
       }
     }
 
-    & > li > div {
-      height: 100%;
-    }
-
     & > li img {
+      height: 188px;
       min-height: 188px;
     }
   }

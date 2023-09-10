@@ -4,17 +4,22 @@ import { NewsModel } from "@/lib/models/NewsModel";
 import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
 import { getImageUrl } from "@/lib/services";
 
+export interface NewsCardProps extends NewsModel {
+  isBig?: boolean;
+}
+
 const NewsCard = ({
   title,
   tags,
   slug,
   image,
+  isBig,
   short_description,
-}: NewsModel) => {
+}: NewsCardProps) => {
   return (
     <ContainerSC className="content-br">
       <LinkSC href={`${RoutesNamespace.NEWS}/${slug}`}>
-        <ImgSC src={getImageUrl(image)} alt={title} />
+        <ImgSC isBig={isBig} src={getImageUrl(image)} alt={title} />
         <TextContainerSC className="content">
           <TagsSC>
             {tags.map((tag) => (
