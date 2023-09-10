@@ -1,14 +1,15 @@
-import Swiper from "swiper";
 import { CategoriesArr } from "@/lib/models/CategoryModel";
+import { SliderArr, SliderModel } from "@/lib/models/SliderModel";
 
 export interface HomeSliderProps {
-  slider: string[];
+  slider: SliderArr;
 }
 
 export interface HomeCategoriesProps {
   categories: CategoriesArr;
 }
 
-export interface HASliderProps extends HomeSliderProps {
-  onSwiper: (swiper: Swiper) => void;
+export interface HASliderProps extends SliderModel {
+  handlePrev: () => void;
+  handleNext: () => void;
 }

@@ -22,9 +22,8 @@ export const useHomeAbout = () => {
   };
 
   return {
+    onSwiper,
     handleNext,
     handlePrev,
-
-    onSwiper,
   };
 };

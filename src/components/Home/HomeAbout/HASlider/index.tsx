@@ -1,20 +1,35 @@
 import React from "react";
 import { HASliderProps } from "@/components/Home/types";
 import { styles } from "@/components/Home/HomeAbout/HASlider/index.styles";
-import { getImageUrl } from "@/lib/services";
+import Link from "next/link";
+import SwiperArrows from "@/UI/SwiperArrows";
 
-const HASlider = ({ slider, onSwiper }: HASliderProps) => {
+const HASlider = ({
+  title,
+  description,
+  image,
+  link,
+  handlePrev,
+  handleNext,
+}: HASliderProps) => {
   return (
-    <SwiperSC loop={true} onSwiper={onSwiper} slidesPerView="auto">
-      {slider.map((item) => (
-        <SwiperSlideSC key={item}>
-          <ImgSC src={getImageUrl(item)} />
-        </SwiperSlideSC>
-      ))}
-    </SwiperSC>
+    <ContainerSC>
+      <LeftSC className="content content-br">
+        <TitleSC>{title}</TitleSC>
+        <DescSC>{description}</DescSC>
+        <BottomSC>
+          <ButtonSC>
+            <Link href={link}>Подробнее</Link>
+          </ButtonSC>
+          <SwiperArrows onPrev={handlePrev} onNext={handleNext} />
+        </BottomSC>
+      </LeftSC>
+      <ImgSC src={image} alt={title} />
+    </ContainerSC>
   );
 };
 
-const { SwiperSC, SwiperSlideSC, ImgSC } = styles;
+const { ContainerSC, LeftSC, TitleSC, DescSC, BottomSC, ButtonSC, ImgSC } =
+  styles;
 
 export default React.memo(HASlider);
