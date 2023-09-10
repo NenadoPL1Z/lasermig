@@ -4,7 +4,7 @@ import { NewsArr } from "@/lib/models/NewsModel";
 import { CategoriesArr } from "@/lib/models/CategoryModel";
 import { SliderArr } from "@/lib/models/SliderModel";
 
-export type FetchGetMainRequest = {
+export type FetchGetMainResponse = {
   slider: SliderArr;
   news: NewsArr;
   category: CategoriesArr;
@@ -12,6 +12,6 @@ export type FetchGetMainRequest = {
 
 export const fetchGetMain = () => {
   return axiosProject
-    .get<FetchGetMainRequest>(ApiNamespace.MAIN)
+    .get<FetchGetMainResponse>(ApiNamespace.MAIN)
     .then((r) => r.data);
 };

@@ -6,12 +6,12 @@ import Orders from "@/components/Orders";
 import { styles } from "@/styles/pages/home.styles";
 import HomeAbout from "@/components/Home/HomeAbout";
 import { GetServerSideProps } from "next";
-import { fetchGetMain, FetchGetMainRequest } from "@/lib/api/fetchGetMain";
+import { fetchGetMain, FetchGetMainResponse } from "@/lib/api/fetchGetMain";
 import HomeCategories from "@/components/Home/HomeCategories";
 import HomeBg from "@/components/Home/HomeBg";
 import HomeNews from "@/components/Home/HomeNews";
 
-interface HomeProps extends FetchGetMainRequest {}
+interface HomeProps extends FetchGetMainResponse {}
 
 const Home = ({ slider, category, news }: HomeProps) => {
   return (

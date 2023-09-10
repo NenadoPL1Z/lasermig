@@ -4,7 +4,7 @@ import { ProductsArr } from "@/lib/models/ProductModel";
 import { PaginationResult } from "@/types/types";
 import { INITIAL_PAGE, PAGE_LIMIT } from "@/lib/constants";
 
-type FetchGetProductsResponse = {
+type FetchGetProductsData = {
   page?: number;
   limit?: number;
 };
@@ -12,7 +12,7 @@ type FetchGetProductsResponse = {
 export const fetchGetProducts = ({
   page = INITIAL_PAGE,
   limit = PAGE_LIMIT,
-}: FetchGetProductsResponse) => {
+}: FetchGetProductsData) => {
   return axiosProject
     .get<PaginationResult<ProductsArr>>(
       ApiNamespace.CATALOG_PRODUCTS + `?page${page}&per_page=${limit}`,
