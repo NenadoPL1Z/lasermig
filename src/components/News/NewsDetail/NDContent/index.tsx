@@ -6,7 +6,8 @@ const NDContent = ({ description }: NDContentProps) => {
   return (
     <ContainerSC
       className="container-two"
-      dangerouslySetInnerHTML={{ __html: description }}></ContainerSC>
+      dangerouslySetInnerHTML={{ __html: description }}
+    />
   );
 };
 

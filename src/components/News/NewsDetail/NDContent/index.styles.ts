@@ -13,88 +13,90 @@ const Title = css`
 `;
 
 const ContainerSC = styled("div")`
-  h1 {
-    ${Title};
-    font-size: 48px;
-    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-      font-size: 32px;
+  & > {
+    h1 {
+      ${Title};
+      font-size: 48px;
+      @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+        font-size: 32px;
+      }
     }
-  }
 
-  h2 {
-    ${Title};
-    font-size: 36px;
-    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-      font-size: 32px;
+    h2 {
+      ${Title};
+      font-size: 36px;
+      @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+        font-size: 32px;
+      }
     }
-  }
 
-  h3 {
-    ${Title};
-    font-size: 28px;
-    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    h3 {
+      ${Title};
+      font-size: 28px;
+      @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+        font-size: 24px;
+      }
+    }
+
+    h4,
+    h5,
+    h6 {
+      ${Title};
       font-size: 24px;
     }
-  }
 
-  h4,
-  h5,
-  h6 {
-    ${Title};
-    font-size: 24px;
-  }
+    p {
+      color: ${ColorScheme.PRIMARY};
+      font-family: ${FontNamespace.SF};
 
-  p {
-    color: ${ColorScheme.PRIMARY};
-    font-family: ${FontNamespace.SF};
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
 
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-
-    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-      font-size: 14px;
+      @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+        font-size: 14px;
+      }
     }
-  }
 
-  ul,
-  li {
-    list-style-type: circle;
-  }
+    ul,
+    li {
+      list-style-type: circle;
+    }
 
-  li {
-  }
+    li {
+    }
 
-  img {
-    display: block;
+    img {
+      display: block;
 
-    width: 100%;
-    height: 100%;
-    max-height: 477px;
+      width: 100%;
+      height: 100%;
+      max-height: 477px;
 
-    object-fit: cover;
-  }
+      object-fit: cover;
+    }
 
-  video {
-    display: block;
+    video {
+      display: block;
 
-    width: 100%;
-    height: 100%;
-    max-height: 567px;
-  }
+      width: 100%;
+      height: 100%;
+      max-height: 567px;
+    }
 
-  figcaption {
-    color: ${ColorScheme.SECONDARY};
+    figcaption {
+      color: ${ColorScheme.SECONDARY};
 
-    font-family: ${FontNamespace.SF};
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+      font-family: ${FontNamespace.SF};
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
 
-    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-      font-size: 12px;
+      @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+        font-size: 12px;
+      }
     }
   }
 `;
