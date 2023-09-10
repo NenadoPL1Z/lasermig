@@ -11,6 +11,7 @@ const ContainerSC = styled("li")`
 
 const LinkSC = styled(Link)`
   display: flex;
+  height: 100%;
   flex-direction: column;
 `;
 
