@@ -7,14 +7,16 @@ import {
 } from "@/lib/api/news/fetchGetNews";
 import { styles } from "@/styles/pages/news.styles";
 import TagsList from "@/components/Tags/TagsList";
+import NewsList from "@/components/News/NewsList";
 
 interface NewsProps extends FetchGetNewsResponse {}
 
-const News = ({ news_tags }: NewsProps) => {
+const News = ({ news_tags, news }: NewsProps) => {
   return (
     <TitleLayout title="Новости">
       <TitleSC className="padding">Новости</TitleSC>
       <TagsList tags={news_tags} />
+      <NewsList tags={news_tags} {...news} />
     </TitleLayout>
   );
 };

@@ -1,5 +1,3 @@
-import { BASE_URL } from "@/lib/constants";
-
 export const telephoneMask = (state: string) => {
   let inputNumbersValue = state.replace(/[\D]+/g, "");
   let formattedInputValue = "";
@@ -30,4 +28,4 @@ export const telephoneMask = (state: string) => {
   return formattedInputValue;
 };
 
-export const getImageUrl = (url: string) => `${BASE_URL}${url}`;
+export const getImageUrl = (url: string) => `${url}`;

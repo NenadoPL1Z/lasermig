@@ -1,12 +1,8 @@
-import { useRouter } from "next/router";
 import { TagModel } from "@/lib/models/TagModel";
+import { useTags } from "@/hooks/useTags";
 
 export const useTagItem = ({ name }: TagModel) => {
-  const { query, push } = useRouter();
-
-  const tags = (((query?.tags as string) || "").split(",") || []).filter(
-    (item) => item,
-  );
+  const { tags, push } = useTags();
 
   const isActive = !!tags.find((item) => item === name);
 
