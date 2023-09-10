@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <HeaderSC
-      className={`container disable-mobile-safe ${
+      className={`container-three disable-mobile-safe ${
         isVisibleHeader ? "" : "header-hide"
       }`}>
       {!isMobile && <HeaderDesktop handleChangeVisible={handleChangeVisible} />}

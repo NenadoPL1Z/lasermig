@@ -8,7 +8,7 @@ import { Mobile } from "@/UI/Mobile";
 
 const Footer = () => {
   return (
-    <FooterSC className="container disable-mobile-safe">
+    <FooterSC className="container-three disable-mobile-safe">
       <FooterWrapperSC className="content">
         <FooterInfo />
         <FooterNav />

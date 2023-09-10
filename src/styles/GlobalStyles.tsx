@@ -77,6 +77,13 @@ const GlobalStyles = createGlobalStyle`
     max-width: 1060px;
     margin: 0 auto;
   }
+
+  .container-three {
+    width: calc(100% - 32px);
+    max-width: 1600px;
+
+    margin: 0 auto;
+  }
   
   
   .disable-mobile-safe {
