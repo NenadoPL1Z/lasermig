@@ -19,7 +19,7 @@ const HeaderSC = styled("header")`
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     height: auto;
 
-    top: 0;
+    top: -1px;
     border-radius: 0 0 24px 24px;
   }
 `;

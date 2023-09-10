@@ -20,6 +20,10 @@ const ImgSC = styled("img")`
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     margin-bottom: 16px;
   }
+
+  @media (max-width: ${Breakpoints.TABLET}px) {
+    max-height: 200px;
+  }
 `;
 
 const ContainerSC = styled("div")`

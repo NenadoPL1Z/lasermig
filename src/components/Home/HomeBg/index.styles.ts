@@ -17,7 +17,7 @@ const ContainerSC = styled("div")`
 
   @media (max-width: ${Breakpoints.MOBILE}px) {
     height: 313px;
-    top: 23px;
+    top: 46px;
   }
 `;
 
