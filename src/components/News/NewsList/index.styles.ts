@@ -3,11 +3,12 @@ import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 const ContainerSC = styled("ul")`
   display: grid;
+  grid-template-areas: "grid-big grid-small grid-small grid-small";
   gap: 20px;
 
-  grid-template-areas: "grid-big grid-small grid-small grid-small";
+  list-style-type: none;
 
-  & > .grid-big {
+  .grid-big {
     min-height: 600px;
 
     grid-area: grid-big;
@@ -19,17 +20,70 @@ const ContainerSC = styled("ul")`
     }
   }
 
-  & > .grid-small {
+  .grid-small {
     grid-area: grid-small;
   }
 
-  & > .gird-small {
-    & > div {
+  .gird-small {
+    div {
       height: 100%;
     }
   }
 
-  list-style-type: none;
+  .gird-small-after {
+    div {
+      height: auto;
+    }
+    img {
+      height: 222px;
+      min-height: 222px;
+    }
+  }
+
+  @media (max-width: ${Breakpoints.NOTEBOOK_HD}px) {
+    grid-template-areas: "grid-big grid-small grid-small";
+  }
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    grid-template-areas: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    .grid-big {
+      min-height: auto;
+
+      grid-area: initial;
+      grid-column: initial;
+      grid-row: initial;
+
+      img {
+        height: auto;
+      }
+    }
+
+    .grid-small {
+      grid-area: initial;
+    }
+
+    .gird-small-after {
+      img {
+        height: 188px;
+        min-height: 188px;
+      }
+    }
+
+    & > li > div {
+      height: 100%;
+    }
+
+    & > li img {
+      min-height: 188px;
+    }
+  }
+
+  @media (max-width: ${Breakpoints.MOBILE}px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const BottomSC = styled("div")`
