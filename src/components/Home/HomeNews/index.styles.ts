@@ -34,7 +34,7 @@ const MobileButtonSC = styled(OutlinedButton)`
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     margin-top: 16px;
-    display: block;
+    display: flex;
   }
 `;
 
