@@ -6,9 +6,20 @@ import { Breakpoints } from "@/styles/theme/Breakpoints";
 import NewsBackIcon from "@/assets/icons/NewsBack.svg";
 import Link from "next/link";
 
-const ContainerSC = styled("section")`
+const ContainerSC = styled("section")``;
+
+const WrapperSC = styled("div")`
+  width: 100%;
+  height: 100%;
+
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 `;
 
 const LeftSC = styled("div")`
@@ -21,6 +32,10 @@ const LeftSC = styled("div")`
   align-items: flex-start;
 
   z-index: ${ZIndex.OVER};
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    margin-bottom: 32px;
+  }
 `;
 
 const LeftTopSC = styled("div")`
@@ -35,12 +50,21 @@ const BackSC = styled(Link)`
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    font-size: 18px;
+  }
 `;
 
 const NewsBackIconSC = styled(NewsBackIcon)`
   width: 20px;
   height: 20px;
   margin-right: 8px;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 const LeftBottomSC = styled("div")``;
@@ -50,16 +74,21 @@ const TagsSC = styled("ul")`
   flex-wrap: wrap;
   align-items: center;
 
-  gap: 20px;
-
   list-style: none;
 `;
 
 const TagSC = styled("li")`
+  margin-right: 20px;
+  margin-bottom: 6px;
+
   color: ${ColorScheme.TERTIARY};
   font-family: ${FontNamespace.BN};
   font-size: 20px;
   font-weight: 400;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    font-size: 18px;
+  }
 `;
 
 const TitleSC = styled("h1")`
@@ -73,11 +102,12 @@ const TitleSC = styled("h1")`
   font-weight: 700;
   line-height: normal;
 
-  margin: 16px 0;
+  margin: 10px 0 16px;
   z-index: ${ZIndex.OVER};
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     font-size: 24px;
+    max-width: none;
   }
 `;
 
@@ -85,6 +115,10 @@ const DateSC = styled("time")`
   color: ${ColorScheme.TERTIARY};
   font-size: 16px;
   font-weight: 400;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    font-size: 12px;
+  }
 `;
 
 const RightSC = styled("div")`
@@ -93,6 +127,7 @@ const RightSC = styled("div")`
 
 export const styles = {
   ContainerSC,
+  WrapperSC,
   LeftSC,
   LeftTopSC,
   NewsBackIconSC,

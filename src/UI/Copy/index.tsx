@@ -14,7 +14,7 @@ const Copy = (props: CopyProps) => {
         </TooltipSC>
       )}
       <CopyButtonSC onClick={handleClick}>
-        ПОДЕЛИТСЯ <SharedIconSC />
+        Поделиться <SharedIconSC />
       </CopyButtonSC>
     </ContainerSC>
   );

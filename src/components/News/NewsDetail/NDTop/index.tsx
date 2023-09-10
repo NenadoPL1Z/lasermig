@@ -16,26 +16,28 @@ const NDTop = ({ slug, title, tags, date, image }: NDTopInterface) => {
   return (
     <ContainerSC className="padding">
       <ImgPage url={image}>
-        <LeftSC>
-          <LeftTopSC>
-            <BackSC href={RoutesNamespace.NEWS}>
-              <NewsBackIconSC />
-              ВЕРНУТСЯ
-            </BackSC>
-          </LeftTopSC>
-          <LeftBottomSC>
-            <TagsSC>
-              {tags.map((tagItem) => (
-                <TagSC key={tagItem}>{tagItem}</TagSC>
-              ))}
-            </TagsSC>
-            <TitleSC>{title}</TitleSC>
-            <DateSC>{clientDate}</DateSC>
-          </LeftBottomSC>
-        </LeftSC>
-        <RightSC>
-          <Copy href={`${RoutesNamespace.NEWS}/${slug}`} />
-        </RightSC>
+        <WrapperSC>
+          <LeftSC>
+            <LeftTopSC>
+              <BackSC href={RoutesNamespace.NEWS}>
+                <NewsBackIconSC />
+                ВЕРНУТСЯ
+              </BackSC>
+            </LeftTopSC>
+            <LeftBottomSC>
+              <TagsSC>
+                {tags.map((tagItem) => (
+                  <TagSC key={tagItem}>{tagItem}</TagSC>
+                ))}
+              </TagsSC>
+              <TitleSC>{title}</TitleSC>
+              <DateSC>{clientDate}</DateSC>
+            </LeftBottomSC>
+          </LeftSC>
+          <RightSC>
+            <Copy href={`${RoutesNamespace.NEWS}/${slug}`} />
+          </RightSC>
+        </WrapperSC>
       </ImgPage>
     </ContainerSC>
   );
@@ -43,6 +45,7 @@ const NDTop = ({ slug, title, tags, date, image }: NDTopInterface) => {
 
 const {
   ContainerSC,
+  WrapperSC,
   LeftSC,
   LeftTopSC,
   NewsBackIconSC,
