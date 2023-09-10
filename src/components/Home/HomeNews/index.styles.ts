@@ -3,6 +3,7 @@ import { H1SC } from "@/UI/H1SC";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import OpenIcon from "@/assets/icons/OpenIcon.svg";
 import { OutlinedButton } from "@/UI/Buttons/OutlinedButton";
+import Link from "next/link";
 
 const TopSC = styled("div")`
   display: flex;
@@ -21,6 +22,16 @@ const TitleSC = styled(H1SC)`
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     font-size: 32px;
   }
+`;
+
+const LinkSC = styled(Link)`
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const DescButtonSC = styled(OutlinedButton)`
@@ -68,6 +79,7 @@ const ListSC = styled("div")`
 export const styles = {
   TopSC,
   TitleSC,
+  LinkSC,
   DescButtonSC,
   MobileButtonSC,
   OpenSC,

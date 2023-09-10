@@ -2,7 +2,6 @@ import React from "react";
 import { styles } from "@/components/Home/HomeNews/index.styles";
 import { HomeNewsProps } from "@/components/Home/types";
 import NewsCard from "@/components/News/NewsCard";
-import Link from "next/link";
 import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
 
 const HomeNews = ({ news }: HomeNewsProps) => {
@@ -14,11 +13,11 @@ const HomeNews = ({ news }: HomeNewsProps) => {
     <>
       <TopSC>
         <TitleSC>Новости</TitleSC>
-        <Link href={RoutesNamespace.NEWS}>
-          <DescButtonSC>
+        <DescButtonSC>
+          <LinkSC href={RoutesNamespace.NEWS}>
             ВСЕ НОВОСТИ <OpenSC />
-          </DescButtonSC>
-        </Link>
+          </LinkSC>
+        </DescButtonSC>
       </TopSC>
       <ListSC>
         {isFirst && (
@@ -37,13 +36,16 @@ const HomeNews = ({ news }: HomeNewsProps) => {
           </div>
         )}
       </ListSC>
-      <MobileButtonSC>
-        Все НОВОСТИ <OpenSC />
+      <MobileButtonSC fullWidth>
+        <LinkSC href={RoutesNamespace.NEWS}>
+          ВСЕ НОВОСТИ <OpenSC />
+        </LinkSC>
       </MobileButtonSC>
     </>
   );
 };
 
-const { TopSC, TitleSC, DescButtonSC, MobileButtonSC, OpenSC, ListSC } = styles;
+const { TopSC, TitleSC, LinkSC, DescButtonSC, MobileButtonSC, OpenSC, ListSC } =
+  styles;
 
 export default React.memo(HomeNews);
