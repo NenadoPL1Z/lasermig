@@ -5,7 +5,7 @@ import TagItem from "@/components/Tags/TagItem";
 
 const TagsList = ({ tags }: TagsListProps) => {
   return (
-    <ContainerSC>
+    <ContainerSC className="padding">
       {tags.map((item) => (
         <TagItem key={item.id} {...item} />
       ))}

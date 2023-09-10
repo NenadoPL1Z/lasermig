@@ -8,7 +8,7 @@ const ContainerSC = styled("ul")`
   display: flex;
   align-items: center;
 
-  overflow-y: scroll;
+  overflow-x: scroll;
   list-style-type: none;
 
   ${mixinHideScroll};
