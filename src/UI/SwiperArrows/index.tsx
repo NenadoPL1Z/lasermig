@@ -1,8 +1,6 @@
 import React from "react";
 import { OutlinedButtonRounded } from "@/UI/Buttons/OutlinedButton";
 import { styles } from "@/UI/SwiperArrows/index.styles";
-import LeftIcon from "@/assets/icons/LeftIcon.svg";
-import RightIcon from "@/assets/icons/RightIcon.svg";
 
 interface SwiperArrowsProps {
   onPrev: () => void;
@@ -13,15 +11,15 @@ const SwiperArrows = ({ onPrev, onNext }: SwiperArrowsProps) => {
   return (
     <ContainerSC>
       <OutlinedButtonRounded onClick={onPrev}>
-        <LeftIcon />
+        <LeftIconSC />
       </OutlinedButtonRounded>
       <OutlinedButtonRounded onClick={onNext}>
-        <RightIcon />
+        <RightIconSC />
       </OutlinedButtonRounded>
     </ContainerSC>
   );
 };
 
-const { ContainerSC } = styles;
+const { ContainerSC, LeftIconSC, RightIconSC } = styles;
 
 export default React.memo(SwiperArrows);

@@ -30,4 +30,4 @@ export const telephoneMask = (state: string) => {
   return formattedInputValue;
 };
 
-export const getImageUrl = (url: string) => `${BASE_URL}/${url}`;
+export const getImageUrl = (url: string) => `${BASE_URL}${url}`;
