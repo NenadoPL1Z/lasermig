@@ -7,14 +7,25 @@ import TitleLayout from "@/layout/TitleLayout";
 import NDRelated from "@/components/News/NewsDetail/NDRelated";
 import { styles } from "@/styles/pages/newsID.styles";
 import Questions from "@/components/Questions";
+import NDContent from "@/components/News/NewsDetail/NDContent";
 
 interface NewsId extends NewsDetailModel {}
 
-const NewsId = ({ slug, title, image, tags, date, related_news }: NewsId) => {
+const NewsId = ({
+  slug,
+  title,
+  image,
+  tags,
+  date,
+  description,
+  related_news,
+}: NewsId) => {
   return (
     <TitleLayout title={title}>
       <NDTop slug={slug} title={title} image={image} tags={tags} date={date} />
-      <ContainerSC>1</ContainerSC>
+      <ContentSC className="padding">
+        <NDContent description={description} />
+      </ContentSC>
       <ContainerSC className="padding">
         <NDRelated news={related_news} />
       </ContainerSC>
@@ -25,7 +36,7 @@ const NewsId = ({ slug, title, image, tags, date, related_news }: NewsId) => {
   );
 };
 
-const { ContainerSC } = styles;
+const { ContainerSC, ContentSC } = styles;
 
 export const getServerSideProps: GetServerSideProps<NewsId> = async (
   context,

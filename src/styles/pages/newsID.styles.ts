@@ -9,6 +9,17 @@ const ContainerSC = styled("section")`
   }
 `;
 
+const ContentSC = styled("section")`
+  margin-top: 50px;
+  margin-bottom: 100px;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    margin-top: 10px;
+    margin-bottom: 48px;
+  }
+`;
+
 export const styles = {
   ContainerSC,
+  ContentSC,
 };

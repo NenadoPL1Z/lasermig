@@ -1,11 +1,11 @@
 import React from "react";
 import { styles } from "@/components/Home/HomeNews/index.styles";
-import { HomeNewsProps } from "@/components/Home/types";
 import NewsCard from "@/components/News/NewsCard";
 import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
 import { useNotebook } from "@/hooks/useMedia";
+import { NDRelatedProps } from "@/components/News/NewsDetail/types";
 
-const NDRelated = ({ news }: HomeNewsProps) => {
+const NDRelated = ({ news }: NDRelatedProps) => {
   const isFirst = news[0];
   const isSecond = news[1];
   const isThird = news[2];

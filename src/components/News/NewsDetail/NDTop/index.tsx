@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { NDTopInterface } from "@/components/News/NewsDetail/types";
+import { NDTopProps } from "@/components/News/NewsDetail/types";
 import { styles } from "@/components/News/NewsDetail/NDTop/index.styles";
 import ImgPage from "@/components/ImgPage";
 import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
 import { getFormatDate } from "@/lib/services";
 import Copy from "@/UI/Copy";
 
-const NDTop = ({ slug, title, tags, date, image }: NDTopInterface) => {
+const NDTop = ({ slug, title, tags, date, image }: NDTopProps) => {
   const [clientDate, setClientDate] = useState(date);
 
   useEffect(() => {
