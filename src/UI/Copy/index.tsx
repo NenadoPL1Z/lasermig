@@ -10,7 +10,9 @@ const Copy = (props: CopyProps) => {
     <ContainerSC>
       {isCopy && (
         <TooltipSC>
-          <TooltipTextSC>Ссылка на новость скопирована</TooltipTextSC>
+          <TooltipWrapperSC>
+            <TooltipTextSC>Ссылка на новость скопирована</TooltipTextSC>
+          </TooltipWrapperSC>
         </TooltipSC>
       )}
       <CopyButtonSC onClick={handleClick}>
@@ -20,7 +22,13 @@ const Copy = (props: CopyProps) => {
   );
 };
 
-const { ContainerSC, CopyButtonSC, SharedIconSC, TooltipSC, TooltipTextSC } =
-  styles;
+const {
+  ContainerSC,
+  CopyButtonSC,
+  SharedIconSC,
+  TooltipSC,
+  TooltipWrapperSC,
+  TooltipTextSC,
+} = styles;
 
 export default React.memo(Copy);

@@ -45,29 +45,37 @@ const SharedIconSC = styled(SharedIcon)`
 
 const TooltipSC = styled("div")`
   width: 308px;
-  padding: 16px 20px;
-  border-radius: 20px;
 
   position: absolute;
   right: 0;
   top: -70px;
 
-  background-color: ${ColorScheme.WHITE};
-
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    position: fixed;
-
     width: 100%;
-    padding: 16px 40px;
-    border-radius: 16px;
 
+    position: fixed;
     right: 0;
     top: auto;
     bottom: 16px;
+  }
+`;
 
+const TooltipWrapperSC = styled("div")`
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 20px;
+  background-color: ${ColorScheme.WHITE};
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+
+    padding: 16px 40px;
+    border-radius: 16px;
     text-align: center;
   }
 `;
+
 const TooltipTextSC = styled("p")`
   color: ${ColorScheme.PRIMARY};
 
@@ -86,5 +94,6 @@ export const styles = {
   CopyButtonSC,
   SharedIconSC,
   TooltipSC,
+  TooltipWrapperSC,
   TooltipTextSC,
 };
