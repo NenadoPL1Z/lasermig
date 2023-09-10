@@ -10,5 +10,6 @@ export const useTags = () => {
   return {
     tags,
     push,
+    query,
   };
 };
