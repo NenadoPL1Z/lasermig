@@ -24,12 +24,12 @@ export const useNewsList = (props: NewsListProps) => {
     handleChangeStatus({ isLoading: true, hasError: "" });
 
     fetchGetNews({ page })
-      .then(({ news: { results } }) => {
+      .then(({ news: { results, count } }) => {
         setPage((prevState) => prevState + 1);
 
         setLocalResult((prevState) => {
           const result = [...prevState, ...results];
-          setIsEnd(result.length === count);
+          setIsEnd(result.length >= count);
           return result;
         });
 

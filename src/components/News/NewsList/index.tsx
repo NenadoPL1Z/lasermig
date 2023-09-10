@@ -10,21 +10,21 @@ const NewsList = (props: NewsListProps) => {
   const { isEnd, isLoading, localResult, handleLoadMore } = useNewsList(props);
 
   return (
-    <div className="padding">
+    <>
       <ContainerSC>
         {localResult.map((item) => (
           <NewsCard key={item.slug} {...item} />
         ))}
       </ContainerSC>
-      <BottomSC>
-        {isEnd && (
+      {!isEnd && (
+        <BottomSC>
           <OutlinedButton onClick={handleLoadMore}>
             {isLoading && <CircularProgress />}
             {!isLoading && "Показать еще"}
           </OutlinedButton>
-        )}
-      </BottomSC>
-    </div>
+        </BottomSC>
+      )}
+    </>
   );
 };
 

@@ -27,7 +27,7 @@ export const useProductList = (props: ProductListProps) => {
 
         setLocalResult((prevState) => {
           const result = [...prevState, ...results];
-          setIsEnd(result.length === count);
+          setIsEnd(result.length >= count);
           return result;
         });
 

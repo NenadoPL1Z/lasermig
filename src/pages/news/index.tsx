@@ -8,6 +8,7 @@ import {
 import { styles } from "@/styles/pages/news.styles";
 import TagsList from "@/components/Tags/TagsList";
 import NewsList from "@/components/News/NewsList";
+import Questions from "@/components/Questions";
 
 interface NewsProps extends FetchGetNewsResponse {}
 
@@ -16,12 +17,17 @@ const News = ({ news_tags, news }: NewsProps) => {
     <TitleLayout title="Новости">
       <TitleSC className="padding">Новости</TitleSC>
       <TagsList tags={news_tags} />
-      <NewsList tags={news_tags} {...news} />
+      <ContainerSC className="padding">
+        <NewsList tags={news_tags} {...news} />
+      </ContainerSC>
+      <div className="padding">
+        <Questions />
+      </div>
     </TitleLayout>
   );
 };
 
-const { TitleSC } = styles;
+const { TitleSC, ContainerSC } = styles;
 
 export const getServerSideProps: GetServerSideProps<NewsProps> = async () => {
   const news = await fetchGetNews({ page: 1 });
