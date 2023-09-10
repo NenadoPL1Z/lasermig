@@ -8,6 +8,7 @@ import { TagsArr } from "@/lib/models/TagModel";
 type FetchGetNewsData = {
   page?: number;
   limit?: number;
+  id?: number[];
 };
 
 export type FetchGetNewsResponse = {
@@ -18,10 +19,13 @@ export type FetchGetNewsResponse = {
 export const fetchGetNews = ({
   page = INITIAL_PAGE,
   limit = PAGE_LIMIT,
+  id = [],
 }: FetchGetNewsData) => {
+  const queryId = id?.length ? `&id=${id.join(",")}` : "";
+
   return axiosProject
     .get<FetchGetNewsResponse>(
-      ApiNamespace.NEWS + `?page${page}&per_page=${limit}`,
+      ApiNamespace.NEWS + `?page${page}&per_page=${limit}${queryId}`,
     )
     .then((r) => r.data);
 };

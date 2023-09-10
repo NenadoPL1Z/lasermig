@@ -11,6 +11,12 @@ export const useNewsList = (props: NewsListProps) => {
   const { count, results } = props;
   const { tags, query } = useTags();
 
+  const tagsId = props.tags
+    .filter((item) => {
+      return tags.find((queryItem) => queryItem === item.name);
+    })
+    .map((item) => item.id);
+
   const [page, setPage] = useState(INITIAL_PAGE + 1);
   const [isEnd, setIsEnd] = useState(results?.length === count);
   const [localResult, setLocalResult] = useState<NewsArr>(results || []);
@@ -23,7 +29,7 @@ export const useNewsList = (props: NewsListProps) => {
   const loadData = (isReplace = false) => {
     handleChangeStatus({ isLoading: true, hasError: "" });
 
-    fetchGetNews({ page })
+    fetchGetNews({ page, id: tagsId })
       .then(({ news: { results, count } }) => {
         setPage((prevState) => prevState + 1);
 
