@@ -20,21 +20,23 @@ interface CatalogProps {
 const Catalog = ({ categories, products }: CatalogProps) => {
   return (
     <TitleLayout title="Каталог">
-      <TitleSC>Каталог</TitleSC>
+      <TitleSC className="padding">Каталог</TitleSC>
       {categories && (
-        <CategoriesSC>
+        <CategoriesSC className="padding">
           <CategoriesList categories={categories} />
         </CategoriesSC>
       )}
       {products?.count && (
-        <ContainerSC>
+        <ContainerSC className="padding">
           <ProductsList {...products} />
         </ContainerSC>
       )}
       <ContainerSC>
         <Orders />
       </ContainerSC>
-      <Questions />
+      <div className="padding">
+        <Questions />
+      </div>
     </TitleLayout>
   );
 };

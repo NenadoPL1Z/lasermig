@@ -63,10 +63,14 @@ const GlobalStyles = createGlobalStyle`
   }
   
   .container {
-    width: calc(100% - 32px);
+    width: 100%;
     max-width: 1600px;
     
     margin: 0 auto;
+  }
+  
+  .padding {
+    padding: 0 16px;
   }
   
   .container-two {

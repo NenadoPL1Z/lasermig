@@ -16,23 +16,25 @@ interface HomeProps extends FetchGetMainResponse {}
 const Home = ({ slider, category, news }: HomeProps) => {
   return (
     <TitleLayout>
-      <ContainerSC>
+      <ContainerSC className="padding">
         <HomeAbout slider={slider} />
         <HomeBg />
       </ContainerSC>
-      <ContainerSC>
+      <ContainerSC className="padding">
         <HomeCategories categories={category} />
       </ContainerSC>
-      <ContainerSC>
+      <ContainerSC className="padding">
         <Advantages />
       </ContainerSC>
       <ContainerSC>
         <Orders />
       </ContainerSC>
-      <ContainerSC>
+      <ContainerSC className="padding">
         <Questions />
       </ContainerSC>
-      <HomeNews news={news} />
+      <div className="padding">
+        <HomeNews news={news} />
+      </div>
     </TitleLayout>
   );
 };

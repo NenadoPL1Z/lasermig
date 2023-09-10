@@ -9,7 +9,7 @@ const Orders = () => {
 
   return (
     <>
-      <TopSC>
+      <TopSC className="padding">
         <TitleSC>Процесс заказа оборудования</TitleSC>
         <SwiperArrows onPrev={handlePrev} onNext={handleNext} />
       </TopSC>

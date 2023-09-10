@@ -13,7 +13,7 @@ interface NewsProps extends FetchGetNewsResponse {}
 const News = ({ news_tags }: NewsProps) => {
   return (
     <TitleLayout title="Новости">
-      <TitleSC>Новости</TitleSC>
+      <TitleSC className="padding">Новости</TitleSC>
       <TagsList tags={news_tags} />
     </TitleLayout>
   );
