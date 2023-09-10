@@ -5,6 +5,7 @@ import { H1SC } from "@/UI/H1SC";
 import { DefaultButton } from "@/UI/Buttons/DefaultButton";
 
 const ImgSC = styled("img")`
+  padding-top: 50px;
   display: block;
 
   width: 100%;
@@ -28,7 +29,6 @@ const ImgSC = styled("img")`
 
 const ContainerSC = styled("div")`
   display: flex;
-  align-items: center;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     flex-direction: column;
