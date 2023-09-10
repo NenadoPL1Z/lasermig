@@ -4,7 +4,7 @@ import Link from "next/link";
 import ColorScheme from "@/styles/theme/ColorScheme";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 
-const ContainerSC = styled("li")`
+const ContainerSC = styled("div")`
   background-color: ${ColorScheme.WHITE};
   overflow: hidden;
 `;

@@ -3,8 +3,31 @@ import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 const ContainerSC = styled("ul")`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px;
+
+  grid-template-areas: "grid-big grid-small grid-small grid-small";
+
+  & > .grid-big {
+    min-height: 600px;
+
+    grid-area: grid-big;
+    grid-column: span 2;
+    grid-row: span 1;
+
+    img {
+      height: 440px;
+    }
+  }
+
+  & > .grid-small {
+    grid-area: grid-small;
+  }
+
+  & > .gird-small {
+    & > div {
+      height: 100%;
+    }
+  }
 
   list-style-type: none;
 `;

@@ -28,4 +28,14 @@ export const telephoneMask = (state: string) => {
   return formattedInputValue;
 };
 
+export const getNewsGridClass = (counter: number) => {
+  if (counter == 1) {
+    return "grid-big";
+  }
+  if (counter === 2 || counter === 3) {
+    return "gird-small-after";
+  }
+  return "gird-small";
+};
+
 export const getImageUrl = (url: string) => `${url}`;
