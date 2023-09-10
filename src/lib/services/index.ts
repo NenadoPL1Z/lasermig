@@ -29,3 +29,11 @@ export const telephoneMask = (state: string) => {
 };
 
 export const getImageUrl = (url: string) => `${url}`;
+
+export const getFormatDate = (date: string) => {
+  return new Date(date).toLocaleString("ru-RU", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+};
