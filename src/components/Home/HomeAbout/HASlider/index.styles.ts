@@ -28,6 +28,7 @@ const ImgSC = styled("img")`
 
 const ContainerSC = styled("div")`
   display: flex;
+  align-items: center;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     flex-direction: column;

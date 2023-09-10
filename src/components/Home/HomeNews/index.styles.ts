@@ -29,11 +29,25 @@ const DescButtonSC = styled(OutlinedButton)`
   }
 `;
 
+const MobileButtonSC = styled(OutlinedButton)`
+  display: none;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    margin-top: 16px;
+    display: block;
+  }
+`;
+
 const OpenSC = styled(OpenIcon)`
   width: 20px;
   height: 20px;
 
   margin-left: 8px;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 const ListSC = styled("div")`
@@ -51,4 +65,11 @@ const ListSC = styled("div")`
   }
 `;
 
-export const styles = { TopSC, TitleSC, DescButtonSC, OpenSC, ListSC };
+export const styles = {
+  TopSC,
+  TitleSC,
+  DescButtonSC,
+  MobileButtonSC,
+  OpenSC,
+  ListSC,
+};
