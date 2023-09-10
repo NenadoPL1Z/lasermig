@@ -13,6 +13,7 @@ const Title = css`
 `;
 
 const ContainerSC = styled("div")`
+  overflow-x: hidden;
   & > {
     h1 {
       ${Title};
