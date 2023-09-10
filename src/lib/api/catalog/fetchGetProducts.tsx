@@ -15,7 +15,7 @@ export const fetchGetProducts = ({
 }: FetchGetProductsData) => {
   return axiosProject
     .get<PaginationResult<ProductsArr>>(
-      ApiNamespace.CATALOG_PRODUCTS + `?page${page}&per_page=${limit}`,
+      ApiNamespace.CATALOG_PRODUCTS + `?page=${page}&per_page=${limit}`,
     )
     .then((r) => r.data);
 };

@@ -8,7 +8,6 @@ import { fetchGetNews } from "@/lib/api/news/fetchGetNews";
 import { useTags } from "@/hooks/useTags";
 
 export const useNewsList = (props: NewsListProps) => {
-  const { count, results } = props;
   const { tags, query } = useTags();
 
   const tagsId = props.tags
@@ -17,9 +16,9 @@ export const useNewsList = (props: NewsListProps) => {
     })
     .map((item) => item.id);
 
-  const [page, setPage] = useState(INITIAL_PAGE + 1);
-  const [isEnd, setIsEnd] = useState(results?.length === count);
-  const [localResult, setLocalResult] = useState<NewsArr>(results || []);
+  const [page, setPage] = useState(INITIAL_PAGE);
+  const [isEnd, setIsEnd] = useState(props.results?.length === props.count);
+  const [localResult, setLocalResult] = useState<NewsArr>(props.results || []);
 
   const { isLoading, handleChangeStatus } = useStatus({
     isLoading: false,
@@ -29,18 +28,18 @@ export const useNewsList = (props: NewsListProps) => {
   const loadData = (isReplace = false) => {
     handleChangeStatus({ isLoading: true, hasError: "" });
 
-    fetchGetNews({ page, id: tagsId })
-      .then(({ news: { results, count } }) => {
-        setPage((prevState) => prevState + 1);
-
+    fetchGetNews({ page: isReplace ? 1 : page, id: tagsId })
+      .then(({ news }) => {
         setLocalResult((prevState) => {
           if (isReplace) {
-            setIsEnd(results.length >= count);
-            return results;
+            setIsEnd(news.results.length >= news.count);
+            setPage(2);
+            return news.results;
           }
           if (!isReplace) {
-            const result = [...prevState, ...results];
-            setIsEnd(result.length >= count);
+            const result = [...prevState, ...news.results];
+            setIsEnd(result.length >= news.count);
+            setPage((prevState) => prevState + 1);
             return result;
           }
           return prevState;
@@ -62,8 +61,6 @@ export const useNewsList = (props: NewsListProps) => {
 
   useEffect(() => {
     if (tags) {
-      setPage(INITIAL_PAGE);
-      setIsEnd(false);
       loadData(true);
     }
   }, [query]);

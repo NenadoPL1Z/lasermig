@@ -25,7 +25,7 @@ export const fetchGetNews = ({
 
   return axiosProject
     .get<FetchGetNewsResponse>(
-      ApiNamespace.NEWS + `?page${page}&per_page=${limit}${queryId}`,
+      ApiNamespace.NEWS + `?page=${page}&per_page=${limit}${queryId}`,
     )
     .then((r) => r.data);
 };
