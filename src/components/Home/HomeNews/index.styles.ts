@@ -7,15 +7,19 @@ import { OutlinedButton } from "@/UI/Buttons/OutlinedButton";
 const TopSC = styled("div")`
   display: flex;
   justify-content: space-between;
+
+  margin-bottom: 20px;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    margin-bottom: 16px;
+  }
 `;
 
 const TitleSC = styled(H1SC)`
   font-size: 48px;
-  margin-bottom: 20px;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     font-size: 32px;
-    margin-bottom: 16px;
   }
 `;
 
@@ -32,4 +36,19 @@ const OpenSC = styled(OpenIcon)`
   margin-left: 8px;
 `;
 
-export const styles = { TopSC, TitleSC, DescButtonSC, OpenSC };
+const ListSC = styled("div")`
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 10px;
+  list-style-type: none;
+
+  @media (max-width: ${Breakpoints.NOTEBOOK}px) {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  @media (max-width: ${Breakpoints.TABLET}px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const styles = { TopSC, TitleSC, DescButtonSC, OpenSC, ListSC };

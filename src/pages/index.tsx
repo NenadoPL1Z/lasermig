@@ -13,7 +13,7 @@ import HomeNews from "@/components/Home/HomeNews";
 
 interface HomeProps extends FetchGetMainRequest {}
 
-const Home = ({ slider, category }: HomeProps) => {
+const Home = ({ slider, category, news }: HomeProps) => {
   return (
     <TitleLayout>
       <ContainerSC>
@@ -32,7 +32,7 @@ const Home = ({ slider, category }: HomeProps) => {
       <ContainerSC>
         <Questions />
       </ContainerSC>
-      <HomeNews />
+      <HomeNews news={news} />
     </TitleLayout>
   );
 };
