@@ -19,6 +19,7 @@ const ImgSC = styled("img")`
   }
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    padding-top: 0;
     margin-bottom: 16px;
   }
 
