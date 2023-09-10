@@ -21,7 +21,7 @@ export const fetchGetNews = ({
   limit = PAGE_LIMIT,
   id = [],
 }: FetchGetNewsData) => {
-  const queryId = id?.length ? `&id=${id.join(",")}` : "";
+  const queryId = id?.length ? `&tags=${id.join(",")}` : "";
 
   return axiosProject
     .get<FetchGetNewsResponse>(
