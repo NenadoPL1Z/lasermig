@@ -3,6 +3,7 @@ import { ProductModel } from "@/lib/models/ProductModel";
 import { styles } from "@/components/Catalog/PorductCard/index.styles";
 import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
 import { OutlinedButton } from "@/UI/Buttons/OutlinedButton";
+import { getImageUrl } from "@/lib/services";
 
 const ProductCard = (props: ProductModel) => {
   const { category, name, short_description, slug, product_images } = props;
@@ -21,7 +22,7 @@ const ProductCard = (props: ProductModel) => {
           <OutlinedButton>ПОДРОБНЕЕ</OutlinedButton>
         </LeftSC>
         <RightSC>
-          <ImgSC src={image} alt={name} />
+          <ImgSC src={getImageUrl(image)} alt={name} />
         </RightSC>
       </LinkSC>
     </ContainerSC>
