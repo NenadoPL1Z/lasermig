@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 
 export const useTags = () => {
-  const { query, push } = useRouter();
+  const { query, push, asPath } = useRouter();
 
   const tags = (((query?.tags as string) || "").split(",") || []).filter(
     (item) => item,
@@ -11,5 +11,6 @@ export const useTags = () => {
     tags,
     push,
     query,
+    asPath: asPath.split("?")[0],
   };
 };
