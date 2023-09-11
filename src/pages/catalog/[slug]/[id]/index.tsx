@@ -6,15 +6,20 @@ import { fetchGetProduct } from "@/lib/api/catalog/fetchGetProduct";
 import { ProductDetailModel } from "@/lib/models/ProductDetailModel";
 import Questions from "@/components/Questions";
 import Orders from "@/components/Orders";
+import ProductsRelated from "@/components/Catalog/ProductsRelated";
 
 interface ProductProps extends ProductDetailModel {}
 
 const Product = (props: ProductProps) => {
-  const { name } = props;
+  const { name, related_products } = props;
   return (
     <TitleLayout title={name}>
-      <ContainerSC className="padding"></ContainerSC>
-      <ContainerSC className="padding">
+      {related_products.length && (
+        <ContainerSC className="padding">
+          <ProductsRelated products={related_products} />
+        </ContainerSC>
+      )}
+      <ContainerSC>
         <Orders />
       </ContainerSC>
       <div className="padding">
