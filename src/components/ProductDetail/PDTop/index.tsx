@@ -3,6 +3,7 @@ import { ProductDetailModel } from "@/lib/models/ProductDetailModel";
 import { styles } from "@/components/ProductDetail/PDTop/index.styles";
 import PDFirst from "@/components/ProductDetail/PDFirst";
 import PDSecond from "@/components/ProductDetail/PDSecond";
+import PDSwiper from "@/components/ProductDetail/PDSwiper";
 
 interface PDTopProps
   extends Omit<
@@ -22,10 +23,15 @@ const PDTop = (props: PDTopProps) => {
           additional_description={props.additional_description}
         />
       </LeftSC>
+      <RightSC>
+        {props.product_images?.length && (
+          <PDSwiper product_images={props.product_images} />
+        )}
+      </RightSC>
     </ContainerSC>
   );
 };
 
-const { ContainerSC, LeftSC } = styles;
+const { ContainerSC, LeftSC, RightSC } = styles;
 
 export default React.memo(PDTop);
