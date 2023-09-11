@@ -5,8 +5,8 @@ import { useRouter } from "next/router";
 import { styles } from "@/components/ErrorPage/Error500/index.styles";
 
 const Error500 = () => {
-  const { pathname, push, reload } = useRouter();
-  const is500Page = pathname == "/500";
+  const { push, reload } = useRouter();
+  const is500Page = false;
 
   const onClick = is500Page ? () => push("/") : reload;
   const buttonTitle = is500Page ? "На главную" : "Перезагрузить";

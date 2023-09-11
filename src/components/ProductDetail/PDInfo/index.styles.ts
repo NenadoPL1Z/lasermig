@@ -3,7 +3,7 @@ import { H1SC } from "@/UI/H1SC";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import ColorScheme from "@/styles/theme/ColorScheme";
 
-const ContainerSC = styled("section")`
+const ContainerSC = styled("div")`
   display: flex;
   justify-content: space-between;
   margin-bottom: 118px;

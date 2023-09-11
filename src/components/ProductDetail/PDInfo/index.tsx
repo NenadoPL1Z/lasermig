@@ -23,7 +23,7 @@ const PDInfo = ({
   }
 
   return (
-    <ContainerSC className="padding">
+    <ContainerSC>
       <LeftSC>
         <TitleSC>ИНФОРМАЦИЯ</TitleSC>
       </LeftSC>
