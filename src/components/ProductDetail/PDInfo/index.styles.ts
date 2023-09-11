@@ -23,7 +23,7 @@ const TitleSC = styled(H1SC)`
 `;
 
 const LeftSC = styled("div")`
-  min-width: 365px;
+  min-width: 280px;
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     min-width: auto;
     margin-bottom: 16px;
@@ -78,7 +78,6 @@ const ListSC = styled("ul")`
 const CharacteristicsItemSC = styled("li")`
   display: flex;
   justify-content: space-between;
-  //align-items: center;
 
   padding-bottom: 16px;
   margin-bottom: 16px;
