@@ -10,6 +10,7 @@ const ContainerSC = styled("ul")`
 
   .grid-big {
     min-height: 600px;
+    max-width: 795px;
 
     grid-area: grid-big;
     grid-column: span 2;
