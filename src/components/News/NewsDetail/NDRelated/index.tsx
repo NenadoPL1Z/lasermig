@@ -15,11 +15,11 @@ const NDRelated = ({ news }: NDRelatedProps) => {
     <>
       <TopSC>
         <TitleSC>Читайте также</TitleSC>
-        <DescButtonSC>
-          <LinkSC href={RoutesNamespace.NEWS}>
+        <LinkSC href={RoutesNamespace.NEWS}>
+          <DescButtonSC>
             ВСЕ НОВОСТИ <OpenSC />
-          </LinkSC>
-        </DescButtonSC>
+          </DescButtonSC>
+        </LinkSC>
       </TopSC>
       <ListSC>
         {isFirst && (
@@ -38,11 +38,11 @@ const NDRelated = ({ news }: NDRelatedProps) => {
           </div>
         )}
       </ListSC>
-      <MobileButtonSC fullWidth>
-        <LinkSC href={RoutesNamespace.NEWS}>
+      <LinkSC href={RoutesNamespace.NEWS}>
+        <MobileButtonSC fullWidth>
           ВСЕ НОВОСТИ <OpenSC />
-        </LinkSC>
-      </MobileButtonSC>
+        </MobileButtonSC>
+      </LinkSC>
     </>
   );
 };

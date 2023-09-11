@@ -24,15 +24,7 @@ const TitleSC = styled(H1SC)`
   }
 `;
 
-const LinkSC = styled(Link)`
-  display: block;
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+const LinkSC = styled(Link)``;
 
 const DescButtonSC = styled(OutlinedButton)`
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
