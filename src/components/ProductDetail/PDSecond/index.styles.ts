@@ -16,7 +16,7 @@ const TopSC = styled("div")`
 `;
 
 const ButtonSC = styled(DefaultButton)`
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+  @media (max-width: ${Breakpoints.NOTEBOOK}px) {
     flex-grow: 1;
   }
 `;

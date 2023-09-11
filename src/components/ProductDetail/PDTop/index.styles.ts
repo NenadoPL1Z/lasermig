@@ -39,9 +39,9 @@ const LeftSC = styled("div")`
   max-width: 538px;
   margin-right: 10px;
 
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+  @media (max-width: ${Breakpoints.NOTEBOOK}px) {
     max-width: none;
-    margin-right: 0px;
+    margin-right: 0;
   }
 `;
 

@@ -7,9 +7,12 @@ const ContainerSC = styled("div")`
   margin-bottom: 24px;
   max-width: 469px;
 
+  @media (max-width: ${Breakpoints.NOTEBOOK}px) {
+    max-width: none;
+  }
+
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     margin-bottom: 32px;
-    max-width: none;
   }
 `;
 
