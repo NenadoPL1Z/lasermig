@@ -19,8 +19,17 @@ const ContainerSC = styled("div")`
 const BackSC = styled("div")`
   margin-bottom: 64px;
 
+  @media (max-width: ${Breakpoints.NOTEBOOK}px) {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+  }
+
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     margin-bottom: 32px;
+    position: static;
+    left: auto;
+    top: auto;
   }
 `;
 

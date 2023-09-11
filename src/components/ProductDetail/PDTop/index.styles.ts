@@ -3,6 +3,8 @@ import ColorScheme from "@/styles/theme/ColorScheme";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 const ContainerSC = styled("div")`
+  position: relative;
+
   margin-bottom: 50px;
 
   display: flex;
