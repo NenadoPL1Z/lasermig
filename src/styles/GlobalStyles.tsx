@@ -108,7 +108,7 @@ const GlobalStyles = createGlobalStyle`
   }
   
   .content-title {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
   }
 
   .content-margin48 {
