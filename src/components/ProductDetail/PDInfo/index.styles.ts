@@ -78,7 +78,7 @@ const ListSC = styled("ul")`
 const CharacteristicsItemSC = styled("li")`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  //align-items: center;
 
   padding-bottom: 16px;
   margin-bottom: 16px;
