@@ -18,7 +18,9 @@ const About = () => {
           </ImgPage>
         </ContainerImageSC>
         <ContainerInfoSC className="container-two">
-          <H2SC className="content-title">{aboutPageData.list.title}</H2SC>
+          <H2SC sx={{ marginBottom: "16px" }} className="content-title">
+            {aboutPageData.list.title}
+          </H2SC>
           <TextsList
             item={aboutPageData.list.items}
             variant={aboutPageData.list.variant as "number"}
