@@ -16,22 +16,32 @@ const PDTop = (props: PDTopProps) => {
     <ContainerSC className="content content-br">
       <LeftSC>
         <PDFirst tags={props.tags} name={props.name} />
-        <PDSecond
-          price={props.price}
-          description={props.description}
-          additional_title={props.additional_title}
-          additional_description={props.additional_description}
-        />
+        <DescSC>
+          <PDSecond
+            price={props.price}
+            description={props.description}
+            additional_title={props.additional_title}
+            additional_description={props.additional_description}
+          />
+        </DescSC>
       </LeftSC>
       <RightSC>
         {props.product_images?.length && (
           <PDSwiper product_images={props.product_images} />
         )}
       </RightSC>
+      <MobileSC>
+        <PDSecond
+          price={props.price}
+          description={props.description}
+          additional_title={props.additional_title}
+          additional_description={props.additional_description}
+        />
+      </MobileSC>
     </ContainerSC>
   );
 };
 
-const { ContainerSC, LeftSC, RightSC } = styles;
+const { ContainerSC, DescSC, MobileSC, LeftSC, RightSC } = styles;
 
 export default React.memo(PDTop);

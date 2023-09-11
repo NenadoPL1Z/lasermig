@@ -10,6 +10,10 @@ const ContainerSC = styled("div")`
 
   background-color: ${ColorScheme.WHITE};
 
+  @media (max-width: ${Breakpoints.NOTEBOOK}px) {
+    flex-direction: column-reverse;
+  }
+
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     margin-bottom: 48px;
     flex-direction: column;
@@ -17,17 +21,42 @@ const ContainerSC = styled("div")`
   }
 `;
 
+const DescSC = styled("div")`
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    display: none;
+  }
+`;
+
+const MobileSC = styled("div")`
+  display: none;
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    display: block;
+  }
+`;
+
 const LeftSC = styled("div")`
+  width: 100%;
   max-width: 538px;
+  margin-right: 10px;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     max-width: none;
+    margin-right: 0px;
   }
 `;
-const RightSC = styled("div")``;
+
+const RightSC = styled("div")`
+  flex-shrink: 0.4;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    flex-shrink: 1;
+  }
+`;
 
 export const styles = {
   ContainerSC,
+  DescSC,
+  MobileSC,
   LeftSC,
   RightSC,
 };
