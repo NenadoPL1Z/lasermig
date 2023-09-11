@@ -8,6 +8,7 @@ export interface ProductModel {
   slug: string;
   name: string;
   short_description: string;
+  tags: string[];
   product_images: ProductImageModel[];
 }
 

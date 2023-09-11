@@ -9,7 +9,7 @@ import { styles } from "@/styles/pages/newsID.styles";
 import Questions from "@/components/Questions";
 import NDContent from "@/components/News/NewsDetail/NDContent";
 
-interface NewsId extends NewsDetailModel {}
+interface NewsIdProps extends NewsDetailModel {}
 
 const NewsId = ({
   slug,
@@ -19,7 +19,7 @@ const NewsId = ({
   date,
   description,
   related_news,
-}: NewsId) => {
+}: NewsIdProps) => {
   return (
     <TitleLayout title={title}>
       <NDTop slug={slug} title={title} image={image} tags={tags} date={date} />
@@ -38,12 +38,12 @@ const NewsId = ({
 
 const { ContainerSC, ContentSC } = styles;
 
-export const getServerSideProps: GetServerSideProps<NewsId> = async (
+export const getServerSideProps: GetServerSideProps<NewsIdProps> = async (
   context,
 ) => {
   const slug = (context.query?.id as string) || "";
   const news = await fetchGetNewBySlug(slug);
-  return { props: { ...news } };
+  return { props: news };
 };
 
 export default React.memo(NewsId);
