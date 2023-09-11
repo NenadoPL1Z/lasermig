@@ -11,6 +11,7 @@ import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
 import TagsList from "@/components/Tags/TagsList";
 import Questions from "@/components/Questions";
 import Orders from "@/components/Orders";
+import ProductsListSlug from "@/components/Catalog/ProductsListSlug";
 
 interface CategoryProps extends FetchGetCategoryResponse {}
 
@@ -23,7 +24,9 @@ const Category = ({ category_tags, products }: CategoryProps) => {
       </BackSC>
       <TitleSC className="padding">{title}</TitleSC>
       <TagsList tags={category_tags} />
-      <ContainerSC className="padding"></ContainerSC>
+      <ContainerSC className="padding">
+        <ProductsListSlug tags={category_tags} {...products} />
+      </ContainerSC>
       <ContainerSC>
         <Orders />
       </ContainerSC>
@@ -40,7 +43,7 @@ export const getServerSideProps: GetServerSideProps<CategoryProps> = async (
   context,
 ) => {
   const slug = (context.query?.slug as string) || "";
-  const category = await fetchGetCategory(slug);
+  const category = await fetchGetCategory(slug, {});
   return { props: category };
 };
 

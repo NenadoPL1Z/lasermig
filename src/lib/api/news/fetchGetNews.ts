@@ -22,10 +22,9 @@ export const fetchGetNews = ({
   id = [],
 }: FetchGetNewsData) => {
   const queryId = id?.length ? `&tags=${id.join(",")}` : "";
+  const query = `?page=${page}&per_page=${limit}${queryId}`;
 
   return axiosProject
-    .get<FetchGetNewsResponse>(
-      ApiNamespace.NEWS + `?page=${page}&per_page=${limit}${queryId}`,
-    )
+    .get<FetchGetNewsResponse>(ApiNamespace.NEWS + query)
     .then((r) => r.data);
 };
