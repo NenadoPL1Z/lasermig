@@ -25,7 +25,7 @@ const About = () => {
           />
           {aboutPageData.desc.map((desc) => (
             <ParagraphSC key={desc} className="content-margin48">
-              {desc};
+              {desc}
             </ParagraphSC>
           ))}
           <figure className="content-margin48">
