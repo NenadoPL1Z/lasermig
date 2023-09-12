@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import { css, styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { LinkSC } from "@/UI/LinkSC";
 import ColorScheme from "@/styles/theme/ColorScheme";
@@ -42,12 +42,19 @@ const LiSC = styled("li")`
   }
 `;
 
-const CustomLinkSC = styled(LinkSC)`
+const CustomLinkSC = styled(LinkSC)<{ isActive: boolean }>`
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      color: ${ColorScheme.BLACK};
+    `};
+
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     display: block;
     padding: 12px 16px;
 
-    color: ${ColorScheme.PRIMARY};
+    color: ${({ isActive }) =>
+      isActive ? ColorScheme.BLACK : ColorScheme.PRIMARY};
 
     font-size: 20px;
   }
