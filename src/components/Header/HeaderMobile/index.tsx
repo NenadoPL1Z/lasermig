@@ -6,9 +6,12 @@ import { Button } from "@mui/material";
 import HeaderDrawer from "@/components/Header/HeaderMobile/HeaderDrawer";
 import { companyData } from "@/lib/mock/companyData";
 import { styles } from "@/components/Header/HeaderMobile/index.styles";
+import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
+import { useScrollTop } from "@/hooks/useScrollTop";
 
 const HeaderMobile = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { handleClick } = useScrollTop(RoutesNamespace.HOME);
 
   return (
     <>
@@ -18,7 +21,7 @@ const HeaderMobile = () => {
             <BurgerMenu />
           </Button>
         </LeftSC>
-        <MiddleSC>
+        <MiddleSC onClick={handleClick}>
           <Lasermig />
         </MiddleSC>
         <RightSC>

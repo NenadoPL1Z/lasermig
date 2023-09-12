@@ -5,15 +5,18 @@ import HeaderActions from "@/components/Header/HeaderActions";
 import { useHeaderDesktop } from "@/components/Header/HeaderDesktop/useHeaderDesktop";
 import { styles } from "@/components/Header/HeaderDesktop/index.styles";
 import { HeaderDesktopProps } from "@/components/Header/HeaderDesktop/types";
+import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
+import { useScrollTop } from "@/hooks/useScrollTop";
 
 const HeaderDesktop = (props: HeaderDesktopProps) => {
   useHeaderDesktop(props);
+  const { handleClick } = useScrollTop(RoutesNamespace.HOME);
 
   return (
     <WrapperSC>
       <HeaderNav />
       <MiddleSC>
-        <LogoSC>
+        <LogoSC onClick={handleClick}>
           <Lasermig />
         </LogoSC>
       </MiddleSC>
