@@ -18,6 +18,17 @@ export const OutlinedButton = styled(DefaultButton)`
       fill: ${ColorScheme.WHITE};
     }
   }
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    &:hover {
+      color: ${ColorScheme.PRIMARY};
+      fill: ${ColorScheme.PRIMARY};
+      background-color: ${ColorScheme.TRANSPARENT};
+
+      & > svg > path {
+        fill: ${ColorScheme.PRIMARY};
+      }
+    }
+  }
 `;
 
 export const OutlinedButtonRounded = styled(OutlinedButton)`
