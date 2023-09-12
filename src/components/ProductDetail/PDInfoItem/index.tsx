@@ -4,16 +4,19 @@ import { styles } from "@/components/ProductDetail/PDInfoItem/index.styles";
 
 interface PDInfoItemProps extends ChildrenProps {
   title: string;
+  initialOpen?: boolean;
 }
 
-const PDInfoItem = ({ title, children }: PDInfoItemProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+const PDInfoItem = ({
+  title,
+  initialOpen = false,
+  children,
+}: PDInfoItemProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(initialOpen);
 
   return (
     <ContainerSC>
-      <HeaderSC
-        tabIndex={0}
-        onClick={() => setIsOpen((prevState) => !prevState)}>
+      <HeaderSC onClick={() => setIsOpen((prevState) => !prevState)}>
         <TitleSC>{title}</TitleSC>
         {isOpen && <ArrowDownSC />}
         {!isOpen && <ArrowUPSC />}

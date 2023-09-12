@@ -18,6 +18,14 @@ const PDInfo = ({
   const isVisible =
     advantages || product_characteristics?.length || accessories || guarantees;
 
+  const charsLength = product_characteristics.length;
+
+  const isAdvantages = !!advantages;
+  const isCharacteristics = !advantages && !!charsLength;
+  const isAccessories = !advantages && !charsLength && !!accessories;
+  const isGuarantees =
+    !advantages && !charsLength && !accessories && !!guarantees;
+
   if (!isVisible) {
     return null;
   }
@@ -29,14 +37,14 @@ const PDInfo = ({
       </LeftSC>
       <RightSC className="content content-br">
         {advantages && (
-          <PDInfoItem title="ПРЕИМУЩЕСТВА">
+          <PDInfoItem title="ПРЕИМУЩЕСТВА" initialOpen={isAdvantages}>
             <ContentSC>
               <TextSC>{advantages}</TextSC>
             </ContentSC>
           </PDInfoItem>
         )}
-        {product_characteristics?.length && (
-          <PDInfoItem title="ХАРАКТЕРИСТИКИ">
+        {!!product_characteristics?.length && (
+          <PDInfoItem title="ХАРАКТЕРИСТИКИ" initialOpen={isCharacteristics}>
             <ContentSC>
               <ListSC>
                 {product_characteristics
@@ -52,14 +60,14 @@ const PDInfo = ({
           </PDInfoItem>
         )}
         {accessories && (
-          <PDInfoItem title="КОМПЛЕКТУЮЩИЕ">
+          <PDInfoItem title="КОМПЛЕКТУЮЩИЕ" initialOpen={isAccessories}>
             <ContentSC>
               <TextSC>{accessories}</TextSC>
             </ContentSC>
           </PDInfoItem>
         )}
         {guarantees && (
-          <PDInfoItem title="ГАРАНТИИ">
+          <PDInfoItem title="ГАРАНТИИ" initialOpen={isGuarantees}>
             <ContentSC>
               <TextSC>{guarantees}</TextSC>
             </ContentSC>
