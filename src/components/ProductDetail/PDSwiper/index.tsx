@@ -2,9 +2,7 @@ import React from "react";
 import { styles } from "@/components/ProductDetail/PDSwiper/index.styles";
 import SwiperArrows from "@/UI/SwiperArrows";
 import { usePDSwiper } from "@/components/ProductDetail/PDSwiper/usePDSwiper";
-import { ProductDetailModel } from "@/lib/models/ProductDetailModel";
-
-interface PDSwiperProps extends Pick<ProductDetailModel, "product_images"> {}
+import { PDSwiperProps } from "@/components/ProductDetail/types";
 
 const PDSwiper = ({ product_images }: PDSwiperProps) => {
   const { onSwiper, handlePrev, handleNext } = usePDSwiper();

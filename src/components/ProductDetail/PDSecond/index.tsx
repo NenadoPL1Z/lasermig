@@ -1,13 +1,7 @@
 import React from "react";
 import { styles } from "@/components/ProductDetail/PDSecond/index.styles";
-import { ProductDetailModel } from "@/lib/models/ProductDetailModel";
 import PDPrice from "@/components/ProductDetail/PDPrice";
-
-interface PDSecondProps
-  extends Pick<
-    ProductDetailModel,
-    "price" | "description" | "additional_title" | "additional_description"
-  > {}
+import { PDSecondProps } from "@/components/ProductDetail/types";
 
 const PDSecond = ({
   price,

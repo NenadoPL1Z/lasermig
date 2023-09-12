@@ -1,30 +1,20 @@
 import React from "react";
 import { styles } from "@/components/ProductDetail/PDInfo/index.styles";
-import { ProductDetailModel } from "@/lib/models/ProductDetailModel";
 import PDInfoItem from "@/components/ProductDetail/PDInfoItem";
+import { PDInfoProps } from "@/components/ProductDetail/types";
+import { usePDInfo } from "@/components/ProductDetail/PDInfo/usePDInfo";
 
-interface PDInfo
-  extends Pick<
-    ProductDetailModel,
-    "advantages" | "product_characteristics" | "accessories" | "guarantees"
-  > {}
+const PDInfo = (props: PDInfoProps) => {
+  const { advantages, product_characteristics, accessories, guarantees } =
+    props;
 
-const PDInfo = ({
-  advantages,
-  product_characteristics,
-  accessories,
-  guarantees,
-}: PDInfo) => {
-  const isVisible =
-    advantages || product_characteristics?.length || accessories || guarantees;
-
-  const charsLength = product_characteristics.length;
-
-  const isAdvantages = !!advantages;
-  const isCharacteristics = !advantages && !!charsLength;
-  const isAccessories = !advantages && !charsLength && !!accessories;
-  const isGuarantees =
-    !advantages && !charsLength && !accessories && !!guarantees;
+  const {
+    isVisible,
+    isAdvantages,
+    isCharacteristics,
+    isAccessories,
+    isGuarantees,
+  } = usePDInfo(props);
 
   if (!isVisible) {
     return null;

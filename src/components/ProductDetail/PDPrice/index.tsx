@@ -3,9 +3,7 @@ import { formatPrice } from "@/lib/services";
 import ModalCall from "@/UI/Modals/variant/ModalCall";
 import { useToggle } from "@/hooks/useToggle";
 import { styles } from "@/components/ProductDetail/PDPrice/index.styles";
-import { ProductDetailModel } from "@/lib/models/ProductDetailModel";
-
-interface PDPriceProps extends Pick<ProductDetailModel, "price"> {}
+import { PDPriceProps } from "@/components/ProductDetail/types";
 
 const PDPrice = ({ price }: PDPriceProps) => {
   const { isOpen, handleOpen, handleClose } = useToggle();

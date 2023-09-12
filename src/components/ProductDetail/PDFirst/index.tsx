@@ -2,9 +2,7 @@ import React from "react";
 import { styles } from "@/components/ProductDetail/PDFirst/index.styles";
 import CatalogBack from "@/components/Catalog/CatalogBack";
 import { useRouter } from "next/router";
-import { ProductDetailModel } from "@/lib/models/ProductDetailModel";
-
-interface PDFirstProps extends Pick<ProductDetailModel, "tags" | "name"> {}
+import { PDFirstProps } from "@/components/ProductDetail/types";
 
 const PDFirst = ({ tags, name }: PDFirstProps) => {
   const { asPath } = useRouter();

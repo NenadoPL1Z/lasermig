@@ -1,11 +1,6 @@
 import React, { useState } from "react";
-import { ChildrenProps } from "@/types/types";
 import { styles } from "@/components/ProductDetail/PDInfoItem/index.styles";
-
-interface PDInfoItemProps extends ChildrenProps {
-  title: string;
-  initialOpen?: boolean;
-}
+import { PDInfoItemProps } from "@/components/ProductDetail/types";
 
 const PDInfoItem = ({
   title,

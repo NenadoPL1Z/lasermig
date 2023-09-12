@@ -1,15 +1,9 @@
 import React from "react";
-import { ProductDetailModel } from "@/lib/models/ProductDetailModel";
 import { styles } from "@/components/ProductDetail/PDTop/index.styles";
 import PDFirst from "@/components/ProductDetail/PDFirst";
 import PDSecond from "@/components/ProductDetail/PDSecond";
 import PDSwiper from "@/components/ProductDetail/PDSwiper";
-
-interface PDTopProps
-  extends Omit<
-    ProductDetailModel,
-    "advantages" | "product_characteristics" | "accessories" | "guarantees"
-  > {}
+import { PDTopProps } from "@/components/ProductDetail/types";
 
 const PDTop = (props: PDTopProps) => {
   return (
