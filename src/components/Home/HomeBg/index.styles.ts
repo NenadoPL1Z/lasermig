@@ -3,6 +3,7 @@ import { ZIndex } from "@/styles/theme/ZIndex";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 const ContainerSC = styled("div")`
+  overflow: hidden;
   width: 100%;
   height: 1016px;
 
@@ -34,7 +35,7 @@ const BgSC = styled("div")`
   height: 1106px;
 
   position: absolute;
-  right: 0;
+  right: -250px;
   top: 0;
   z-index: ${ZIndex.HIDDEN};
 
@@ -48,6 +49,7 @@ const BgSC = styled("div")`
 
   @media (max-width: ${Breakpoints.MOBILE}px) {
     height: 313px;
+    right: 0px;
     background-size: auto;
     background-image: url("/assets/images/HomeMobileBg.png");
   }
