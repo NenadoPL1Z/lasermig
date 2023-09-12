@@ -27,7 +27,11 @@ const NDTop = ({ slug, title, tags, date, image }: NDTopProps) => {
             <LeftBottomSC>
               <TagsSC>
                 {tags.map((tagItem) => (
-                  <TagSC key={tagItem}>{tagItem}</TagSC>
+                  <TagSC key={tagItem}>
+                    <TagLinkSC href={`${RoutesNamespace.NEWS}?tags=${tagItem}`}>
+                      {tagItem}
+                    </TagLinkSC>
+                  </TagSC>
                 ))}
               </TagsSC>
               <TitleSC>{title}</TitleSC>
@@ -53,6 +57,7 @@ const {
   BackSC,
   TagsSC,
   TagSC,
+  TagLinkSC,
   TitleSC,
   DateSC,
   RightSC,

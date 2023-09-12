@@ -77,7 +77,11 @@ const TagsSC = styled("ul")`
   list-style: none;
 `;
 
-const TagSC = styled("li")`
+const TagSC = styled("li")``;
+
+const TagLinkSC = styled(Link)`
+  display: block;
+
   margin-right: 20px;
   margin-bottom: 6px;
 
@@ -135,6 +139,7 @@ export const styles = {
   BackSC,
   TagsSC,
   TagSC,
+  TagLinkSC,
   TitleSC,
   DateSC,
   RightSC,
