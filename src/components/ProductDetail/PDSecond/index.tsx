@@ -1,9 +1,7 @@
 import React from "react";
 import { styles } from "@/components/ProductDetail/PDSecond/index.styles";
 import { ProductDetailModel } from "@/lib/models/ProductDetailModel";
-import { formatPrice } from "@/lib/services";
-import { useToggle } from "@/hooks/useToggle";
-import ModalCall from "@/UI/Modals/variant/ModalCall";
+import PDPrice from "@/components/ProductDetail/PDPrice";
 
 interface PDSecondProps
   extends Pick<
@@ -17,48 +15,31 @@ const PDSecond = ({
   additional_title,
   additional_description,
 }: PDSecondProps) => {
-  const { isOpen, handleOpen, handleClose } = useToggle();
-
   return (
-    <>
-      <ContainerSC>
-        <TopSC>
-          <ButtonSC onClick={handleOpen}>Заказать в 1 клик</ButtonSC>
-          {price && (
-            <PriceSC>
-              <PriceLabelSC>Цена</PriceLabelSC>
-              <PriceSumSC>
-                {isNaN(+price) ? price : ` ОТ ${formatPrice(+price)}`}
-              </PriceSumSC>
-            </PriceSC>
-          )}
-        </TopSC>
-        <BottomSC>
-          {(additional_title || additional_description) && (
-            <AdditionalSC>
-              {additional_title && (
-                <AdditionalTitleSC>{additional_title}</AdditionalTitleSC>
-              )}
-              {additional_description && (
-                <AdditionalDescSC>{additional_description}</AdditionalDescSC>
-              )}
-            </AdditionalSC>
-          )}
-          {description && <DesSC>{description}</DesSC>}
-        </BottomSC>
-      </ContainerSC>
-      <ModalCall isOpen={isOpen} handleClose={handleClose} />
-    </>
+    <ContainerSC>
+      <TopSC>
+        <PDPrice price={price} />
+      </TopSC>
+      <BottomSC>
+        {(additional_title || additional_description) && (
+          <AdditionalSC>
+            {additional_title && (
+              <AdditionalTitleSC>{additional_title}</AdditionalTitleSC>
+            )}
+            {additional_description && (
+              <AdditionalDescSC>{additional_description}</AdditionalDescSC>
+            )}
+          </AdditionalSC>
+        )}
+        {description && <DesSC>{description}</DesSC>}
+      </BottomSC>
+    </ContainerSC>
   );
 };
 
 const {
   ContainerSC,
   TopSC,
-  ButtonSC,
-  PriceSC,
-  PriceLabelSC,
-  PriceSumSC,
   BottomSC,
   DesSC,
   AdditionalSC,

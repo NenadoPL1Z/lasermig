@@ -1,7 +1,5 @@
 import { styled } from "@mui/material";
-import { DefaultButton } from "@/UI/Buttons/DefaultButton";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
-import { H3SC } from "@/UI/H3SC";
 import ColorScheme from "@/styles/theme/ColorScheme";
 
 const ContainerSC = styled("div")``;
@@ -11,42 +9,7 @@ const TopSC = styled("div")`
   margin-bottom: 64px;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    margin-bottom: 32px;
-  }
-`;
-
-const ButtonSC = styled(DefaultButton)`
-  @media (max-width: ${Breakpoints.NOTEBOOK}px) {
-    flex-grow: 1;
-  }
-`;
-
-const PriceSC = styled("div")`
-  margin-left: 24px;
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    margin-left: 16px;
-  }
-`;
-
-const PriceLabelSC = styled("p")`
-  font-size: 18px;
-  margin-bottom: 10px;
-
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    font-size: 12px;
-    margin-bottom: 4px;
-  }
-`;
-
-const PriceSumSC = styled(H3SC)`
-  font-size: 24px;
-  font-weight: 400;
-
-  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-    font-size: 18px;
+    display: none;
   }
 `;
 
@@ -109,10 +72,6 @@ const DesSC = styled("p")`
 export const styles = {
   ContainerSC,
   TopSC,
-  ButtonSC,
-  PriceSC,
-  PriceLabelSC,
-  PriceSumSC,
   BottomSC,
   AdditionalSC,
   AdditionalTitleSC,

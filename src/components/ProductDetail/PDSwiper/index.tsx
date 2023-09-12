@@ -14,7 +14,7 @@ const PDSwiper = ({ product_images }: PDSwiperProps) => {
       <NavContainerSC>
         <SwiperArrows onNext={handleNext} onPrev={handlePrev} />
       </NavContainerSC>
-      <SwiperSC onSwiper={onSwiper} loop={true} slidesPerView="auto">
+      <SwiperSC onSwiper={onSwiper} slidesPerView="auto" loop autoHeight>
         {product_images
           .sort((a, b) => a.position - b.position)
           .map((img, index) => (
