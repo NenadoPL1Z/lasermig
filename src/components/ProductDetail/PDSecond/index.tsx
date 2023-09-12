@@ -27,7 +27,9 @@ const PDSecond = ({
           {price && (
             <PriceSC>
               <PriceLabelSC>Цена</PriceLabelSC>
-              <PriceSumSC>ОТ {formatPrice(+price)}</PriceSumSC>
+              <PriceSumSC>
+                {isNaN(+price) ? price : ` ОТ ${formatPrice(+price)}`}
+              </PriceSumSC>
             </PriceSC>
           )}
         </TopSC>
