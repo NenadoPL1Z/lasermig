@@ -16,7 +16,9 @@ const PDFirst = ({ tags, name }: PDFirstProps) => {
       {tags.length && (
         <TagsSC>
           {tags.map((tag) => (
-            <TagSC key={tag}>{tag}</TagSC>
+            <TagSC key={tag}>
+              <TagLinkSC href={path + `?tags=${tag}`}>{tag}</TagLinkSC>
+            </TagSC>
           ))}
         </TagsSC>
       )}
@@ -25,6 +27,6 @@ const PDFirst = ({ tags, name }: PDFirstProps) => {
   );
 };
 
-const { ContainerSC, BackSC, TagsSC, TagSC, TitleSC } = styles;
+const { ContainerSC, BackSC, TagsSC, TagSC, TagLinkSC, TitleSC } = styles;
 
 export default React.memo(PDFirst);

@@ -2,6 +2,7 @@ import { styled } from "@mui/material";
 import { H1SC } from "@/UI/H1SC";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { FontNamespace } from "@/styles/theme/FontNamespace";
+import Link from "next/link";
 
 const ContainerSC = styled("div")`
   margin-bottom: 24px;
@@ -46,7 +47,11 @@ const TagsSC = styled("ul")`
     margin-right: 0;
   }
 `;
-const TagSC = styled("li")`
+
+const TagSC = styled("li")``;
+
+const TagLinkSC = styled(Link)`
+  display: block;
   margin-right: 20px;
   margin-bottom: 8px;
 
@@ -67,4 +72,11 @@ const TitleSC = styled(H1SC)`
   }
 `;
 
-export const styles = { ContainerSC, BackSC, TagsSC, TagSC, TitleSC };
+export const styles = {
+  ContainerSC,
+  BackSC,
+  TagsSC,
+  TagSC,
+  TagLinkSC,
+  TitleSC,
+};
