@@ -56,6 +56,7 @@ const BottomSC = styled("div")`
 
   & > *:first-child {
     margin-right: 53px;
+    min-width: 180px;
   }
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
@@ -63,6 +64,7 @@ const BottomSC = styled("div")`
 
     & > *:first-child {
       margin-right: 0;
+      min-width: auto;
     }
   }
 `;
