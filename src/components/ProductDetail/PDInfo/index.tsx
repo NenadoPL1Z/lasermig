@@ -36,7 +36,7 @@ const PDInfo = ({
           </PDInfoItem>
         )}
         {product_characteristics?.length && (
-          <PDInfoItem title="ПРЕИМУЩЕСТВА">
+          <PDInfoItem title="ХАРАКТЕРИСТИКИ">
             <ContentSC>
               <ListSC>
                 {product_characteristics
