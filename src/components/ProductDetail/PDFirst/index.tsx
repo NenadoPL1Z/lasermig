@@ -17,7 +17,7 @@ const PDFirst = ({ tags, name }: PDFirstProps) => {
       </BackSC>
       {tags.length && (
         <TagsSC>
-          {[...tags, ...tags, ...tags].map((tag) => (
+          {tags.map((tag) => (
             <TagSC key={tag}>{tag}</TagSC>
           ))}
         </TagsSC>
