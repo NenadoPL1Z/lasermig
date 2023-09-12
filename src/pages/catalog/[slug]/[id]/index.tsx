@@ -8,6 +8,7 @@ import Questions from "@/components/Questions";
 import Orders from "@/components/Orders";
 import ProductsRelated from "@/components/Catalog/ProductsRelated";
 import ProductDetail from "@/components/ProductDetail";
+import PDPrice from "@/components/ProductDetail/PDPrice";
 
 interface ProductProps extends ProductDetailModel {}
 
@@ -24,14 +25,19 @@ const Product = (props: ProductProps) => {
       <ContainerSC>
         <Orders />
       </ContainerSC>
-      <div className="padding">
+      <LastSC className="padding">
         <Questions />
-      </div>
+      </LastSC>
+      <BottomSC className="padding">
+        <BottomWrapperSC>
+          <PDPrice price={props.price} />
+        </BottomWrapperSC>
+      </BottomSC>
     </TitleLayout>
   );
 };
 
-const { ContainerSC } = styles;
+const { ContainerSC, LastSC, BottomSC, BottomWrapperSC } = styles;
 
 export const getServerSideProps: GetServerSideProps<ProductProps> = async (
   context,
