@@ -1,6 +1,7 @@
 import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import ColorScheme from "@/styles/theme/ColorScheme";
+import { FontNamespace } from "@/styles/theme/FontNamespace";
 
 const ContainerSC = styled("div")``;
 
@@ -19,7 +20,6 @@ const BottomSC = styled("div")`
 
   & > *:first-child {
     margin-right: 53px;
-    min-width: 180px;
   }
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
@@ -27,7 +27,6 @@ const BottomSC = styled("div")`
 
     & > *:first-child {
       margin-right: 0;
-      min-width: auto;
     }
   }
 `;
@@ -55,6 +54,7 @@ const AdditionalDescSC = styled("p")`
   white-space: pre-wrap;
 
   font-size: 24px;
+  font-family: ${FontNamespace.BN};
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     font-size: 18px;
