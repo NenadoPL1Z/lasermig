@@ -12,6 +12,8 @@ const ImgSC = styled("img")`
   height: 100%;
   max-height: 704px;
 
+  align-self: center;
+
   object-fit: contain;
 
   @media (max-width: ${Breakpoints.NOTEBOOK}px) {
@@ -39,9 +41,8 @@ const ContainerSC = styled("div")`
 const LeftSC = styled("div")`
   width: 100%;
   max-width: 715px;
-  height: 637px;
+  min-width: 550px;
 
-  flex-shrink: 0.5;
   margin-right: 22px;
 
   display: flex;
@@ -52,6 +53,7 @@ const LeftSC = styled("div")`
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     height: auto;
     max-width: none;
+    min-width: auto;
     margin-right: 0;
 
     order: 2;

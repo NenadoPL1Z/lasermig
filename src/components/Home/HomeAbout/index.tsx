@@ -8,7 +8,7 @@ const HomeSlider = ({ slider }: HomeSliderProps) => {
   const { onSwiper, handlePrev, handleNext } = useHomeAbout();
 
   return (
-    <SwiperSC onSwiper={onSwiper} loop={true} slidesPerView="auto">
+    <SwiperSC onSwiper={onSwiper} loop={true} autoHeight slidesPerView="auto">
       {slider.map((sliderItem) => (
         <SwiperSlideSC key={sliderItem.title}>
           <HASlider
