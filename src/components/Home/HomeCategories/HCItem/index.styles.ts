@@ -71,14 +71,20 @@ const ImgSC = styled("img")<Alternative>`
           width: 100%;
           max-height: 329px;
 
-          object-fit: contain;
           position: absolute;
           right: 0;
-
+          top: 40%;
+          transform: translateY(-40%);
           z-index: ${ZIndex.DEFAULT};
+
+          object-fit: contain;
+
           @media (max-width: ${Breakpoints.BIG_TABLET}px) {
             height: auto;
+
             position: static;
+            top: 0%;
+            transform: translateY(0%);
           }
         `
       : css`

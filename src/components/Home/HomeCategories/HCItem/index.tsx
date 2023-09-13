@@ -4,6 +4,7 @@ import { styles } from "@/components/Home/HomeCategories/HCItem/index.styles";
 import { OutlinedButton } from "@/UI/Buttons/OutlinedButton";
 import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
 import { getImageUrl } from "@/lib/services";
+import { Box } from "@mui/material";
 
 interface HCItemProps extends CategoryModel {
   count: number;
@@ -20,7 +21,9 @@ const HCItem = ({ name, slug, image, count }: HCItemProps) => {
       isAlternative={isAlternative}>
       <LeftSC>
         <TitleSC isAlternative={isAlternative}>{name}</TitleSC>
-        <OutlinedButton>Подробнее</OutlinedButton>
+        <Box sx={{ backgroundColor: "white" }}>
+          <OutlinedButton>Подробнее</OutlinedButton>
+        </Box>
       </LeftSC>
       <RightSC>
         <ImgSC
