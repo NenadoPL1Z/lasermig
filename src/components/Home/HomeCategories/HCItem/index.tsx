@@ -2,7 +2,6 @@ import React from "react";
 import { CategoryModel } from "@/lib/models/CategoryModel";
 import { styles } from "@/components/Home/HomeCategories/HCItem/index.styles";
 import { OutlinedButton } from "@/UI/Buttons/OutlinedButton";
-import Link from "next/link";
 import { RoutesNamespace } from "@/lib/constants/namespaces/RoutesNamespace";
 import { getImageUrl } from "@/lib/services";
 
@@ -16,13 +15,12 @@ const HCItem = ({ name, slug, image, count }: HCItemProps) => {
 
   return (
     <ContainerSC
+      href={href}
       className={`content content-br grid-${count}`}
       isAlternative={isAlternative}>
       <LeftSC>
         <TitleSC isAlternative={isAlternative}>{name}</TitleSC>
-        <OutlinedButton>
-          <Link href={href}>Подробнее</Link>
-        </OutlinedButton>
+        <OutlinedButton>Подробнее</OutlinedButton>
       </LeftSC>
       <RightSC>
         <ImgSC

@@ -3,10 +3,11 @@ import ColorScheme from "@/styles/theme/ColorScheme";
 import { H2SC } from "@/UI/H2SC";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 import { ZIndex } from "@/styles/theme/ZIndex";
+import Link from "next/link";
 
 type Alternative = { isAlternative: boolean };
 
-const ContainerSC = styled("li")<Alternative>`
+const ContainerSC = styled(Link)<Alternative>`
   min-height: 285px;
 
   display: flex;

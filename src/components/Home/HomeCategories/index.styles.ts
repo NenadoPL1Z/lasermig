@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 
-const ContainerSC = styled("ul")`
+const FirstSC = styled("section")`
   display: grid;
   grid-template-columns: 3fr 1.5fr;
   gap: 20px;
@@ -22,6 +22,25 @@ const ContainerSC = styled("ul")`
   }
 `;
 
+const SecondSC = styled("section")`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  margin-top: 20px;
+  gap: 20px;
+
+  & > * {
+    flex: 1;
+    min-width: calc(50% - 20px);
+  }
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    display: none;
+  }
+`;
+
 export const styles = {
-  ContainerSC,
+  FirstSC,
+  SecondSC,
 };
