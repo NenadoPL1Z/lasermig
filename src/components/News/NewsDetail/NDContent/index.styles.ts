@@ -14,90 +14,91 @@ const Title = css`
 
 const ContainerSC = styled("div")`
   overflow-x: hidden;
-  & > {
-    h1 {
-      ${Title};
-      font-size: 48px;
-      @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-        font-size: 32px;
-      }
-    }
 
-    h2 {
-      ${Title};
-      font-size: 36px;
-      @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-        font-size: 32px;
-      }
+  h1 {
+    ${Title};
+    font-size: 48px;
+    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+      font-size: 32px;
     }
+  }
 
-    h3 {
-      ${Title};
-      font-size: 28px;
-      @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-        font-size: 24px;
-      }
+  h2 {
+    ${Title};
+    font-size: 36px;
+    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+      font-size: 32px;
     }
+  }
 
-    h4,
-    h5,
-    h6 {
-      ${Title};
+  h3 {
+    ${Title};
+    font-size: 28px;
+    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
       font-size: 24px;
     }
+  }
 
-    p {
-      color: ${ColorScheme.PRIMARY};
-      font-family: ${FontNamespace.SF};
+  h4,
+  h5,
+  h6 {
+    ${Title};
+    font-size: 24px;
+  }
 
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
+  p {
+    color: ${ColorScheme.PRIMARY};
+    font-family: ${FontNamespace.SF};
 
-      @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-        font-size: 14px;
-      }
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+      font-size: 14px;
     }
+  }
 
-    ul,
-    li {
-      list-style-type: circle;
+  ul,
+  li {
+    list-style-type: circle;
+  }
+
+  img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    max-height: 477px;
+
+    object-fit: contain;
+
+    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+      width: 100% !important;
+      height: 100% !important;
     }
+  }
 
-    li {
-    }
+  video {
+    display: block;
 
-    img {
-      display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 567px;
+  }
 
-      width: 100%;
-      height: 100%;
-      max-height: 477px;
+  figcaption {
+    color: ${ColorScheme.SECONDARY};
 
-      object-fit: cover;
-    }
+    font-family: ${FontNamespace.SF};
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 
-    video {
-      display: block;
-
-      width: 100%;
-      height: 100%;
-      max-height: 567px;
-    }
-
-    figcaption {
-      color: ${ColorScheme.SECONDARY};
-
-      font-family: ${FontNamespace.SF};
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-
-      @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-        font-size: 12px;
-      }
+    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+      font-size: 12px;
     }
   }
 `;
