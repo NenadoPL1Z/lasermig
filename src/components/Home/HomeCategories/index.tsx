@@ -35,10 +35,9 @@ const HomeCategories = ({ categories }: HomeCategoriesProps) => {
       </FirstSC>
       {!!second.length && (
         <SecondSC>
-          {second.map((category) => {
-            increment();
-            return <HCItem key={category.slug} count={count} {...category} />;
-          })}
+          {second.map((category) => (
+            <HCItem key={category.slug} count={0} {...category} />
+          ))}
         </SecondSC>
       )}
     </>
