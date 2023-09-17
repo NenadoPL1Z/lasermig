@@ -5,10 +5,16 @@ import FooterNav from "@/components/Footer/FooterNav";
 import FooterMoore from "@/components/Footer/FooterMoore/FooterMoore";
 import { styles } from "@/components/Footer/index.styles";
 import { Mobile } from "@/UI/Mobile";
+import { useRouter } from "next/router";
 
 const Footer = () => {
+  const { pathname } = useRouter();
+  const isProduct = pathname == "/catalog/[slug]/[id]";
+
   return (
-    <FooterSC className="container-three disable-mobile-safe">
+    <FooterSC
+      isBottom={isProduct}
+      className="container-three disable-mobile-safe">
       <FooterWrapperSC className="content">
         <FooterInfo />
         <FooterNav />

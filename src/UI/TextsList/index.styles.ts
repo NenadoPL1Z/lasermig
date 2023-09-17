@@ -6,11 +6,19 @@ import { Breakpoints } from "@/styles/theme/Breakpoints";
 const ListSC = styled("ul")`
   padding-left: 55px;
   list-style-type: disc;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    padding-left: 16px;
+  }
 `;
 
 const NumberListSC = styled("ol")`
   padding-left: 55px;
   list-style-type: number;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    padding-left: 16px;
+  }
 `;
 
 const ItemSC = styled("li")`
