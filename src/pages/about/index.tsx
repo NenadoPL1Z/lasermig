@@ -7,6 +7,7 @@ import TitleLayout from "@/layout/TitleLayout";
 import Questions from "@/components/Questions";
 import { styles } from "@/styles/pages/about.styles";
 import ImgPage from "@/components/ImgPage";
+import Certificate from "@/components/Certificate";
 
 const About = () => {
   return (
@@ -37,6 +38,10 @@ const About = () => {
             />
             <FigcaptionSC>{aboutPageData.bottom.figcaption}</FigcaptionSC>
           </figure>
+          <H2SC sx={{ marginBottom: "16px" }}>
+            {aboutPageData.certificate.title}
+          </H2SC>
+          <Certificate />
         </ContainerInfoSC>
         <Questions />
       </div>

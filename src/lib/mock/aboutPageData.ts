@@ -23,4 +23,7 @@ export const aboutPageData = {
     image: "/assets/images/Office.jpg",
     figcaption: "Офис",
   },
+  certificate: {
+    title: "Сертификаты",
+  },
 };
