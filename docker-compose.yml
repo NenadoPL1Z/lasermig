@@ -3,8 +3,11 @@ services:
   app:
     image: lasermig_front
     container_name: lasermig_front
+    tty: true
     restart: always
+    stdin_open: true
     ports:
       - "5779:3000"
-    tty: true
-    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
