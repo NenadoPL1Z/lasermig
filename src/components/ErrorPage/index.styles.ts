@@ -15,6 +15,14 @@ const ContainerSC = styled("section")<Pick<ErrorPageProps, "errorImage">>`
   background-position: right 65px bottom;
   background-size: 45%;
 
+  @media (max-height: 1000px) {
+    min-height: 602px;
+  }
+
+  @media (max-height: 700px) {
+    min-height: 402px;
+  }
+
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
     min-height: 402px;
 

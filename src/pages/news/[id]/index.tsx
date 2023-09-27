@@ -23,12 +23,16 @@ const NewsId = ({
   return (
     <TitleLayout title={title}>
       <NDTop slug={slug} title={title} image={image} tags={tags} date={date} />
-      <ContentSC className="padding">
-        <NDContent description={description} />
-      </ContentSC>
-      <ContainerSC className="padding">
-        <NDRelated news={related_news} />
-      </ContainerSC>
+      {!!description && (
+        <ContentSC className="padding">
+          <NDContent description={description} />
+        </ContentSC>
+      )}
+      {!!related_news.length && (
+        <ContainerSC className="padding">
+          <NDRelated news={related_news} />
+        </ContainerSC>
+      )}
       <div className="padding">
         <Questions />
       </div>
