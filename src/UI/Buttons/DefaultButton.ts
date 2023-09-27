@@ -7,10 +7,6 @@ export const DefaultButton = styled(Button)`
   height: 60px;
   padding: 0 30px;
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
   color: ${ColorScheme.PRIMARY};
   background-color: ${ColorScheme.ACCENT};
   border-radius: 45px;

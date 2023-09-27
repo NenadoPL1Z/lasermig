@@ -5,7 +5,7 @@ import { FontNamespace } from "@/styles/theme/FontNamespace";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
 
 const BackSC = styled(Button)`
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
 
   padding: 5px 5px 5px 2px;
