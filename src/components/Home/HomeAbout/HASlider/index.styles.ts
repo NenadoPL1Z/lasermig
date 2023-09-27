@@ -32,8 +32,13 @@ const ImgSC = styled("img")`
 
 const ContainerSC = styled("div")`
   display: flex;
+  min-height: 550px;
+  max-height: 637px;
 
   @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    min-height: auto;
+    max-height: none;
+
     flex-direction: column;
   }
 `;
