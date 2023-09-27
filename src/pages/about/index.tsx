@@ -38,9 +38,9 @@ const About = () => {
             />
             <FigcaptionSC>{aboutPageData.bottom.figcaption}</FigcaptionSC>
           </figure>
-          <H2SC sx={{ marginBottom: "16px" }}>
-            {aboutPageData.certificate.title}
-          </H2SC>
+          {/*<H2SC sx={{ marginBottom: "16px" }}>*/}
+          {/*  {aboutPageData.certificate.title}*/}
+          {/*</H2SC>*/}
           <Certificate />
         </ContainerInfoSC>
         <Questions />

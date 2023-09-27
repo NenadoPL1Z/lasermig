@@ -26,7 +26,7 @@ const Catalog = ({ categories, products }: CatalogProps) => {
           <CategoriesList categories={categories} />
         </CategoriesSC>
       )}
-      {products?.count && (
+      {!!products?.count && (
         <ContainerSC className="padding">
           <ProductsList {...products} />
         </ContainerSC>
