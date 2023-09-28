@@ -85,7 +85,12 @@ const ContainerSC = styled("div")`
 
     width: 100%;
     height: 100%;
-    max-height: 567px;
+    max-height: 477px;
+
+    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+      width: 100% !important;
+      height: 100% !important;
+    }
   }
 
   iframe {
@@ -96,7 +101,8 @@ const ContainerSC = styled("div")`
     max-height: 477px;
 
     @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-      max-height: 197px;
+      width: 100% !important;
+      height: 100% !important;
     }
   }
 
