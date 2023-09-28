@@ -88,6 +88,18 @@ const ContainerSC = styled("div")`
     max-height: 567px;
   }
 
+  iframe {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    max-height: 477px;
+
+    @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+      max-height: 197px;
+    }
+  }
+
   figcaption {
     color: ${ColorScheme.SECONDARY};
 
