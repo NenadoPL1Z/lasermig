@@ -84,25 +84,28 @@ const ContainerSC = styled("div")`
     display: block;
 
     width: 100%;
-    height: 100%;
-    max-height: 477px;
+    max-height: 567px;
 
     @media (max-width: ${Breakpoints.BIG_TABLET}px) {
       width: 100% !important;
-      height: 100% !important;
     }
   }
 
   iframe {
     display: block;
+    border-radius: 40px;
 
     width: 100%;
-    height: 100%;
-    max-height: 477px;
+    max-height: 567px;
 
     @media (max-width: ${Breakpoints.BIG_TABLET}px) {
-      width: 100% !important;
-      height: 100% !important;
+      width: 100%;
+      max-height: 467px;
+      border-radius: 24px;
+    }
+
+    @media (max-width: ${Breakpoints.MOBILE}px) {
+      max-height: 250px;
     }
   }
 
