@@ -20,7 +20,7 @@ const PDTop = (props: PDTopProps) => {
         </DescSC>
       </LeftSC>
       <RightSC>
-        {props.product_images?.length && (
+        {!!props.product_images?.length && (
           <PDSwiper product_images={props.product_images} />
         )}
       </RightSC>

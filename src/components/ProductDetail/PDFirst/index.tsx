@@ -13,7 +13,7 @@ const PDFirst = ({ tags, name }: PDFirstProps) => {
       <BackSC>
         <CatalogBack href={path} />
       </BackSC>
-      {tags.length && (
+      {!!tags.length && (
         <TagsSC>
           {tags.map((tag) => (
             <TagSC key={tag}>

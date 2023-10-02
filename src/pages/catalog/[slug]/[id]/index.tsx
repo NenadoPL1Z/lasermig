@@ -17,7 +17,7 @@ const Product = (props: ProductProps) => {
   return (
     <TitleLayout title={name}>
       <ProductDetail {...props} />
-      {related_products.length && (
+      {!!related_products.length && (
         <ContainerSC className="padding">
           <ProductsRelated products={related_products} />
         </ContainerSC>
