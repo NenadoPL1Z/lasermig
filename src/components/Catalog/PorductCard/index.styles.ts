@@ -4,6 +4,7 @@ import ColorScheme from "@/styles/theme/ColorScheme";
 import { H3SC } from "@/UI/H3SC";
 import { H2SC } from "@/UI/H2SC";
 import { Breakpoints } from "@/styles/theme/Breakpoints";
+import { FontNamespace } from "@/styles/theme/FontNamespace";
 
 const ContainerSC = styled("li")`
   background-color: ${ColorScheme.WHITE};
@@ -45,6 +46,46 @@ const LeftTopSC = styled("div")`
 
   @media (max-width: ${Breakpoints.TABLET}px) {
     flex-grow: 0;
+  }
+`;
+
+const LeftBottomSC = styled("div")`
+  display: flex;
+  align-items: center;
+`;
+
+const PriceSC = styled("div")`
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+`;
+
+const PriceLabelSC = styled("p")`
+  margin-bottom: 10px;
+
+  color: ${ColorScheme.SECONDARY};
+
+  font-family: ${FontNamespace.SF};
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+`;
+
+const PriceSumSC = styled("div")`
+  color: ${ColorScheme.PRIMARY};
+
+  font-family: ${FontNamespace.BN};
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+
+  @media (max-width: ${Breakpoints.BIG_TABLET}px) {
+    font-size: 18px;
   }
 `;
 
@@ -110,6 +151,10 @@ export const styles = {
   LinkSC,
   LeftSC,
   LeftTopSC,
+  LeftBottomSC,
+  PriceSC,
+  PriceLabelSC,
+  PriceSumSC,
   CategorySC,
   TitleSC,
   DescSC,

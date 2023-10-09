@@ -1,5 +1,5 @@
 import React from "react";
-import { formatPrice } from "@/lib/services";
+import { checkPrice } from "@/lib/services";
 import ModalCall from "@/UI/Modals/variant/ModalCall";
 import { useToggle } from "@/hooks/useToggle";
 import { styles } from "@/components/ProductDetail/PDPrice/index.styles";
@@ -14,9 +14,7 @@ const PDPrice = ({ price }: PDPriceProps) => {
       {price && (
         <PriceSC>
           <PriceLabelSC>Цена</PriceLabelSC>
-          <PriceSumSC>
-            {isNaN(+price) ? price : ` ОТ ${formatPrice(+price)}`}
-          </PriceSumSC>
+          <PriceSumSC>{checkPrice(price)}</PriceSumSC>
         </PriceSC>
       )}
       <ModalCall isOpen={isOpen} handleClose={handleClose} />

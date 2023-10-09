@@ -7,6 +7,7 @@ export interface ProductModel {
   category: { name: string; slug: string };
   slug: string;
   name: string;
+  price: string;
   short_description: string;
   tags: string[];
   product_images: ProductImageModel[];

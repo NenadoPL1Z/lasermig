@@ -48,3 +48,7 @@ export const formatPrice = (price: number) => {
 
   return format.format(price);
 };
+
+export const checkPrice = (price: string) => {
+  return isNaN(+price) ? price : ` ОТ ${formatPrice(+price)}`;
+};
