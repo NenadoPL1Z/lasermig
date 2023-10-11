@@ -23,7 +23,6 @@ const ProductCard = (props: ProductModel) => {
           <LeftBottomSC>
             <OutlinedButton>ПОДРОБНЕЕ</OutlinedButton>
             <PriceSC>
-              <PriceLabelSC>Цена</PriceLabelSC>
               <PriceSumSC>{checkPrice(price)}</PriceSumSC>
             </PriceSC>
           </LeftBottomSC>
@@ -43,7 +42,6 @@ const {
   LeftTopSC,
   LeftBottomSC,
   PriceSC,
-  PriceLabelSC,
   PriceSumSC,
   CategorySC,
   TitleSC,
