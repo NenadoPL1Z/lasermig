@@ -8,9 +8,11 @@ export const TagButton = styled(OutlinedButton)<{ active?: boolean }>(
     active
       ? css`
           position: relative;
+
           color: ${ColorScheme.WHITE};
           background-color: ${ColorScheme.PRIMARY};
           border: none;
+          white-space: nowrap;
 
           @media (max-width: ${Breakpoints.BIG_TABLET}px) {
             &:hover {
@@ -28,5 +30,7 @@ export const TagButton = styled(OutlinedButton)<{ active?: boolean }>(
             }
           }
         `
-      : {},
+      : css`
+          white-space: nowrap;
+        `,
 );

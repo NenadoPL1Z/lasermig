@@ -49,7 +49,7 @@ const NewsList = (props: NewsListProps) => {
       {!isEnd && (
         <BottomSC>
           <OutlinedButton onClick={handleLoadMore}>
-            {isLoading && <CircularProgress />}
+            {isLoading && <CircularProgress size={20} />}
             {!isLoading && "Показать еще"}
           </OutlinedButton>
         </BottomSC>

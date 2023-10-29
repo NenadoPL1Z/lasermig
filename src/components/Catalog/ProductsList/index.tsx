@@ -20,7 +20,7 @@ const ProductsList = (props: ProductListProps) => {
       {!isEnd && (
         <BottomSC>
           <OutlinedButton disabled={isLoading} onClick={handleLoadMore}>
-            {isLoading && <CircularProgress />}
+            {isLoading && <CircularProgress size={20} />}
             {!isLoading && "Показать еще"}
           </OutlinedButton>
         </BottomSC>

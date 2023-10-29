@@ -23,7 +23,7 @@ const BottomSC = styled("div")`
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: ${ZIndex.OVER};
+    z-index: ${ZIndex.HEADER};
 
     background-color: ${ColorScheme.WHITE};
     box-shadow: 0px -9px 34px 0px rgba(223, 223, 223, 0.42);
